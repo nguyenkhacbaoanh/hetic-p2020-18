@@ -1,16 +1,64 @@
-@import 'blocs/header';
-@import 'blocs/footer';
+@charset 'UTF-8';
 
-@font-face {
- font-family: "Roboto";
- src: url("../fonts/Roboto-Regular.ttf") format("truetype");
-}
+@import
+  'bases/_reset.scss',
+  // 'base/_normalize.scss',
+  // 'base/_typography.scss',
+  'bases/_fonts.scss';
 
-h1 {
-  color: brown;
-  font-family: "Roboto", Arial;
+@import
+  'utiles/_variables.scss',
+  'utiles/_functions.scss',
+  'utiles/_mixins.scss',
+  'utiles/_placeholders.scss';
 
-  &:hover {
-    color: green;
-  }
-}
+
+
+@import
+  'layouts/_navigation.scss',
+  'layouts/_grid.scss',
+  'layouts/_sidebar.scss',
+  'layouts/_forms.scss';
+
+@import
+  'components/_buttons.scss',
+  'components/_carousel.scss',
+  'components/_cover.scss',
+  'components/_dropdown.scss';
+
+// @import
+//   'pages/_error.scss',
+//   'pages/_home.scss',
+//   'pages/_trendee.scss',
+//   'pages/_contact_influencer.scss',
+//   'pages/_contact_brand.scss',
+//   'pages/_legales.scss';
+
+
+
+@import
+  "partials/_header.scss",
+  "partials/_footer.scss";
+
+
+// @import
+//   'themes/_theme.scss',
+//   'themes/_admin.scss';
+
+// @import
+//   'responsive/_home_responsive.scss',
+//   'responsive/_trendee_responsive.scss';
+
+// @font-face {
+//  font-family: "Roboto";
+//  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+// }
+
+// h1 {
+//   color: brown;
+//   font-family: "Roboto", Arial;
+
+//   &:hover {
+//     color: green;
+//   }
+// }

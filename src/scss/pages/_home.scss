@@ -1,3 +1,19 @@
-// div {
-//     color: red;
-// }
+.hero {
+    position: relative;
+    height: 92vh;
+    background-color: grey;
+}
+
+.hero__scrollIndication {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+
+}
+
+.hero__scrollDown {
+    text-align: center;
+    color: $white;
+    font-family: $font_callBack;
+}

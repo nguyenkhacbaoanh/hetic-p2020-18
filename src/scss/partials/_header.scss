@@ -1,3 +1,25 @@
-header {
-  background: green;
+.header {
+    /* Background: */
+    height: 60px;
+    background: #000000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+
+.header__callToAction {
+    padding: 10px;
+    /* Contour: */
+    background: $golden;
+    border: 1px solid $golden;
+    border-radius: 2px;
+    /* TROUVEZ VOTRE CAFÉ: */
+    font-family: $font_callBack;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 16px;
+    color: #FFFFFF;
 }

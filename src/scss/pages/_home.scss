@@ -1,3 +1,110 @@
-// div {
-//     color: red;
-// }
+// HERO SECTION
+.hero {
+    position: relative;
+    height: 92vh;
+    background-color: grey;
+    overflow: hidden;
+}
+
+.hero__scrollIndication {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.hero__scrollDown {
+    text-align: center;
+    color: $white;
+    font-family: $descritpion-font;
+    margin-bottom: 20px;
+}
+
+.hero__scrollindicator {
+    height: 54px;
+    width: 2px;
+    background: $white;
+    margin: auto;
+}
+
+// _Animation of Hero
+.hero-animation {
+    height: 30px;
+    width: 100vw;
+    background: #E0E0E0;
+}
+
+
+
+
+
+
+
+/*********************************
+
+    COUNRTRIES SLIDERS
+
+************************************/
+
+
+//_header
+.countriesSlider {
+    padding-top: 54px;
+}
+
+.countriesSlider__header {
+    text-align: center;
+    font-family: $descritpion-font;
+    padding-bottom: 20px;
+}
+
+.countriesSlider__header > * {
+    padding-bottom : 10px;
+}
+
+.header__onTitle {
+    padding-bottom: 6px;
+    font-size: 20px;
+    color: $golden;
+}
+
+
+
+
+// _Sider
+.countriesSlider__content {
+    margin: 0 auto;
+    width: 335px; 
+    height: 255px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content__image {
+    width: 276px;
+    height: 224px;
+    background-color: grey;
+}
+
+.countriesSlider__description {
+    text-align: center;
+    font-weight: 400;
+}
+
+
+
+// _Capsules
+.countriesSlider__capsules {
+    margin: 0 auto;
+    width: 335px; 
+    height: 255px;
+    border: red solid 1px;
+
+}
+
+.countriesSlider__capsules ul {
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+}

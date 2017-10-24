@@ -2,9 +2,11 @@
 
 @import
   'bases/_reset.scss',
+  'bases/_fonts.scss',
+  'bases/_base.scss';
   // 'base/_normalize.scss',
   // 'base/_typography.scss',
-  'bases/_fonts.scss';
+  ;
 
 @import
   'utiles/_variables.scss',
@@ -26,12 +28,10 @@
   'components/_cover.scss',
   'components/_dropdown.scss';
 
-// @import
-//   'pages/_error.scss',
-//   'pages/_home.scss',
-//   'pages/_trendee.scss',
-//   'pages/_contact_influencer.scss',
-//   'pages/_contact_brand.scss',
+@import
+  // 'pages/_error.scss',
+  'pages/_home.scss';
+
 //   'pages/_legales.scss';
 
 

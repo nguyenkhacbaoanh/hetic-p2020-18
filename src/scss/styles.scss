@@ -2,9 +2,11 @@
 
 @import
   'bases/_reset.scss',
+  'bases/_fonts.scss',
+  'bases/_base.scss';
   // 'base/_normalize.scss',
   // 'base/_typography.scss',
-  'bases/_fonts.scss';
+  ;
 
 @import
   'utiles/_variables.scss',

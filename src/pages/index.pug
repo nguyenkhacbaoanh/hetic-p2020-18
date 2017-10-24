@@ -1,7 +1,51 @@
 include ../partials/header.pug
+
 section(class='hero')
-  div(class="hero__scrollIndication")
-    div(class="hero__scrollDown") Scroll Down
-    //- div(class="hero__scrollindicator")
+    div(class="hero__scrollIndication")
+      div(class="hero__scrollDown") Scroll Down
+      div(class="hero__scrollindicator")
+div(class="hero-animation")
+
+
+
+section(class="countriesSlider")
+  header(class="countriesSlider__header")
+    h3(class="header__onTitle") DÉCOUVREZ
+    h2(class="header__title") LES ORIGINES DE VOS CAFÉS
+    p(class="header_text") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cura- bitur consectetur sit amet massa ullamcorper hendrerit. 
+  
+  div(class="countriesSlider__content")
+    div(class="content__arrows content__previousBtn ") <
+    div(class="content__image")
+    div(class="content__arrows content__nextBtn") >
+  
+  p(class="countriesSlider__description") 6 capsules créés à partir du café de ce pays :
+
+  div(class="countriesSlider__capsules")
+    ul(class="countriesSlider__capsule")
+      li(class="capsule__left")
+        div(class="capsule__image")
+          img(src="", alt="")
+        div(class="capsule__description")
+          div(class="capsule__descriptionTitle") RISTRETTO
+          div(class="capsule__descriptionText") Intense et Boisé
+      
+      li(class="capsule__left")
+        div(class="capsule__image")
+          img(src="", alt="")
+        div(class="capsule__description")
+          div(class="capsule__descriptionTitle") RISTRETTO
+          div(class="capsule__descriptionText") Intense et Boisé
+          
+      li(class="capsule__left")
+        div(class="capsule__image")
+          img(src="", alt="")
+        div(class="capsule__description")
+          div(class="capsule__descriptionTitle") RISTRETTO
+          div(class="capsule__descriptionText") Intense et Boisé
+      
+    
+
+
 
 include ../partials/footer.pug

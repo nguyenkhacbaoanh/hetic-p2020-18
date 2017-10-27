@@ -1,25 +1,28 @@
 .header {
     /* Background: */
-    height: 60px;
+    height: 10vh;
     background: #000000;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    z-index: $zindex-5;
 }
 
-
+.logo {
+    width: 113px;
+    height: auto;
+}
 
 .header__callToAction {
     padding: 10px;
     /* Contour: */
-    background: $golden;
-    border: 1px solid $golden;
+    border: 2px solid $gold;
     border-radius: 2px;
     /* TROUVEZ VOTRE CAFÉ: */
     font-family: $font_callBack;
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
     text-decoration: none;
     line-height: 16px;
-    color: #FFFFFF;
+    color: $gold;
 }

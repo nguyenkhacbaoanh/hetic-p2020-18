@@ -1,39 +1,42 @@
 // HERO SECTION
 .hero {
     position: relative;
-    height: 92vh;
-    background-color: grey;
-    overflow: hidden;
+    height: 90vh;
+    background-color:#000;
 }
 
 .hero__scrollIndication {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 20px;
     transform: translateX(-50%);
 }
 
-.hero__scrollDown {
-    text-align: center;
-    color: $white;
-    font-family: $descritpion-font;
-    margin-bottom: 20px;
-}
+.hero__capsule {
+    width: 80vw;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
 
-.hero__scrollindicator {
-    height: 54px;
-    width: 2px;
-    background: $white;
-    margin: auto;
-}
+    img.logoBackground {
+        width: 100%;
+        height: auto;
+        z-index: $zindex;
+    }
 
-// _Animation of Hero
-.hero-animation {
-    height: 30px;
-    width: 100vw;
-    background: #E0E0E0;
-}
+    img.capsulePath {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        height: auto;
+        z-index: $zindex-2;
+    }
 
+}
 
 
 
@@ -65,7 +68,7 @@
 .header__onTitle {
     padding-bottom: 6px;
     font-size: 20px;
-    color: $golden;
+    color: $gold;
 }
 
 

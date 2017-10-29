@@ -1,9 +1,9 @@
 .header {
     /* Background: */
-    height: 10vh;
-    background: #000000;
+    padding: 15px 25px;
+    background: #1B1B1B;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     z-index: $zindex-5;
 }
@@ -19,7 +19,7 @@
     border: 2px solid $gold;
     border-radius: 2px;
     /* TROUVEZ VOTRE CAFÉ: */
-    font-family: $font_callBack;
+    font-family: $button-font;
     font-size: 11px;
     text-transform: uppercase;
     text-decoration: none;

@@ -5,16 +5,31 @@
 }
 
 html, body {
-    font-family: 'Open sans' sans-serif;
+    font-family: $description-font, 'Open sans' sans-serif;
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
+    background: #1B1B1B;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     line-height: 1.2;
+}
+
+h1 {
+    font-size: 22px;
+    font-family: $title-font;
+    color: $gold;
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-size: 17px;
+    font-family: $button-font;
+    color: $white;
+    padding-bottom: 4px;
 }
 
 // h1 { font-size: 2.6rem; }
@@ -30,21 +45,21 @@ h1, h2, h3, h4, h5, h6 {
 // h6 { font-size: 1rem; }
 
 p {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.5;
     font-weight: 300;
-    font-family: $descritpion-font;
+    font-family: $description-font;
 }
 
 a {
     font-size: 1em;
     text-decoration: none;
     // color: $main-color;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.15s ease-in-out;
 
     &:hover {
         // color: $main-color-hover;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.15s ease-in-out;
     }
 }
 

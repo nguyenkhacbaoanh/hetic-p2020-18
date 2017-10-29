@@ -1,3 +1,12 @@
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+	@font-face {
+		font-family: $font-family;
+		src: url('../fonts/#{$file-path}.ttf') format('truetype');
+		font-weight: $font-weight;
+		font-style: $font-style;
+	}
+}
+
 @mixin gradient($startColor: #eee, $endColor: white)
 {
 	background-color: $startColor;

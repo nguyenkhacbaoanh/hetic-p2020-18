@@ -1,20 +1,17 @@
 @charset 'UTF-8';
 
 @import
-  'bases/_reset.scss',
-  'bases/_fonts.scss',
-  'bases/_base.scss';
-  // 'base/_normalize.scss',
-  // 'base/_typography.scss',
-  ;
+'bases/_reset.scss';
 
 @import
-  'utiles/_variables.scss',
-  'utiles/_functions.scss',
-  'utiles/_mixins.scss',
-  'utiles/_placeholders.scss';
+'utiles/_variables.scss',
+'utiles/_functions.scss',
+'utiles/_mixins.scss',
+'utiles/_placeholders.scss';
 
-
+@import
+  'bases/_fonts.scss',
+  'bases/_base.scss';
 
 @import
   'layouts/_navigation.scss',

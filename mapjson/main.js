@@ -1,12 +1,22 @@
 // VARIABLES
-const JSON_CAPSULES_LINK = 'capsules.json';
+const JSON_CAPSULES_LINK = "capsules.json";
 const CAPSULES = document.querySelectorAll(".capsule");
 const PREVIOUS = document.querySelector(".previous");
 const NEXT = document.querySelector(".next");
 const TABLECAPSULES = [];
 
+// SLIDER  DOM ELMENTS : 
+const capsuleName = document.querySelector(".capsuleName");
+const capsuleArom = document.querySelector(".capsuleArom");
+const shortDescription = document.querySelector(".shortDescription");
+const aromOne = document.querySelector(".aromOne");
+const aromTwo = document.querySelector(".aromTwo");
+
+
+
 let currentCapsule = 0;
 let currentId;
+let currentData;
 // console.dir(capsules)
 
 
@@ -32,7 +42,7 @@ fetch(JSON_CAPSULES_LINK)
 
 
 function findCurrentData(id) {
-	return	TABLECAPSULES.find(item =>{
+	return TABLECAPSULES.find(item => {
 		return item.id == id;
 	});
 }
@@ -83,8 +93,8 @@ NEXT.addEventListener("click", function getIdOfCapsule() {
 	console.log(`current capsule id ${currentId}`);
 	// return capsules[currentCapsule].dataset;
 
-	console.log('One', findCurrentData(currentId));
-
+	currentData = findCurrentData(currentId);
+	insertData(currentData);
 });
 
 
@@ -113,8 +123,39 @@ PREVIOUS.addEventListener("click", function getIdOfCapsule() {
 	currentId = CAPSULES[currentCapsule].dataset.id;
 	console.log(`current capsule id ${currentId}`);
 
-	console.log('One', findCurrentData(currentId));
+	currentData = findCurrentData(currentId);
 });
+
+
+
+
+//F
+function insertData(data) {
+	// console.log(data.casuleName);
+	capsuleName.textContent = `${data.casuleName}`;
+	shortDescription.textContent = `${data.shortDescription}`;
+
+
+	let currentAromData; 
+
+	for (let i = 0; i < data.aromatic_notes.length; i++) {
+		if (i == 0) {
+
+
+			currentAromData = data.aromatic_notes[0];
+		}
+		else {
+			currentAromData += ' • ' + data.aromatic_notes[i];
+		}
+
+
+	}
+	capsuleArom.innerHTML = currentAromData;
+
+}
+
+
+
 
 
 

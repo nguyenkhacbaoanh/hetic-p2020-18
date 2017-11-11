@@ -1,26 +1,15 @@
 // DATA CONST
-const JSON_CAPSULES_LINK = "datas/capsules.json";
-const TABLECAPSULES = [];
+const JsonCapsulesLink = 'datas/capsules.json';
+const TablesCapsules = [];
 
 
-fetch(JSON_CAPSULES_LINK)
-	.then(capsule => capsule.json())
-	.then(data => {
-		TABLECAPSULES.push(...data);
-		console.log(TABLECAPSULES);
-	})
-	.catch(err => console.log(Error(err)));
-
-
-
-
-
-
-
-
-
-
-
+fetch(JsonCapsulesLink)
+  .then(capsule => capsule.json())
+  .then(data => {
+    TablesCapsules.push(...data);
+    console.log(TablesCapsules);
+  })
+  .catch(err => console.log(Error(err)));
 
 
 
@@ -35,7 +24,7 @@ fetch(JSON_CAPSULES_LINK)
 // const CAPSULES = document.querySelectorAll(".capsule");
 // const PREVIOUS = document.querySelector(".previous");
 // const NEXT = document.querySelector(".next");
-const countries = document.querySelectorAll(".country");
+const countries = document.querySelectorAll('.country');
 
 
 
@@ -48,9 +37,9 @@ const countries = document.querySelectorAll(".country");
 // VARIABLES
 // let currentCapsule = 0;
 // let currentId;
-let currentCountry;
-let currentCountryData;
-// let currentData;
+// let currentCountry;
+let currentCountryDataTable;
+let currentData;
 
 
 
@@ -60,71 +49,64 @@ let currentCountryData;
 
 
 
+// FUNCTION CHECK THE SEARCHED COUNTRY
+function findCountryDatas(country) {
+  currentCountryDataTable = [];
+  for (let i = 0; i < TablesCapsules.length; i++) {
+    for (let j = 0; j < TablesCapsules[i].countries.length; j++) {
+      if (TablesCapsules[i].countries[j] === country) {
+        currentCountryDataTable.push(TablesCapsules[i])
+      }
+    }
+  }
+
+  return currentCountryDataTable;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// FUNCTION GET THE COUNTRY BY CLICK
-countries.forEach(function (element) {
-	element.addEventListener("click", () => {
-
-		currentCountry = element.dataset.country;
-		findCountryDatas(currentCountry);
-	});
-
-});
-
-
-window.onload = function () {
-	findCountryDatas("Mexique");
+//ONLOEAD FUNCTION
+window.onload = () => {
+  findCountryDatas('Inde');
 };
 
 
+// function creatCapsuleSlides(countryDatas) {
+//   console.log(countryDatas);
+//   ds
+// }
 
-// FUNCTION CALLED BY 
-function findCountryDatas(country) {
-	currentCountryData = [];
-	for (let i = 0; i < TABLECAPSULES.length; i++) {
-		for (let j = 0; j < TABLECAPSULES[i].countries.length; j++) {
-			if (TABLECAPSULES[i].countries[j] === country) {
-				currentCountryData.push(TABLECAPSULES[i]);
 
-			}
-		}
-	}
-	console.log(currentCountryData);
-	return currentCountryData;
+// FUNCTION GET THE COUNTRY BY CLICK
+countries.forEach((element) => {
+  element.addEventListener('click', (e) => {
+    e.preventDefault();
+    let countryDatas = findCountryDatas(element.dataset.country);
+    creatCapsuleSlides(countryDatas);
+  });
+});
 
-}
+
+
+
+
+
+
+
+// 
+
+
+
+
 
 
 //FUNCTION  
 // function findCurrentData(id) {
-// 	return TABLECAPSULES.find(item => {
+// 	return TablesCapsules.find(item => {
 // 		return item.id == id;
 // 	});
 // }
 
-// TABLECAPSULES.find(findCurrentData());
+// TablesCapsules.find(findCurrentData());
 // {name: "cherries", quantity: 5}
 
 
@@ -234,24 +216,4 @@ function findCountryDatas(country) {
 // 	capsuleArom.innerHTML = currentAromData;
 
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -46,12 +46,12 @@ function scss() {
  */
 
 function js() {
-  return browserify({entries: ['src/js/script.js'], debug: true})
-    .transform(babelify, {presets: 'es2015'})
+  return browserify({ entries: ['src/js/script.js'], debug: true })
+    .transform(babelify, { presets: 'es2015' })
     .bundle()
     .pipe(source('script.js'))
     .pipe(buffer())
-    .pipe(gulpif(!isProd, sourcemaps.init({loadMaps: true})))
+    .pipe(gulpif(!isProd, sourcemaps.init({ loadMaps: true })))
     .pipe(uglify())
     .pipe(gulpif(!isProd, sourcemaps.write('.')))
     .pipe(gulp.dest('dist/js'))
@@ -64,7 +64,7 @@ function js() {
 
 function images() {
   return gulp.src('src/img/**/*')
-    .pipe(gulpif(isProd, imagemin({verbose: true})))
+    .pipe(gulpif(isProd, imagemin({ verbose: true })))
     .pipe(gulp.dest('dist/img'));
 }
 
@@ -96,7 +96,7 @@ function clean() {
 
 gulp.task('build', gulp.series(clean, gulp.parallel(templates, scss, data, js, images, fonts)));
 
-gulp.task('default', gulp.parallel(templates, scss, js, images, data, fonts, function(done) {
+gulp.task('default', gulp.parallel(templates, scss, js, images, data, fonts, function (done) {
   sync.init({
     server: {
       baseDir: './dist'

@@ -14,8 +14,8 @@
         "roasting": "5",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Intensément torréfié", "Boisé", "Épicé"],
-        "mainImage": "capsule-kazaar-intenso-nespresso",
-        "sideImage": "capsule-kazaar-intenso-side-nespresso",
+        "mainImage": "capsule-intenso-kazaar-nespresso",
+        "sideImage": "capsule-intenso-kazaar-side-nespresso",
         "countries": ["Guatemala", "Brésil"]
     },
     {
@@ -33,8 +33,8 @@
         "roasting": "5",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Intensément torréfié", "Cacao", "Céréale"],
-        "mainImage": "capsule-dharkan-intenso-nespresso",
-        "sideImage": "capsule-dharkan-intenso-side-nespresso",
+        "mainImage": "capsule-intenso-dharkan-nespresso",
+        "sideImage": "capsule-intenso-dharkan-side-nespresso",
         "countries": ["Costa Rica", "Indonésie"]
     },
     {
@@ -52,8 +52,8 @@
         "roasting": "4",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Intensément torréfié", "Fruité"],
-        "mainImage": "capsule-ristretto-intenso-nespresso",
-        "sideImage": "capsule-ristretto-intenso-side-nespresso",
+        "mainImage": "capsule-intenso-ristretto-nespresso",
+        "sideImage": "capsule-intenso-ristretto-side-nespresso",
         "countries": ["Colombie", "Brésil"]
     },
     {
@@ -71,8 +71,8 @@
         "roasting": "4",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Intensément torréfié", "Cacao"],
-        "mainImage": "capsule-arpeggio-intenso-nespresso",
-        "sideImage": "capsule-arpeggio-intenso-side-nespresso",
+        "mainImage": "capsule-intenso-arpeggio-nespresso.png",
+        "sideImage": "capsule-intenso-arpeggio-side-nespresso.png",
         "countries": ["Guatemala", "Brésil"]
     },
     {
@@ -90,8 +90,8 @@
         "roasting": "3",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Boisé", "Céréale"],
-        "mainImage": "capsule-roma-intenso-nespresso",
-        "sideImage": "capsule-roma-intenso-side-nespresso",
+        "mainImage": "capsule-intenso-roma-nespresso.png",
+        "sideImage": "capsule-intenso-roma-side-nespresso.png",
         "countries": ["Mexique", "Brésil"]
     },
     {
@@ -109,8 +109,8 @@
         "roasting": "3",
         "aromatic_profile": "Équilibré",
         "aromatic_notes": ["Grillé", "Caramel"],
-        "mainImage": "capsule-livanto-espresso-nespresso",
-        "sideImage": "capsule-livanto-espresso-side-nespresso",
+        "mainImage": "capsule-espresso-livanto-nespresso.png",
+        "sideImage": "capsule-espresso-livanto-side-nespresso.png",
         "countries": ["Guatemala", "Brésil"]
     },
     {
@@ -128,8 +128,8 @@
         "roasting": "2",
         "aromatic_profile": "Équilibré",
         "aromatic_notes": ["Céréale"],
-        "mainImage": "capsule-capriccio-espresso-nespresso",
-        "sideImage": "capsule-capriccio-espresso-side-nespresso",
+        "mainImage": "capsule-espresso-capriccio-nespresso.png",
+        "sideImage": "capsule-espresso-capriccio-side-nespresso.png",
         "countries": ["Colombie", "Brésil"]
     },
     {
@@ -147,8 +147,8 @@
         "roasting": "2",
         "aromatic_profile": "Équilibré",
         "aromatic_notes": ["Biscuit", "Fruité"],
-        "mainImage": "capsule-volluto-espresso-nespresso",
-        "sideImage": "capsule-volluto-espresso-side-nespresso",
+        "mainImage": "capsule-espresso-volluto-nespresso.png",
+        "sideImage": "capsule-espresso-volluto-side-nespresso.png",
         "countries": ["Colombie", "Brésil"]
     },
     {
@@ -166,8 +166,8 @@
         "roasting": "1",
         "aromatic_profile": "Fruité",
         "aromatic_notes": ["Céréale" ,"Agrume"],
-        "mainImage": "capsule-cosi-espresso-nespresso",
-        "sideImage": "capsule-cosi-espresso-side-nespresso",
+        "mainImage": "capsule-espresso-cosi-nespresso.png",
+        "sideImage": "capsule-espresso-cosi-side-nespresso.png",
         "countries": ["Costa Rica", "Kenya"]
     },
     {
@@ -185,8 +185,8 @@
         "roasting": "4",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Épicé", "Grillé"],
-        "mainImage": "capsule-indriya-pureOrigine-nespresso",
-        "sideImage": "capsule-indriya-pureOrigine-side-nespresso",
+        "mainImage": "capsule-pureOrigine-indriya-nespresso.png",
+        "sideImage": "capsule-pureOrigine-indriya-side-nespresso.png",
         "countries": ["Inde"]
     },
     {
@@ -204,8 +204,8 @@
         "roasting": "3",
         "aromatic_profile": "Fruité",
         "aromatic_notes": ["Vin fruité"],
-        "mainImage": "capsule-rosabaya-pureOrigine-nespresso",
-        "sideImage": "capsule-rosabaya-pureOrigine-side-nespresso",
+        "mainImage": "capsule-pureOrigine-rosabaya-nespresso.png",
+        "sideImage": "capsule-pureOrigine-rosabaya-side-nespresso.png",
         "countries": ["Colombie"]
     },
     {
@@ -223,8 +223,8 @@
         "roasting": "2",
         "aromatic_profile": "Equilibré",
         "aromatic_notes": ["Miel", "Céréale"],
-        "mainImage": "capsule-dulsao-pureOrigine-nespresso",
-        "sideImage": "capsule-dulsao-pureOrigine-side-nespresso",
+        "mainImage": "capsule-pureOrigine-dulsao-nespresso.png",
+        "sideImage": "capsule-pureOrigine-dulsao-side-nespresso.png",
         "countries": ["Brésil"]
     },
     {
@@ -242,8 +242,8 @@
         "roasting": "1",
         "aromatic_profile": "Fruité",
         "aromatic_notes": ["Floral"],
-        "mainImage": "capsule-bukeela-pureOrigine-nespresso",
-        "sideImage": "capsule-bukeela-pureOrigine-side-nespresso",
+        "mainImage": "capsule-pureOrigine-bukeela-nespresso.png",
+        "sideImage": "capsule-pureOrigine-bukeela-side-nespresso.png",
         "countries": ["Éthiopie"]
     },
     {
@@ -261,8 +261,8 @@
         "roasting": "4",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Floral", "Boisé", "Grillé", "Pain d'épices"],
-        "mainImage": "capsule-envivo-lungo-nespresso",
-        "sideImage": "capsule-envivo-lungo-side-nespresso",
+        "mainImage": "capsule-lungo-envivo-nespresso.png",
+        "sideImage": "capsule-lungo-envivo-side-nespresso.png",
         "countries": ["Mexique", "Inde"]
     },
     {
@@ -280,8 +280,8 @@
         "roasting": "4",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Malté", "Grillé", "Céréale"],
-        "mainImage": "capsule-fortissio-lungo-nespresso",
-        "sideImage": "capsule-fortissio-lungo-side-nespresso",
+        "mainImage": "capsule-lungo-fortissio-nespresso.png",
+        "sideImage": "capsule-lungo-fortissio-side-nespresso.png",
         "countries": ["Colombie", "Inde"]
     },
     {
@@ -299,8 +299,8 @@
         "roasting": "3",
         "aromatic_profile": "Fruité",
         "aromatic_notes": ["Floral", "Fruité", "Grillé"],
-        "mainImage": "capsule-vivalto-lungo-nespresso",
-        "sideImage": "capsule-vivalto-lungo-side-nespresso",
+        "mainImage": "capsule-lungo-vivalto-nespresso.png",
+        "sideImage": "capsule-lungo-vivalto-side-nespresso.png",
         "countries": ["Colombie", "Éthiopie"]
     },
     {
@@ -318,8 +318,8 @@
         "roasting": "2",
         "aromatic_profile": "Équilibré",
         "aromatic_notes": ["Céréale", "Malté"],
-        "mainImage": "capsule-linizio-lungo-nespresso",
-        "sideImage": "capsule-linizio-lungo-side-nespresso",
+        "mainImage": "capsule-lungo-linizio-nespresso.png",
+        "sideImage": "capsule-lungo-linizio-side-nespresso.png",
         "countries": ["Colombie", "Brésil"]
     },
     {
@@ -337,8 +337,8 @@
         "roasting": "5",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Intensément torréfié", "Grillé", "Fruité"],
-        "mainImage": "capsule-ristretto-decaffeinato-nespresso",
-        "sideImage": "capsule-ristretto-decaffeinato-side-nespresso",
+        "mainImage": "capsule-decaffeinato-ristretto-nespresso.png",
+        "sideImage": "capsule-decaffeinato-ristretto-side-nespresso.png",
         "countries": ["Colombie", "Brésil"]
     },
     {
@@ -356,8 +356,8 @@
         "roasting": "4",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Cacao", "Céréale"],
-        "mainImage": "capsule-arpeggio-decaffeinato-nespresso",
-        "sideImage": "capsule-arpeggio-decaffeinato-side-nespresso",
+        "mainImage": "capsule-decaffeinato-arpeggio-nespresso.png",
+        "sideImage": "capsule-decaffeinato-arpeggio-side-nespresso.png",
         "countries": ["Costa Rica", "Brésil"]
     },
     {
@@ -375,8 +375,8 @@
         "roasting": "2",
         "aromatic_profile": "Équilibré",
         "aromatic_notes": ["Biscuit", "Céréale", "Fruité"],
-        "mainImage": "capsule-volluto-decaffeinato-nespresso",
-        "sideImage": "capsule-volluto-decaffeinato-side-nespresso",
+        "mainImage": "capsule-decaffeinato-volluto-nespresso.png",
+        "sideImage": "capsule-decaffeinato-volluto-side-nespresso.png",
         "countries": ["Colombie", "Brésil"]
     },
     {
@@ -394,8 +394,8 @@
         "roasting": "3",
         "aromatic_profile": "Fruité",
         "aromatic_notes": ["Floral", "Grillé"],
-        "mainImage": "capsule-vivalto-decaffeinato-nespresso",
-        "sideImage": "capsule-vivalto-decaffeinato-side-nespresso",
+        "mainImage": "capsule-decaffeinato-vivalto-nespresso.png",
+        "sideImage": "capsule-decaffeinato-vivalto-side-nespresso.png",
         "countries": ["Colombie", "Éthiopie"]
     },
     {
@@ -413,8 +413,8 @@
         "roasting": "3",
         "aromatic_profile": "Variations",
         "aromatic_notes": ["Caramel"],
-        "mainImage": "capsule-caramelito-nespresso",
-        "sideImage": "capsule-caramelito-side-nespresso",
+        "mainImage": "capsule-variations-caramelito-nespresso.png",
+        "sideImage": "capsule-variations-caramelito-side-nespresso.png",
         "countries": ["Guatemala", "Brésil"]
     },
     {
@@ -432,8 +432,8 @@
         "roasting": "3",
         "aromatic_profile": "Variations",
         "aromatic_notes": ["Chocolat noir"],
-        "mainImage": "capsule-ciocattino-nespresso",
-        "sideImage": "capsule-ciocattino-side-nespresso",
+        "mainImage": "capsule-variations-ciocattino-nespresso.png",
+        "sideImage": "capsule-variations-ciocattino-side-nespresso.png",
         "countries": ["Guatemala", "Brésil"]
     },
     {
@@ -451,8 +451,8 @@
         "roasting": "3",
         "aromatic_profile": "Variations",
         "aromatic_notes": ["Vanille"],
-        "mainImage": "capsule-vanilio-nespresso",
-        "sideImage": "capsule-vanilio-side-nespresso",
+        "mainImage": "capsule-variations-vanilio-nespresso.png",
+        "sideImage": "capsule-variations-vanilio-side-nespresso.png",
         "countries": ["Guatemala", "Brésil"]
     }
 ]

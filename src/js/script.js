@@ -5,11 +5,14 @@ const TablesCapsules = [];
 
 fetch(JsonCapsulesLink)
   .then(capsule => capsule.json())
-  .then(data => {
+  .then((data) => {
     TablesCapsules.push(...data);
     console.log(TablesCapsules);
   })
   .catch(err => console.log(Error(err)));
+
+
+
 
 
 
@@ -25,6 +28,7 @@ fetch(JsonCapsulesLink)
 // const PREVIOUS = document.querySelector(".previous");
 // const NEXT = document.querySelector(".next");
 const countries = document.querySelectorAll('.country');
+const allCapsules = document.querySelector('.capsules');
 
 
 
@@ -40,6 +44,7 @@ const countries = document.querySelectorAll('.country');
 // let currentCountry;
 let currentCountryDataTable;
 let currentData;
+let capsules = [];
 
 
 
@@ -64,23 +69,56 @@ function findCountryDatas(country) {
 }
 
 
-//ONLOEAD FUNCTION
+// ONLOEAD FUNCTION
 window.onload = () => {
   findCountryDatas('Inde');
 };
 
+function removeLasCountryCapsules() {
+  while (allCapsules.hasChildNodes()) {
+    allCapsules.removeChild(allCapsules.firstChild);
+  }
+}
 
-// function creatCapsuleSlides(countryDatas) {
-//   console.log(countryDatas);
-//   ds
-// }
+
+// FUNCTION CREAT CPASULE SLIDE
+function creatCapsuleSlides(countryDatas) {
+  // removing last country children 
+  removeLasCountryCapsules();
+
+  // Create the new elements
+  countryDatas.forEach((element) => {
+
+    // Creat wrapper
+    const capsuleWrapper = document.createElement('div');
+    capsuleWrapper.setAttribute('class', 'capsule');
+    capsuleWrapper.setAttribute('data-name', `${element.casuleName}`);
+
+    // Create image
+    const capsuleImage = document.createElement('img');
+    capsuleImage.src = `img/test`;
+    capsuleImage.setAttribute('alt', `Nesspresso ${element.countries}`);
+
+    capsuleWrapper.appendChild(capsuleImage);
+
+    // Stocking all in variable
+
+    capsules.push(capsuleWrapper);
+  });
+
+  // append all chidrens
+  capsules.forEach((element) => {
+    allCapsules.appendChild(element);
+  });
+}
 
 
 // FUNCTION GET THE COUNTRY BY CLICK
 countries.forEach((element) => {
   element.addEventListener('click', (e) => {
     e.preventDefault();
-    let countryDatas = findCountryDatas(element.dataset.country);
+    const countryDatas = findCountryDatas(element.dataset.country);
+    capsules.length = 0;
     creatCapsuleSlides(countryDatas);
   });
 });
@@ -92,7 +130,6 @@ countries.forEach((element) => {
 
 
 
-// 
 
 
 

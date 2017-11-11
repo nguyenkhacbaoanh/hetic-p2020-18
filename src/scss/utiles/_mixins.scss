@@ -7,6 +7,23 @@
 	}
 }
 
+// responsive 
+$medium: 768px;
+$large: 1024px;
+
+@mixin medium {
+	@media (min-width: #{$medium}) {
+	  @content;
+	}
+  }
+
+  @mixin large {
+	@media (min-width: #{$large}) {
+	  @content;
+	}
+  }
+  
+
 @mixin gradient($startColor: #eee, $endColor: white)
 {
 	background-color: $startColor;

@@ -28,7 +28,7 @@ fetch(JsonCapsulesLink)
 // const PREVIOUS = document.querySelector(".previous");
 // const NEXT = document.querySelector(".next");
 const countries = document.querySelectorAll('.country');
-const allCapsules = document.querySelector('.capsules');
+const allCapsules = document.querySelector('.capsules__slider .capsules');
 
 
 

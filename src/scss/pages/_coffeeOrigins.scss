@@ -1,5 +1,16 @@
 //_header
-.coffeeOrigins {}
+.coffeeOrigins {
+    display: flex;
+}
+
+// map
+.coffeOrigins__wrapperMap {
+    width: 50vw;
+    height: 630px;
+    .st0 {
+        fill: #CAC9C9;
+    }
+}
 
 .coffeeOrigins__header {
     font-family: $description-font;
@@ -57,7 +68,14 @@
     background: $light-grey;
 }
 
-.countries__currentCapsules {
+.capsules__slider {
+    margin-top: 21px;
+    text-align: center;
+    font-family: $description-font;
+    color: $black;
+}
+
+.capsules__slider .capsules {
     display: flex;
 }
 
@@ -65,6 +83,57 @@
     width: 80px;
     height: 80px;
     background: red;
+}
+
+.capsules__slider .slider__data {
+    margin-top: 1px;
+}
+
+.capsules__slider .slider__data .data__name {
+    margin-bottom: 7px;
+    font-size: 18px;
+}
+
+.capsules__slider .slider__data .data__aroma {
+    font-size: 12px;
+    color: $gold;
+    font-style: italic;
+}
+
+.capsules__slider .slider__data .data__line {
+    height: 1px;
+    width: 96px;
+    background: $grey;
+    margin: 9px auto;
+}
+
+.capsules__slider .slider__data .data__description,
+.capsules__slider .slider__data .data__intensity {
+    font-size: 13px;
+    font-style: italic;
+    margin-bottom: 33px;
+}
+
+.capsules__slider .slider__data .intensity__strength {
+    font-size: 12px;
+    color: $gold;
+    padding-left: 4px;
+}
+
+.capsules__slider .slider__data .data__intensity,
+.capsules__slider .slider__data .intensity__strength {
+    display: inline-block;
+}
+
+.capsules__slider .slider__data .intensity__svg {
+    margin-top: 20px;
+}
+
+#map {
+    display: none;
+    @include medium {
+        display: block;
+    }
 }
 
 // // _Capsules

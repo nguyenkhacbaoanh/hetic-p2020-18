@@ -21,14 +21,14 @@ fetch(JsonCapsulesLink)
 
 
 //  DOM ELMENTS FOR BINDING : 
-const capsuleName = document.querySelector('.capsuleName');
-const capsuleArom = document.querySelector('.capsuleArom');
-const shortDescription = document.querySelector('.capsuleShortDescription');
+const capsuleName = document.querySelector('.data__name');
+const capsuleArom = document.querySelector('.data__aroma');
+const shortDescription = document.querySelector('.data__description');
 // const CAPSULES = document.querySelectorAll(".capsule");
 // const PREVIOUS = document.querySelector(".previous");
 // const NEXT = document.querySelector(".next");
 const countries = document.querySelectorAll('.country');
-const allCapsules = document.querySelector('.countries__currentCapsules');
+const allCapsules = document.querySelector('.capsules__slider .capsules');
 
 
 
@@ -213,6 +213,7 @@ countries.forEach((element) => {
 
 
 
+ds
 
 
 

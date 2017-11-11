@@ -21,14 +21,14 @@ fetch(JsonCapsulesLink)
 
 
 //  DOM ELMENTS FOR BINDING : 
-// const capsuleName = document.querySelector(".capsuleName");
-// const capsuleArom = document.querySelector(".capsuleArom");
-// const shortDescription = document.querySelector(".shortDescription");
+const capsuleName = document.querySelector('.capsuleName');
+const capsuleArom = document.querySelector('.capsuleArom');
+const shortDescription = document.querySelector('.capsuleShortDescription');
 // const CAPSULES = document.querySelectorAll(".capsule");
 // const PREVIOUS = document.querySelector(".previous");
 // const NEXT = document.querySelector(".next");
 const countries = document.querySelectorAll('.country');
-const allCapsules = document.querySelector('.capsules');
+const allCapsules = document.querySelector('.countries__currentCapsules');
 
 
 
@@ -54,6 +54,17 @@ let capsules = [];
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 // FUNCTION CHECK THE SEARCHED COUNTRY
 function findCountryDatas(country) {
   currentCountryDataTable = [];
@@ -69,11 +80,33 @@ function findCountryDatas(country) {
 }
 
 
-// ONLOEAD FUNCTION
-window.onload = () => {
-  findCountryDatas('Inde');
-};
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FUNCTION REMOVE LAST COUNTRY DOM CAPSULE
 function removeLasCountryCapsules() {
   while (allCapsules.hasChildNodes()) {
     allCapsules.removeChild(allCapsules.firstChild);
@@ -81,10 +114,13 @@ function removeLasCountryCapsules() {
 }
 
 
+
+
 // FUNCTION CREAT CPASULE SLIDE
 function creatCapsuleSlides(countryDatas) {
   // removing last country children 
   removeLasCountryCapsules();
+  capsules.length = 0;
 
   // Create the new elements
   countryDatas.forEach((element) => {
@@ -113,13 +149,61 @@ function creatCapsuleSlides(countryDatas) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ONLOEAD FUNCTION
+window.onload = () => {
+
+  const onloadCountryDatas = findCountryDatas('Mexique');
+  creatCapsuleSlides(onloadCountryDatas);
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // FUNCTION GET THE COUNTRY BY CLICK
 countries.forEach((element) => {
   element.addEventListener('click', (e) => {
     e.preventDefault();
     const countryDatas = findCountryDatas(element.dataset.country);
-    capsules.length = 0;
+
     creatCapsuleSlides(countryDatas);
+    insertDescription(element);
   });
 });
 
@@ -229,28 +313,28 @@ countries.forEach((element) => {
 
 
 
-//FUNCION AFFICHE LA DATA
-// function insertData(data) {
-// 	// console.log(data.casuleName);
-// 	capsuleName.textContent = `${data.casuleName}`;
-// 	shortDescription.textContent = `${data.shortDescription}`;
+// FUNCION AFFICHE LA DATA
+function insertDescription(data) {
+  // console.log(data.casuleName);
+  capsuleName.textContent = `${data.casuleName}`;
+  shortDescription.textContent = `${data.shortDescription}`;
 
 
-// 	let currentAromData; 
+  let currentAromData;
 
-// 	for (let i = 0; i < data.aromatic_notes.length; i++) {
-// 		if (i == 0) {
-
-
-// 			currentAromData = data.aromatic_notes[0];
-// 		}
-// 		else {
-// 			currentAromData += ` • ${data.aromatic_notes[i]}`;
-// 		}
+  for (let i = 0; i < data.aromatic_notes.length; i++) {
+    if (i == 0) {
 
 
-// 	}
-// 	capsuleArom.innerHTML = currentAromData;
+      currentAromData = data.aromatic_notes[0];
+    }
+    else {
+      currentAromData += ` • ${data.aromatic_notes[i]}`;
+    }
 
-// }
+
+  }
+  capsuleArom.innerHTML = currentAromData;
+
+}
 

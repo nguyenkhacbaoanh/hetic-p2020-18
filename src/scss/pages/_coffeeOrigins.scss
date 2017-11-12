@@ -77,12 +77,33 @@
 
 .capsules__slider .capsules {
     display: flex;
+    justify-content: space-around;
 }
+.capsules__slider .arrows {
+    cursor: pointer;
+}
+
+
+.slider__content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 
 .capsule {
     width: 80px;
     height: 80px;
-    background: red;
+    border: 1px solid red;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+}
+
+.currentCap{
+  border: 1px solid blue;
 }
 
 .capsules__slider .slider__data {

@@ -7,12 +7,17 @@ fetch(JsonCapsulesLink)
   .then(capsule => capsule.json())
   .then((data) => {
     TablesCapsules.push(...data);
-    console.log(TablesCapsules);
+    // console.log(TablesCapsules);
   })
   .catch(err => console.log(Error(err)));
 
 
 
+
+// ONLOEAD FUNCTION FOR MEXIQUE
+// window.onload = () => {
+
+// }
 
 
 
@@ -24,24 +29,27 @@ fetch(JsonCapsulesLink)
 const capsuleName = document.querySelector('.data__name');
 const capsuleArom = document.querySelector('.data__aroma');
 const shortDescription = document.querySelector('.data__description');
-// const CAPSULES = document.querySelectorAll(".capsule");
-// const PREVIOUS = document.querySelector(".previous");
-// const NEXT = document.querySelector(".next");
 const countries = document.querySelectorAll('.country');
-const allCapsules = document.querySelector('.capsules__slider .capsules');
+const wrapperCapsules = document.querySelector('.capsules__slider .capsules');
+
+const previous = document.querySelector('.slider_previousBtn');
+const next = document.querySelector('.slider_nextBtn');
 
 
-
-
+const allcapsules = document.querySelectorAll('.capsule')
 
 
 
 
 
 // VARIABLES
-// let currentCapsule = 0;
-// let currentId;
-// let currentCountry;
+
+let allcurrentCapsulesElements = [];
+
+
+
+let currentCapsuleId;
+
 let currentCountryDataTable;
 let currentData;
 let capsules = [];
@@ -65,7 +73,7 @@ let capsules = [];
 
 
 
-// FUNCTION CHECK THE SEARCHED COUNTRY
+// FUNCTION WHICH LOOK FOR ALL THE CLIKED COUNTRY CAPSULES IN THE JSON FILE
 function findCountryDatas(country) {
   currentCountryDataTable = [];
   for (let i = 0; i < TablesCapsules.length; i++) {
@@ -108,16 +116,15 @@ function findCountryDatas(country) {
 
 // FUNCTION REMOVE LAST COUNTRY DOM CAPSULE
 function removeLasCountryCapsules() {
-  while (allCapsules.hasChildNodes()) {
-    allCapsules.removeChild(allCapsules.firstChild);
+  while (wrapperCapsules.hasChildNodes()) {
+    wrapperCapsules.removeChild(wrapperCapsules.firstChild);
   }
 }
 
 
-
-
 // FUNCTION CREAT CPASULE SLIDE
 function creatCapsuleSlides(countryDatas) {
+
   // removing last country children 
   removeLasCountryCapsules();
   capsules.length = 0;
@@ -126,25 +133,28 @@ function creatCapsuleSlides(countryDatas) {
   countryDatas.forEach((element) => {
 
     // Creat wrapper
-    const capsuleWrapper = document.createElement('div');
-    capsuleWrapper.setAttribute('class', 'capsule');
-    capsuleWrapper.setAttribute('data-name', `${element.casuleName}`);
+    const capsule = document.createElement('div');
+    capsule.setAttribute('class', 'capsule');
+    capsule.setAttribute('data-name', `${element.casuleName}`);
+    capsule.setAttribute('data-id', `${element.id}`);
+
 
     // Create image
     const capsuleImage = document.createElement('img');
-    capsuleImage.src = `img/test`;
+    capsuleImage.src = `img/gammes_capsules/${element.mainImage}`;
     capsuleImage.setAttribute('alt', `Nesspresso ${element.countries}`);
+    capsule.appendChild(capsuleImage);
 
-    capsuleWrapper.appendChild(capsuleImage);
 
     // Stocking all in variable
-
-    capsules.push(capsuleWrapper);
+    capsules.push(capsule);
   });
+
+  allcurrentCapsulesElements = [...capsules];
 
   // append all chidrens
   capsules.forEach((element) => {
-    allCapsules.appendChild(element);
+    wrapperCapsules.appendChild(element);
   });
 }
 
@@ -154,41 +164,16 @@ function creatCapsuleSlides(countryDatas) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ONLOEAD FUNCTION
-window.onload = () => {
-
-  const onloadCountryDatas = findCountryDatas('Mexique');
-  creatCapsuleSlides(onloadCountryDatas);
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// FUNCTION INIT CLASS FOR SLIDER
+function setcurrentCapsule() {
+  for (let i = 0; i < allcurrentCapsulesElements.length; i++) {
+    if (allcurrentCapsulesElements.length >= 3) {
+      allcurrentCapsulesElements[1].classList.add('currentCap');
+    } else {
+      allcurrentCapsulesElements[0].classList.add('currentCap');
+    }
+  }
+}
 
 
 
@@ -202,9 +187,63 @@ countries.forEach((element) => {
     e.preventDefault();
     const countryDatas = findCountryDatas(element.dataset.country);
 
+    // Creat all capsules element
     creatCapsuleSlides(countryDatas);
-    insertDescription(element);
+
+    // Add Class for current Cap
+    setcurrentCapsule();
   });
+});
+
+
+
+// EVENT ON NEXT BTN
+
+// next.addEventListener('click', () => {
+//   console.log(allcurrentCapsulesElements)
+//   if (allcurrentCapsulesElements.length > 0) {
+
+//     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
+//     currentCapsuleId++;
+//     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
+//   }
+// }
+
+
+
+
+  // currentId = CAPSULES[currentCapsule].dataset.id;
+  // console.log(`current capsule id ${currentId}`);
+  // // return capsules[currentCapsule].dataset;
+
+  // currentData = findCurrentData(currentId);
+  // insertData(currentData);
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.addEventListener('load', () => {
+  const onloadCountryDatas = findCountryDatas('Mexique');
+  creatCapsuleSlides(onloadCountryDatas);
+  setcurrentCapsule();
+  console.log(allcurrentCapsulesElements);
 });
 
 
@@ -213,7 +252,49 @@ countries.forEach((element) => {
 
 
 
-ds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -254,29 +335,6 @@ ds
 
 
 
-// NEXT.addEventListener("click", function getIdOfCapsule() {
-
-// 	if (currentCapsule >= CAPSULES.length - 1) {
-// 		currentCapsule = 0;
-// 		CAPSULES[2].classList.remove("currentCap");
-// 		CAPSULES[currentCapsule].classList.add("currentCap");
-
-// 	}
-// 	else {
-// 		CAPSULES[currentCapsule].classList.remove("currentCap");
-// 		currentCapsule++;
-// 		CAPSULES[currentCapsule].classList.add("currentCap");
-
-
-// 	}
-
-// 	currentId = CAPSULES[currentCapsule].dataset.id;
-// 	console.log(`current capsule id ${currentId}`);
-// 	// return capsules[currentCapsule].dataset;
-
-// 	currentData = findCurrentData(currentId);
-// 	insertData(currentData);
-// });
 
 
 
@@ -284,7 +342,7 @@ ds
 
 
 
-
+// EVENT ON PREVIOUS BTN
 // PREVIOUS.addEventListener("click", function getIdOfCapsule() {
 
 // 	if (currentCapsule === 0) {
@@ -315,27 +373,25 @@ ds
 
 
 // FUNCION AFFICHE LA DATA
-function insertDescription(data) {
-  // console.log(data.casuleName);
-  capsuleName.textContent = `${data.casuleName}`;
-  shortDescription.textContent = `${data.shortDescription}`;
+// function insertDescription(data) {
+//   // console.log(data.casuleName);
+//   capsuleName.textContent = `${data.casuleName}`;
+//   shortDescription.textContent = `${data.shortDescription}`;
 
 
-  let currentAromData;
+//   let currentAromData;
 
-  for (let i = 0; i < data.aromatic_notes.length; i++) {
-    if (i == 0) {
-
-
-      currentAromData = data.aromatic_notes[0];
-    }
-    else {
-      currentAromData += ` • ${data.aromatic_notes[i]}`;
-    }
+//   for (let i = 0; i < data.aromatic_notes.length; i++) {
+//     if (i == 0) {
 
 
-  }
-  capsuleArom.innerHTML = currentAromData;
+//       currentAromData = data.aromatic_notes[0];
+//     }
+//     else {
+//       currentAromData += ` • ${data.aromatic_notes[i]}`;
+//     }
 
-}
 
+//   }
+//   capsuleArom.innerHTML = currentAromData;
+// }

@@ -14,8 +14,8 @@
         "roasting": "5",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Intensément torréfié", "Boisé", "Épicé"],
-        "mainImage": "capsule-intenso-kazaar-nespresso",
-        "sideImage": "capsule-intenso-kazaar-side-nespresso",
+        "mainImage": "capsule-intenso-kazaar-nespresso.png",
+        "sideImage": "capsule-intenso-kazaar-side-nespresso.png",
         "countries": ["Guatemala", "Brésil"]
     },
     {
@@ -33,8 +33,8 @@
         "roasting": "5",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Intensément torréfié", "Cacao", "Céréale"],
-        "mainImage": "capsule-intenso-dharkan-nespresso",
-        "sideImage": "capsule-intenso-dharkan-side-nespresso",
+        "mainImage": "capsule-intenso-dharkan-nespresso.png",
+        "sideImage": "capsule-intenso-dharkan-side-nespresso.png",
         "countries": ["Costa Rica", "Indonésie"]
     },
     {
@@ -52,8 +52,8 @@
         "roasting": "4",
         "aromatic_profile": "Intense",
         "aromatic_notes": ["Intensément torréfié", "Fruité"],
-        "mainImage": "capsule-intenso-ristretto-nespresso",
-        "sideImage": "capsule-intenso-ristretto-side-nespresso",
+        "mainImage": "capsule-intenso-ristretto-nespresso.png",
+        "sideImage": "capsule-intenso-ristretto-side-nespresso.png",
         "countries": ["Colombie", "Brésil"]
     },
     {

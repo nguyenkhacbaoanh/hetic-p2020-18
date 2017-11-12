@@ -11,6 +11,7 @@ html, body {
     height: 100%;
     width: 100%;
     background: #fefefe;
+    color: $black;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -23,6 +24,7 @@ h1 {
     font-family: $title-font;
     color: $gold;
     padding-bottom: 15px;
+    text-transform: uppercase;
 }
 
 h2 {
@@ -31,18 +33,6 @@ h2 {
     color: $white;
     padding-bottom: 4px;
 }
-
-// h1 { font-size: 2.6rem; }
-
-// h2 { font-size: 5.1rem; }
-
-// h3 { font-size: 1.75rem; }
-
-// h4 { font-size: 1.5rem; }
-
-// h5 { font-size: 1.25rem; }
-
-// h6 { font-size: 1rem; }
 
 p {
     font-size: 13px;
@@ -61,6 +51,18 @@ a {
         // color: $main-color-hover;
         transition: all 0.15s ease-in-out;
     }
+}
+
+.blue {
+    color: $blue;
+}
+
+.gold {
+    color: $gold;
+}
+
+.italic {
+    font-style: italic;
 }
 
 input:focus {

@@ -5,6 +5,6 @@
 //     font-style: normal;
 // }
 
-@include font-face(Lato, lato-regular, 400, normal);
-@include font-face(Trebuchet, trebuchet-regular, 400, normal);
-@include font-face(Trebuchet, trebuchet-bold, 600, bold);
+@include font-face(Lato, lato/lato-regular, 400, normal);
+@include font-face(Trebuchet, trebuchet/trebuchet-regular, 400, normal);
+@include font-face(Trebuchet, trebuchet/trebuchet-bold, 600, bold);

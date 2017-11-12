@@ -1,18 +1,19 @@
 include ../partials/header.pug
 
 section(class='hero')
-    div(class="hero__scrollIndication")
-      a(href="#" class='hero__imgScroll')
-        img(src="../img/scroll-down.svg", alt="Scroll down")
+    //- div(class="hero__scrollIndication")
+    //-   a(href="#" class='hero__imgScroll')
+    //-     img(src="../img/scroll-down.svg", alt="Scroll down")
     
     div(class="hero__capsule")
       img(src="../img/n-logo-nespresso.png", alt="N nespresso", class="logoBackground")
       a(href="#" class='hero__capsulePath')
-        img(src="../img/capsule-trace-nespresso.svg", alt="Capsule tracé nespresso", class="capsulePath")
+        div
+          img(src="../img/capsule-trace-nespresso.svg", alt="Capsule tracé nespresso", class="capsulePath")
 
 
 include ./coffeeOrigins.pug
-
+include ./coffeeFamilies.pug
 
      
       

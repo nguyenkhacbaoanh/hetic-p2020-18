@@ -1,39 +1,62 @@
 // HERO SECTION
 .hero {
-    position: relative;
-    height: 90vh;
-    background-color:#1B1B1B;
+  position: relative;
+  height: 90vh;
+  background-color:#1B1B1B;
 }
 
-.hero__scrollIndication {
-    position: absolute;
-    left: 50%;
-    bottom: 50px;
-    transform: translateX(-50%);
-}
+// .hero__scrollIndication {
+//   position: absolute;
+//   left: 50%;
+//   bottom: 50px;
+//   transform: translateX(-50%);
+// }
 
 .hero__capsule {
-    width: 80vw;
+  width: 70vw;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+
+  @include medium {
+    width: 40vw;
+  }
+
+  img.logoBackground {
+    width: 100%;
     height: auto;
+    z-index: $zindex;
+  }
+
+  .hero__capsulePath div {
     position: absolute;
     left: 50%;
-    top: 45%;
+    top: 50%;
     transform: translate(-50%, -50%);
+    animation: mooving-capsule 1.9s ease-in-out infinite;
+    will-change: transform;
+    width: 30%;
+    height: auto;
+    z-index: $zindex-2;
 
-    img.logoBackground {
-        width: 100%;
-        height: auto;
-        z-index: $zindex;
+    @include medium {
+      width: 25%;
     }
+  }
+}
 
-    img.capsulePath {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 40%;
-        height: auto;
-        z-index: $zindex-2;
-    }
+@keyframes mooving-capsule {
+  0% {
+    transform:translate(-50%, -50%);
+  }
 
+  50% {
+    transform:translate(-50%, -60%);
+  }
+
+  100% {
+    transform:translate(-50%, -50%);
+  }
 }

@@ -1,0 +1,67 @@
+.coffeeFamilies {
+  padding: 30px 25px;
+  font-family: $description-font;
+  color: $black;
+  text-align: center;
+  background: #FBFBFB;
+}
+
+.coffeeFamilies__header {
+  margin-bottom: 60px;
+}
+
+.coffeeFamilies__header h2 {
+  color: #1B1B1B;
+}
+
+.coffeeFamilies__header p,
+.coffeeBean__description p {
+  width: 335px;
+  margin: auto;
+
+  @include medium {
+    width: 369px;
+  }
+}
+
+.coffeeBeans__slider div {
+  display: inline-block;
+}
+
+.coffeeBeans__images {
+  margin-bottom: 30px;
+}
+
+.coffeeBeans__images img {
+  width: 260px;
+  height: auto;
+}
+
+.coffeeBeans__content {
+  margin-bottom: 25px;
+}
+
+.coffeeBean,
+.bean {
+  display: none;
+}
+
+.coffeeBean.coffeeBean--active,
+.bean.bean--active {
+  display: inline-block;
+}
+
+.coffeeBeans__content .coffeeBean__family {
+  font-family: $title-font;
+  font-weight: 600;
+  color: #1B1B1B;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.coffeeBean__tasteNotes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}

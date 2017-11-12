@@ -4,11 +4,11 @@
 'bases/_reset.scss';
 
 @import
-'utiles/_variables.scss',
-'utiles/_mixins.scss';
+  'utiles/_mixins.scss',
+  'utiles/_fonts.scss',
+  'utiles/_variables.scss';
 
 @import
-  'bases/_fonts.scss',
   'bases/_base.scss';
 
 @import

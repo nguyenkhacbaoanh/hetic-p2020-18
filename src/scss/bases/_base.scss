@@ -14,15 +14,16 @@ html, body {
     color: $black;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    line-height: 1.2;
-}
+// h1, h2, h3, h4, h5, h6 {
+//     font-weight: 600;
+//     line-height: 1.2;
+// }
 
 h1 {
     font-size: 22px;
     font-family: $title-font;
     color: $gold;
+    font-weight: 600;
     padding-bottom: 15px;
     text-transform: uppercase;
 }
@@ -37,7 +38,7 @@ h2 {
 p {
     font-size: 13px;
     line-height: 1.5;
-    font-weight: 400;
+    // font-weight: 400;
     font-family: $description-font;
 }
 

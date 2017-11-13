@@ -12,6 +12,7 @@ $small: 610px;
 $medium: 768px;
 $medium-2: 920px;
 $large: 1024px;
+$large-1: 1165px;
 $large-2: 1200px;
 
 @mixin small {
@@ -34,6 +35,12 @@ $large-2: 1200px;
 
 @mixin large {
 	@media (min-width: #{$large}) {
+  		@content;
+	}
+}
+
+@mixin large-1 {
+	@media (min-width: #{$large-1}) {
   		@content;
 	}
 }

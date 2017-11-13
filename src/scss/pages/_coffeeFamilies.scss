@@ -4,6 +4,10 @@
   color: $black;
   text-align: center;
   background: #FBFBFB;
+
+  @include medium {
+    padding: 40px 60px;
+  }
 }
 
 .coffeeFamilies__header {

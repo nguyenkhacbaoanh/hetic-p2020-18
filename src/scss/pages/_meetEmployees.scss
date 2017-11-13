@@ -1,14 +1,72 @@
 .meetEmployees {
-  padding: 30px 25px;
   font-family: $description-font;
+  display: flex;
+  flex-direction: column;
+
+  @include medium {
+    flex-direction: row;
+  } 
+}
+
+.meetEpmloyees__farmerWrapper {
+  position: relative;
+  width: 100%;
+  height: 375px;
+  overflow: hidden;
+
+  @include medium {
+    order: 2;
+    width: 50vw;
+    height: 577px;
+  } 
+}
+
+.meetEpmloyees__farmerWrapper img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  transform: translate(-50%,-50%);
+
+  @include medium {
+    height: 100%;
+    width: auto;
+  } 
+
+  @include large-1 {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.meetEpmloyees__contentWrapper {
+  position: relative;
+  padding: 30px 25px 64px 25px;
+
+  @include medium {
+    order: 1;
+    width: 50vw;
+    padding: 60px 0px 64px 25px;
+  } 
 }
 
 .meetEmployees__header {
   margin-bottom: 15px;
+
+  @include medium {
+    margin: 0 auto 80px auto;
+    width: 80%;
+  }
 }
 
 .employees__employee {
-  position: relative;
+
+  @include medium {
+    margin: auto;
+    width: 80%;
+  }
 }
 
 .employees__employee .employee__name {
@@ -31,7 +89,7 @@
 .employee__icons {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin-top: 25px;
 
   @include medium {
@@ -64,8 +122,32 @@
   font-size: 14px;
 }
 
-.employees__slider {
+.employee__slider {
   position: absolute;
   bottom: 0;
-  right: 0;;
+  right: 0;
+  float: right;
+}
+
+.employee__slider .slider__counter {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.employee__slider .slider__arrows div {
+  background: $blue;
+  padding: 17px 21px;
+  display: inline-block;
+  cursor: pointer;
+  @include medium {
+    padding: 24px 29px;
+  }
+}
+
+.employee__slider .slider__arrows div img {
+  height: 17px;
+  width: auto;
+  @include medium {
+    height: 22px;
+  }
 }

@@ -7,22 +7,42 @@
 	}
 }
 
-// responsive 
+// Responsive
+$small: 610px;
 $medium: 768px;
+$medium-2: 920px;
 $large: 1024px;
+$large-2: 1200px;
+
+@mixin small {
+	@media (min-width: #{$small}) {
+	  @content;
+	}
+}
 
 @mixin medium {
 	@media (min-width: #{$medium}) {
 	  @content;
 	}
-  }
+}
 
-  @mixin large {
-	@media (min-width: #{$large}) {
+@mixin medium-2 {
+	@media (min-width: #{$medium-2}) {
 	  @content;
 	}
-  }
-  
+}
+
+@mixin large {
+	@media (min-width: #{$large}) {
+  		@content;
+	}
+}
+
+@mixin large-2 {
+	@media (min-width: #{$large-2}) {
+  		@content;
+	}
+}
 
 @mixin gradient($startColor: #eee, $endColor: white)
 {

@@ -205,13 +205,23 @@ next.addEventListener('click', () => {
   if (currentCapsuleId < allcurrentCapsulesElements.length-1) {
 
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
-    currentCapsuleId++;
+    currentCapsuleId++ ;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
+  } else {
+    allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
+    currentCapsuleId = 0; 
+    allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
+
   }
+
+  let currentId = allcurrentCapsulesElements[currentCapsuleId].dataset.id;
+  console.log(`current capsule id ${currentId}`);
+
+  // 	// currentData = findCurrentData(currentId);
 });
 
 
-//EVENT ON PREVIOUS BTN 
+// EVENT ON PREVIOUS BTN 
 previous.addEventListener('click', () => {
   // console.log(allcurrentCapsulesElements)
   if (currentCapsuleId > 0) {
@@ -219,7 +229,12 @@ previous.addEventListener('click', () => {
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
     currentCapsuleId--;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
+  } else {
+    allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
+    currentCapsuleId = allcurrentCapsulesElements.length-1 ;
+    allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
   }
+
 });
 
 
@@ -333,50 +348,6 @@ window.addEventListener('load', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// EVENT ON PREVIOUS BTN
-// PREVIOUS.addEventListener("click", function getIdOfCapsule() {
-
-// 	if (currentCapsule === 0) {
-// 		currentCapsule = CAPSULES.length - 1;
-// 		CAPSULES[0].classList.remove("currentCap");
-// 		CAPSULES[currentCapsule].classList.add("currentCap");
-
-// 	}
-// 	else {
-// 		CAPSULES[currentCapsule].classList.remove("currentCap");
-// 		currentCapsule--;
-// 		CAPSULES[currentCapsule].classList.add("currentCap");
-
-
-// 	}
-
-// 	currentId = CAPSULES[currentCapsule].dataset.id;
-// 	console.log(`current capsule id ${currentId}`);
-
-// 	// currentData = findCurrentData(currentId);
-// });
 
 
 

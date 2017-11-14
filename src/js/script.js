@@ -43,16 +43,20 @@ const allcapsules = document.querySelectorAll('.capsule')
 
 
 // VARIABLES
+// This array will contains all de capsules of all countries
+let capsules = [];
 
+//Array contrains alls the country capsules
+let currentCountryDataTable;
+
+let currentData;
+
+
+//This array will contain all the dom element per country caps
 let allcurrentCapsulesElements = [];
-
-
-
+// This is variable will serve check id or the capsule in previous array
 let currentCapsuleId;
 
-let currentCountryDataTable;
-let currentData;
-let capsules = [];
 
 
 
@@ -86,27 +90,6 @@ function findCountryDatas(country) {
 
   return currentCountryDataTable;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -172,7 +155,7 @@ function setcurrentCapsule() {
       currentCapsuleId = 1
     } else {
       allcurrentCapsulesElements[0].classList.add('currentCap');
-      currentCapsuleId= 0;
+      currentCapsuleId = 0;
     }
   }
 }
@@ -199,17 +182,92 @@ countries.forEach((element) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***********************************************************
+ *
+ *   BELLOW : FUNCTION WIHCH TRAIT THE CAPSULES
+ * 
+ **********************************************************/
+
+
+
+
+
+
+// FUNCTION  FIN THE CURRENT CAPSULE DATAS  
+function findCurrentCapsuleDatas(id) {
+  return currentCountryDataTable.find((item) => {
+    return item.id == id;
+  });
+}
+
+
+// FUNCION AFFICHE LA DATA
+function getCurrentCapsuleDomDescription(data) {
+  // console.log(data.casuleName);
+  capsuleName.textContent = `${data.casuleName}`;
+  shortDescription.textContent = `${data.shortDescription}`;
+
+  let currentAromData;
+
+  for (let i = 0; i < data.aromatic_notes.length; i++) {
+    if (i == 0) {
+
+
+      currentAromData = data.aromatic_notes[0];
+    }
+    else {
+      currentAromData += ` • ${data.aromatic_notes[i]}`;
+    }
+  }
+  capsuleArom.innerHTML = currentAromData;
+}
+
+
+
+
+
+
+
+
+
+
+
 // EVENT ON NEXT BTN
 next.addEventListener('click', () => {
   // console.log(allcurrentCapsulesElements)
-  if (currentCapsuleId < allcurrentCapsulesElements.length-1) {
+  if (currentCapsuleId < allcurrentCapsulesElements.length - 1) {
 
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
-    currentCapsuleId++ ;
+    currentCapsuleId++;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
   } else {
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
-    currentCapsuleId = 0; 
+    currentCapsuleId = 0;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
 
   }
@@ -217,8 +275,16 @@ next.addEventListener('click', () => {
   let currentId = allcurrentCapsulesElements[currentCapsuleId].dataset.id;
   console.log(`current capsule id ${currentId}`);
 
-  // 	// currentData = findCurrentData(currentId);
+  let currentCapsuleDataId = findCurrentCapsuleDatas(currentId);
+  console.log(currentCapsuleDataId);
+  getCurrentCapsuleDomDescription(currentCapsuleDataId );
 });
+
+
+
+
+
+
 
 
 // EVENT ON PREVIOUS BTN 
@@ -231,29 +297,16 @@ previous.addEventListener('click', () => {
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
   } else {
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
-    currentCapsuleId = allcurrentCapsulesElements.length-1 ;
+    currentCapsuleId = allcurrentCapsulesElements.length - 1;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
   }
+  let currentId = allcurrentCapsulesElements[currentCapsuleId].dataset.id;
+  console.log(`current capsule id ${currentId}`);
+  let currentCapsuleDataId = findCurrentCapsuleDatas(currentId);
+  console.log(currentCapsuleDataId);
+  getCurrentCapsuleDomDescription(currentCapsuleDataId);
 
 });
-
-
-
-
-  // currentId = CAPSULES[currentCapsule].dataset.id;
-  // console.log(`current capsule id ${currentId}`);
-  // // return capsules[currentCapsule].dataset;
-
-  // currentData = findCurrentData(currentId);
-  // insertData(currentData);
-// });
-
-
-
-
-
-
-
 
 
 
@@ -273,109 +326,3 @@ window.addEventListener('load', () => {
   setcurrentCapsule();
   console.log(allcurrentCapsulesElements);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//FUNCTION  
-// function findCurrentData(id) {
-// 	return TablesCapsules.find(item => {
-// 		return item.id == id;
-// 	});
-// }
-
-// TablesCapsules.find(findCurrentData());
-// {name: "cherries", quantity: 5}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// FUNCION AFFICHE LA DATA
-// function insertDescription(data) {
-//   // console.log(data.casuleName);
-//   capsuleName.textContent = `${data.casuleName}`;
-//   shortDescription.textContent = `${data.shortDescription}`;
-
-
-//   let currentAromData;
-
-//   for (let i = 0; i < data.aromatic_notes.length; i++) {
-//     if (i == 0) {
-
-
-//       currentAromData = data.aromatic_notes[0];
-//     }
-//     else {
-//       currentAromData += ` • ${data.aromatic_notes[i]}`;
-//     }
-
-
-//   }
-//   capsuleArom.innerHTML = currentAromData;
-// }

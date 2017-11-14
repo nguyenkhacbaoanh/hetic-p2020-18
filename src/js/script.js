@@ -169,8 +169,10 @@ function setcurrentCapsule() {
   for (let i = 0; i < allcurrentCapsulesElements.length; i++) {
     if (allcurrentCapsulesElements.length >= 3) {
       allcurrentCapsulesElements[1].classList.add('currentCap');
+      currentCapsuleId = 1
     } else {
       allcurrentCapsulesElements[0].classList.add('currentCap');
+      currentCapsuleId= 0;
     }
   }
 }
@@ -198,16 +200,27 @@ countries.forEach((element) => {
 
 
 // EVENT ON NEXT BTN
+next.addEventListener('click', () => {
+  // console.log(allcurrentCapsulesElements)
+  if (currentCapsuleId < allcurrentCapsulesElements.length-1) {
 
-// next.addEventListener('click', () => {
-//   console.log(allcurrentCapsulesElements)
-//   if (allcurrentCapsulesElements.length > 0) {
+    allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
+    currentCapsuleId++;
+    allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
+  }
+});
 
-//     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
-//     currentCapsuleId++;
-//     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
-//   }
-// }
+
+//EVENT ON PREVIOUS BTN 
+previous.addEventListener('click', () => {
+  // console.log(allcurrentCapsulesElements)
+  if (currentCapsuleId > 0) {
+
+    allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
+    currentCapsuleId--;
+    allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
+  }
+});
 
 
 

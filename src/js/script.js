@@ -181,6 +181,9 @@ countries.forEach((element) => {
 
     // Add Class for current Cap
     setcurrentCapsule();
+
+    // Get current capsule id a show his DOM like Next and Previous BTN
+    getCurrentCapsuleId(currentCapsuleId);
   });
 });
 
@@ -223,7 +226,7 @@ countries.forEach((element) => {
 
 
 
-// FUNCTION  FIN THE CURRENT CAPSULE DATAS  
+// FUNCTION  FIN THE CURRENT CAPSULE DATAS
 function findCurrentCapsuleDatas(id) {
   return currentCountryDataTable.find((item) => {
     return item.id == id;
@@ -242,7 +245,6 @@ function getCurrentCapsuleDomDescription(data) {
   for (let i = 0; i < data.aromatic_notes.length; i++) {
     if (i == 0) {
 
-
       currentAromData = data.aromatic_notes[0];
     }
     else {
@@ -259,6 +261,13 @@ function getCurrentCapsuleDomDescription(data) {
 
 
 
+function getCurrentCapsuleId(id) {
+  const currentId = allcurrentCapsulesElements[id].dataset.id;
+  console.log(`current capsule id ${currentId}`);
+  const currentCapsuleDataId = findCurrentCapsuleDatas(currentId);
+  console.log(currentCapsuleDataId);
+  getCurrentCapsuleDomDescription(currentCapsuleDataId);
+}
 
 
 
@@ -266,7 +275,6 @@ function getCurrentCapsuleDomDescription(data) {
 next.addEventListener('click', () => {
   // console.log(allcurrentCapsulesElements)
   if (currentCapsuleId < allcurrentCapsulesElements.length - 1) {
-
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
     currentCapsuleId++;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
@@ -274,15 +282,9 @@ next.addEventListener('click', () => {
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
     currentCapsuleId = 0;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
-
+   
   }
-
-  let currentId = allcurrentCapsulesElements[currentCapsuleId].dataset.id;
-  console.log(`current capsule id ${currentId}`);
-
-  let currentCapsuleDataId = findCurrentCapsuleDatas(currentId);
-  console.log(currentCapsuleDataId);
-  getCurrentCapsuleDomDescription(currentCapsuleDataId );
+  getCurrentCapsuleId(currentCapsuleId);
 });
 
 
@@ -305,13 +307,11 @@ previous.addEventListener('click', () => {
     currentCapsuleId = allcurrentCapsulesElements.length - 1;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
   }
-  let currentId = allcurrentCapsulesElements[currentCapsuleId].dataset.id;
-  console.log(`current capsule id ${currentId}`);
-  let currentCapsuleDataId = findCurrentCapsuleDatas(currentId);
-  console.log(currentCapsuleDataId);
-  getCurrentCapsuleDomDescription(currentCapsuleDataId);
+  getCurrentCapsuleId(currentCapsuleId);
 
 });
+
+
 
 
 

@@ -1,3 +1,4 @@
+// MEET EMPLOYEES SECTION
 .meetEmployees {
   font-family: $description-font;
   display: flex;
@@ -8,6 +9,7 @@
   } 
 }
 
+// Farmer image
 .meetEpmloyees__farmerWrapper {
   position: relative;
   width: 100%;
@@ -41,6 +43,7 @@
   }
 }
 
+// Farmer informations
 .meetEpmloyees__contentWrapper {
   position: relative;
   padding: 30px 25px 64px 25px;
@@ -52,6 +55,7 @@
   } 
 }
 
+// // header
 .meetEmployees__header {
   margin-bottom: 15px;
 
@@ -62,13 +66,13 @@
 }
 
 .employees__employee {
-
   @include medium {
     margin: auto;
     width: 80%;
   }
 }
 
+// // infos
 .employees__employee .employee__name {
   text-transform: uppercase;  
   font-size: 17px;
@@ -122,6 +126,7 @@
   font-size: 14px;
 }
 
+// Farmer slider
 .employee__slider {
   position: absolute;
   bottom: 0;

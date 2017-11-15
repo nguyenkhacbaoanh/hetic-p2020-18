@@ -1,0 +1,25 @@
+.understandIntensity {
+  padding: 30px 25px;
+  font-family: $description-font;
+  color: $white;
+  text-align: center;
+  background: $black-background;
+  
+  @include medium {
+    padding: 30px 40px;
+  }
+}
+  
+.understandIntensity__header {
+  margin-bottom: 60px;
+}
+  
+.understandIntensity__header p {
+  width: 325px;
+  margin: auto;
+  color: $light-grey;
+
+  @include medium {
+    width: 369px;
+  }
+}

@@ -2,7 +2,7 @@
 const JsonCapsulesLink = 'datas/capsules.json';
 const TablesCapsules = [];
 
-
+// JSON FILE FETCH FUNCTION
 fetch(JsonCapsulesLink)
   .then(capsule => capsule.json())
   .then((data) => {
@@ -11,13 +11,6 @@ fetch(JsonCapsulesLink)
   })
   .catch(err => console.log(Error(err)));
 
-
-
-
-// ONLOEAD FUNCTION FOR MEXIQUE
-// window.onload = () => {
-
-// }
 
 
 
@@ -34,9 +27,9 @@ const wrapperCapsules = document.querySelector('.capsules__slider .capsules');
 
 const previous = document.querySelector('.slider_previousBtn');
 const next = document.querySelector('.slider_nextBtn');
+// const allcapsules = document.querySelectorAll('.capsule');
 
-
-const allcapsules = document.querySelectorAll('.capsule')
+const producer = [...document.querySelectorAll('#producer')];
 
 
 
@@ -163,6 +156,17 @@ function setcurrentCapsule() {
 
 
 
+function GetShowCountryOnMap(country) {
+  producer.forEach((element) => {
+    if (element.dataset.country === country) {
+      console.log(element.classList);
+      element.classList.add('country--active');
+      console.log('ok')
+    } else {
+      element.classList.remove('country--active');
+    }
+  });
+}
 
 
 
@@ -171,7 +175,7 @@ countries.forEach((element) => {
   element.addEventListener('click', (e) => {
     e.preventDefault();
     const countryDatas = findCountryDatas(element.dataset.country);
-
+    GetShowCountryOnMap(element.dataset.country);
     // Creat all capsules element
     creatCapsuleSlides(countryDatas);
 
@@ -179,6 +183,7 @@ countries.forEach((element) => {
     setcurrentCapsule();
   });
 });
+
 
 
 
@@ -320,8 +325,24 @@ previous.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ONLOAD FUNCTION
 window.addEventListener('load', () => {
   const onloadCountryDatas = findCountryDatas('Mexique');
+  GetShowCountryOnMap('Mexique');
   creatCapsuleSlides(onloadCountryDatas);
   setcurrentCapsule();
   console.log(allcurrentCapsulesElements);

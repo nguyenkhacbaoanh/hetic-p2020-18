@@ -18,7 +18,7 @@
   background: #FBFBFB;
   z-index: $zindex;
 
-  .st0 {
+  .bkg-map {
     fill: #CAC9C9;
   }
 
@@ -33,6 +33,12 @@
   @include medium-2 {
     display: block;
   }
+}
+.country--active {
+  fill: #CBA15A !important;
+  transition-duration: 1s;
+  transition-property: fill;
+  transition-timing-function: ease;
 }
 
 .coffeeOrigin__wrapperContent {
@@ -198,6 +204,8 @@
 .capsules__slider .slider__data .intensity__svg {
   margin-top: 20px;
 }
+
+
 
 // // _Capsules
 // .countriesSlider__capsules {

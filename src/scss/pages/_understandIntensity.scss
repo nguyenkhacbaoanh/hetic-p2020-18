@@ -8,18 +8,110 @@
   @include medium {
     padding: 30px 40px;
   }
-}
-  
+} 
+
 .understandIntensity__header {
-  margin-bottom: 60px;
-}
-  
-.understandIntensity__header p {
-  width: 325px;
+  width: 80vw;
   margin: auto;
   color: $light-grey;
+  margin-bottom: 40px;
 
   @include medium {
     width: 369px;
   }
+}
+
+.understandIntensity__morphing {
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.understandIntensity__morphing .morphing__infos {
+  margin-top: 30px;
+  text-align: left;
+
+  @include medium {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: none;
+    transform: translate(-50%,-50%);
+  }
+}
+
+.morphing__infos .infos__info {
+  padding: 20px 0 15px 0;
+  border-bottom: 1px solid $black;
+  
+  @include medium {
+    position: absolute;
+    padding: none;
+    border: none;
+    width: 30vw;
+  }
+}
+
+.morphing__infos .infos__info:nth-child(1),
+.morphing__infos .infos__info:nth-child(4) {
+  @include medium {
+    text-align: right;
+  }
+}
+
+.morphing__infos .infos__info:nth-child(1) {
+  @include medium {
+    left: -420px;
+    top: -190px;
+  }
+}
+
+.morphing__infos .infos__info:nth-child(2) {
+  @include medium {
+    left: 110px;
+    top: -150px;
+  }
+}
+
+.morphing__infos .infos__info:nth-child(3) {
+  @include medium {
+    left: 130px;
+    top: 30px;
+  }
+}
+
+.morphing__infos .infos__info:nth-child(4) {
+  @include medium {
+    left: -450px;
+    top: 50px;
+  }
+}
+
+.morphing__infos .infos__info .info__arrow {
+  cursor: pointer;
+
+  @include medium {
+    display: none;
+  }
+}
+
+.morphing__infos .infos__info .info__arrow img {
+  width: 15px;
+  height: auto;
+  float: right;
+  will-change: transform;
+}
+
+.morphing__infos .infos__info p {
+  display: none;
+  margin-top: 5px;
+  color: $light-grey;
+  font-size: 13px;
+}
+
+.morphing__infos .infos__info.info--active p {
+  display: block;
+}
+
+.morphing__infos .infos__info.info--active .info__arrow img {
+  transform: rotate(180deg);
 }

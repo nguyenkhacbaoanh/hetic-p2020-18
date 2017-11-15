@@ -6,7 +6,7 @@ section(class="understandIntensity")
   
   div(class="understandIntensity__morphing")
     div(class="morphing__svg")
-      svg(width="280" height="268", viewBox="0 0 380 380")
+      svg(width="280" height="280", viewBox="0 0 220 350")
         g(transform="translate(100.000000, 36.000000)")
           polygon(id="Rectangle-5", fill="#252525", mask="url(#mask-2)", transform="translate(17.806520, 166.232435) rotate(-75.000000) translate(-147.806520, -166.232435)", points="11.5935372 50.4947138 280.436291 20.7222909 284.019504 221.116548 113.23901 311.742579")
           polygon(id="Rectangle-4", fill="#2F2F2F", mask="url(#mask-2)", transform="translate(18.729354, 165.501952) rotate(-75.000000) translate(-148.729354, -165.501952)", points="39.654727 72.8647079 254.934668 49.0346621 257.803981 209.431562 121.048892 281.969242")
@@ -18,17 +18,25 @@ section(class="understandIntensity")
     div(class="morphing__infos")
       div(class="infos__info")
         span Amertume
-        p 
+        span(class="info__arrow")
+          img(src="../img/arrow-down-white.svg", alt="Afficher le contenu")
+        p(class="italic")
       
-      div(class="infos__info")
+      div(class="infos__info info--active")
         span Acidité
-        p Saveur de base perçue sur les papilles de la langue, donne de la vivacité au café
+        span(class="info__arrow")
+          img(src="../img/arrow-down-white.svg", alt="Afficher le contenu")
+        p(class="italic") Saveur de base perçue sur les papilles de la langue, donne de la vivacité au café.
 
       div(class="infos__info")
         span Corps
-        p 
+        span(class="info__arrow")
+          img(src="../img/arrow-down-white.svg", alt="Afficher le contenu")
+        p(class="italic")
 
       div(class="infos__info")
         span Torréfaction
-        p 
+        span(class="info__arrow")
+          img(src="../img/arrow-down-white.svg", alt="Afficher le contenu")
+        p(class="italic")
 

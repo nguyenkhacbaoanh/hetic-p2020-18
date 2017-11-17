@@ -23,7 +23,7 @@ const capsuleName = document.querySelector('.data__name');
 const capsuleArom = document.querySelector('.data__aroma');
 const shortDescription = document.querySelector('.data__description');
 const countries = document.querySelectorAll('.country');
-const wrapperCapsules = document.querySelector('.capsules__slider .capsules');
+const wrapperCapsules = document.querySelector('.slider__contentCapsules');
 
 const previous = document.querySelector('.slider_previousBtn');
 const next = document.querySelector('.slider_nextBtn');
@@ -48,7 +48,8 @@ let currentData;
 //This array will contain all the dom element per country caps
 let allcurrentCapsulesElements = [];
 // This is variable will serve check id or the capsule in previous array
-let currentCapsuleId;
+let currentCapsuleId = 0;
+let rotateWrapper = 0;
 
 
 
@@ -101,8 +102,12 @@ function removeLasCountryCapsules() {
 // FUNCTION CREAT CPASULE SLIDE
 function creatCapsuleSlides(countryDatas) {
 
-  // removing last country children 
-  removeLasCountryCapsules();
+
+  // let rotateYCapsule = 0;
+  const ratio = 360 / countryDatas.length;
+
+
+  // Stockable variable initialize
   capsules.length = 0;
 
   // Create the new elements
@@ -113,6 +118,7 @@ function creatCapsuleSlides(countryDatas) {
     capsule.setAttribute('class', 'capsule');
     capsule.setAttribute('data-name', `${element.casuleName}`);
     capsule.setAttribute('data-id', `${element.id}`);
+    // capsule.style.transform = `rotateY(30deg) translateZ(288px)`;
 
 
     // Create image
@@ -125,6 +131,11 @@ function creatCapsuleSlides(countryDatas) {
     // Stocking all in variable
     capsules.push(capsule);
   });
+
+
+  for (let i = 0; i < capsules.length; i++) {
+    capsules[i].style.transform = `rotateY(${ratio * i}deg) translateZ(280px)`;
+  }
 
   allcurrentCapsulesElements = [...capsules];
 
@@ -143,25 +154,24 @@ function creatCapsuleSlides(countryDatas) {
 // FUNCTION INIT CLASS FOR SLIDER
 function setcurrentCapsule() {
   for (let i = 0; i < allcurrentCapsulesElements.length; i++) {
-    if (allcurrentCapsulesElements.length >= 3) {
-      allcurrentCapsulesElements[1].classList.add('currentCap');
-      currentCapsuleId = 1
-    } else {
-      allcurrentCapsulesElements[0].classList.add('currentCap');
-      currentCapsuleId = 0;
-    }
+    allcurrentCapsulesElements[0].classList.add('currentCap');
+    // if (allcurrentCapsulesElements.length >= 3) {
+    //   allcurrentCapsulesElements[1].classList.add('currentCap');
+    // currentCapsuleId = 1
+    // } else {
+    //   allcurrentCapsulesElements[0].classList.add('currentCap');
+
+    // }
   }
 }
 
 
 
-
+// 
 function GetShowCountryOnMap(country) {
   producer.forEach((element) => {
     if (element.dataset.country === country) {
-      console.log(element.classList);
       element.classList.add('country--active');
-      console.log('ok')
     } else {
       element.classList.remove('country--active');
     }
@@ -174,8 +184,17 @@ function GetShowCountryOnMap(country) {
 countries.forEach((element) => {
   element.addEventListener('click', (e) => {
     e.preventDefault();
+
+    rotateWrapper = 0;
+    wrapperCapsules.style.transform = `rotateY(0deg)`;
+    currentCapsuleId = 0;
     const countryDatas = findCountryDatas(element.dataset.country);
+
     GetShowCountryOnMap(element.dataset.country);
+
+    // removing last country children
+    removeLasCountryCapsules();
+
     // Creat all capsules element
     creatCapsuleSlides(countryDatas);
 
@@ -184,6 +203,8 @@ countries.forEach((element) => {
 
     // Get current capsule id a show his DOM like Next and Previous BTN
     getCurrentCapsuleId(currentCapsuleId);
+
+
   });
 });
 
@@ -265,24 +286,32 @@ function getCurrentCapsuleId(id) {
   const currentId = allcurrentCapsulesElements[id].dataset.id;
   console.log(`current capsule id ${currentId}`);
   const currentCapsuleDataId = findCurrentCapsuleDatas(currentId);
-  console.log(currentCapsuleDataId);
   getCurrentCapsuleDomDescription(currentCapsuleDataId);
 }
 
 
 
+
+
+
+
 // EVENT ON NEXT BTN
+
 next.addEventListener('click', () => {
-  // console.log(allcurrentCapsulesElements)
-  if (currentCapsuleId < allcurrentCapsulesElements.length - 1) {
+  console.log('allcurrentCapsule', allcurrentCapsulesElements.length);
+  const rotateCaroussel = 360 / allcurrentCapsulesElements.length;
+  if (allcurrentCapsulesElements.length > 1) {
+    wrapperCapsules.style.transform = `rotateY(${rotateWrapper += rotateCaroussel}deg)`;
+  }
+
+  if (currentCapsuleId == 0) {
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
-    currentCapsuleId++;
+    currentCapsuleId = allcurrentCapsulesElements.length - 1;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
   } else {
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
-    currentCapsuleId = 0;
+    currentCapsuleId--;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
-   
   }
   getCurrentCapsuleId(currentCapsuleId);
 });
@@ -297,12 +326,14 @@ next.addEventListener('click', () => {
 // EVENT ON PREVIOUS BTN 
 previous.addEventListener('click', () => {
   // console.log(allcurrentCapsulesElements)
-  if (currentCapsuleId > 0) {
 
+  if (currentCapsuleId > 0) {
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
     currentCapsuleId--;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
-  } else {
+  }
+
+  else {
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
     currentCapsuleId = allcurrentCapsulesElements.length - 1;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
@@ -345,5 +376,4 @@ window.addEventListener('load', () => {
   GetShowCountryOnMap('Mexique');
   creatCapsuleSlides(onloadCountryDatas);
   setcurrentCapsule();
-  console.log(allcurrentCapsulesElements);
 });

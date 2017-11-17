@@ -158,7 +158,6 @@
     display: block;
     width: 80px;
     height: 80px;
-    border: 1px solid red;
     left: 30%;
     opacity: 0.5;
     transform: scale(0.6);
@@ -174,9 +173,8 @@
 }
 
 .currentCap {
-    transform: scale(0.9) ;
     opacity: 1;
-    border: 1px solid blue;
+
 }
 
 .capsules__slider .slider__data {

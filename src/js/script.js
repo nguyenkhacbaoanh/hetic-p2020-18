@@ -326,16 +326,21 @@ next.addEventListener('click', () => {
 // EVENT ON PREVIOUS BTN 
 previous.addEventListener('click', () => {
   // console.log(allcurrentCapsulesElements)
+  const rotateCaroussel = 360 / allcurrentCapsulesElements.length;
+  if (allcurrentCapsulesElements.length > 1) {
+    wrapperCapsules.style.transform = `rotateY(${rotateWrapper -= rotateCaroussel}deg)`;
+  }
+  // capsules[i].style.transform = `rotateY(${ratio * i}deg) translateZ(280px) scale(.6)`;
 
-  if (currentCapsuleId > 0) {
+  if (currentCapsuleId == allcurrentCapsulesElements.length - 1) {
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
-    currentCapsuleId--;
+    currentCapsuleId = 0;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
   }
 
   else {
     allcurrentCapsulesElements[currentCapsuleId].classList.remove('currentCap');
-    currentCapsuleId = allcurrentCapsulesElements.length - 1;
+    currentCapsuleId++;
     allcurrentCapsulesElements[currentCapsuleId].classList.add('currentCap');
   }
   getCurrentCapsuleId(currentCapsuleId);

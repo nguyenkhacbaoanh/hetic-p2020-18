@@ -46,6 +46,10 @@
 .morphing__infos .infos__info {
   padding: 20px 0 15px 0;
   border-bottom: 1px solid $black;
+  transition-duration: .5s;
+  transition-property: color;
+  transition-timing-function: ease;
+  will-change: color;
   
   @include medium {
     position: absolute;

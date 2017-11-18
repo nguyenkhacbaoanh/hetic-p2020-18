@@ -23,8 +23,8 @@ const capsuleName = document.querySelector('.data__name');
 const capsuleArom = document.querySelector('.data__aroma');
 const shortDescription = document.querySelector('.data__description');
 const countries = document.querySelectorAll('.country');
-const wrapperCapsules = document.querySelector('.slider__contentCapsules');
-
+const wrapperCapsules = document.querySelector('.slider__contentCapsulesWrapper');
+const border = document.querySelector('.nav__lineBorder');
 const previous = document.querySelector('.slider_previousBtn');
 const next = document.querySelector('.slider_nextBtn');
 // const allcapsules = document.querySelectorAll('.capsule');
@@ -179,6 +179,10 @@ function GetShowCountryOnMap(country) {
 }
 
 
+function setBorderPosition(element) {
+  border.style.transform = `translateX(${element.offsetLeft}px)`;
+}
+
 
 // FUNCTION GET THE COUNTRY BY CLICK
 countries.forEach((element) => {
@@ -204,6 +208,9 @@ countries.forEach((element) => {
     // Get current capsule id a show his DOM like Next and Previous BTN
     getCurrentCapsuleId(currentCapsuleId);
 
+
+    console.dir(element);
+    setBorderPosition(element);
 
   });
 });
@@ -382,3 +389,6 @@ window.addEventListener('load', () => {
   creatCapsuleSlides(onloadCountryDatas);
   setcurrentCapsule();
 });
+
+
+

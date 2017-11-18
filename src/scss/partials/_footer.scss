@@ -1,3 +1,83 @@
 footer {
-  background-color: yellow;
+  background-color: #FBFBFB;
+  font-family: $description-font;
+  height: 300px;
+}
+
+.footer__container {
+  width: 97%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 36px 0;
+}
+
+hr.footer__separtor {
+  margin: 15px 0;
+  background-color:$grey;
+  height: 1px; 
+  border: 0; 
+}
+
+.footer__content {
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.contentTop__toplist {
+  display: flex;
+}
+
+.contentTop__listEl {
+  margin-right: 30px;
+  color: $black-background;
+  opacity: .5;
+}
+
+.footer__bot{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__botSocialMedia  {
+  display: flex;
+  align-items: center;
+}
+
+.footer__botSocialMedia__text {
+  margin-right: 20px;
+}
+
+.footer__botSocialMedia__icons {
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin-right: 20px;
+}
+
+.footer__botSocialMedia__icons img {
+  width: 100%;
+  height: 100%;
+}
+
+.footer__lawInfos {
+  color: $gold;
+  display: flex;
+  align-items: center;
+}
+
+.footer__lawInfos__separtor{
+  display: inline-block;
+  height: 20px;
+  width: 2px;
+  background-color: $gold;
+  margin: 0 20px;
+}
+
+.footer__Copyright {
+  text-align: right;
+  opacity: .5;
 }

@@ -1,0 +1,18 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 12">
+  <title>propose__etap</title>
+  <g id="Home">
+    <g id="caracteristique_black" data-name="caracteristique black">
+      <rect id="Rectangle" width="88" height="12" style="fill: #4a4a4a"/>
+    </g>
+  </g>
+  <g id="Home-2" data-name="Home">
+    <g id="caracteristique_gold" data-name="caracteristique gold">
+      <rect id="Rectangle-2" data-name="Rectangle" width="88" height="12" style="fill: #cba15a"/>
+    </g>
+  </g>
+  <g id="Home-3" data-name="Home">
+    <g id="caracteristique_perfore_black" data-name="caracteristique perfore black">
+      <path id="Combined-Shape" d="M0,0H88V12H0ZM6,12A6,6,0,1,0,0,6,6,6,0,0,0,6,12Zm19,0a6,6,0,1,0-6-6A6,6,0,0,0,25,12Zm19,0a6,6,0,1,0-6-6A6,6,0,0,0,44,12Zm19,0a6,6,0,1,0-6-6A6,6,0,0,0,63,12Zm19,0a6,6,0,1,0-6-6A6,6,0,0,0,82,12Z" style="fill: #1f292f"/>
+    </g>
+  </g>
+</svg>

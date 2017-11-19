@@ -1,0 +1,24 @@
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94 11">
+  <title>find__etap</title>
+  <g id="Home">
+    <g id="etape_white" data-name="etape white">
+      <g id="Group">
+        <rect id="Combined-Shape" width="94" height="11" style="fill: #fff"/>
+      </g>
+    </g>
+  </g>
+  <g id="Home-2" data-name="Home">
+    <g id="etape_gold" data-name="etape gold">
+      <g id="Group-2" data-name="Group">
+        <rect id="Combined-Shape-2" data-name="Combined-Shape" width="94" height="11" style="fill: #cba15a"/>
+      </g>
+    </g>
+  </g>
+  <g id="Home-3" data-name="Home">
+    <g id="etape_perfore" data-name="etape perfore">
+      <g id="Group-3" data-name="Group">
+        <path id="Combined-Shape-3" data-name="Combined-Shape" d="M0,0H94V11H0ZM83,6a5.53,5.53,0,1,0,5.51-6A5.53,5.53,0,0,0,83,5H66.33a5.53,5.53,0,0,0-11,0H38.68a5.53,5.53,0,0,0-11,0H11a5.53,5.53,0,1,0-5.51,6A5.53,5.53,0,0,0,11,6H27.67a5.53,5.53,0,0,0,11,0H55.32a5.53,5.53,0,0,0,11,0Z" style="fill: #fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

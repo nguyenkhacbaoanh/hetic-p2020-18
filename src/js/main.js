@@ -1,2 +1,3 @@
-require('./script.js');
+require('./meetEmployees.js');
 require('./graph.js');
+require('./script.js');

@@ -209,7 +209,7 @@ countries.forEach((element) => {
     getCurrentCapsuleId(currentCapsuleId);
 
 
-    console.dir(element);
+
     setBorderPosition(element);
 
   });
@@ -291,7 +291,7 @@ function getCurrentCapsuleDomDescription(data) {
 
 function getCurrentCapsuleId(id) {
   const currentId = allcurrentCapsulesElements[id].dataset.id;
-  console.log(`current capsule id ${currentId}`);
+  // console.log(`current capsule id ${currentId}`);
   const currentCapsuleDataId = findCurrentCapsuleDatas(currentId);
   getCurrentCapsuleDomDescription(currentCapsuleDataId);
 }
@@ -305,7 +305,7 @@ function getCurrentCapsuleId(id) {
 // EVENT ON NEXT BTN
 
 next.addEventListener('click', () => {
-  console.log('allcurrentCapsule', allcurrentCapsulesElements.length);
+  // console.log('allcurrentCapsule', allcurrentCapsulesElements.length);
   const rotateCaroussel = 360 / allcurrentCapsulesElements.length;
   if (allcurrentCapsulesElements.length > 1) {
     wrapperCapsules.style.transform = `rotateY(${rotateWrapper += rotateCaroussel}deg)`;

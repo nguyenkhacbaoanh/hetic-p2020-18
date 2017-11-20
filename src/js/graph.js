@@ -13,7 +13,7 @@ setInterval(() => {
     i++
     allinfos[i].classList.add('info--active');
   }
- console.log(i)
+
 
 }, 2000);
 
@@ -33,4 +33,3 @@ var morphing = anime({
   loop: true
 });
 
-console.log(allinfos)

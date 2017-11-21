@@ -6,32 +6,7 @@ const employeeImg = document.querySelector('.meetEmployees__farmerWrapper img');
 const iconSun = document.querySelector('.icon__dataSun');
 const iconAltitude = document.querySelector('.icon__dataAltitude');
 const iconRain = document.querySelector('.icon__dataRain');
-const arrows = document.querySelectorAll('.employee__slider .slider__arrow');
-
-console.log(TablesEmployees);
-
-// JSON FILE FETCH FUNCTION
-fetch(JsonEmployeesLink)
-  .then(employee => employee.json())
-  .then((data) => {
-    TablesEmployees.push(...data);
-    console.log(TablesEmployees);
-  })
-  .catch(err => console.log(Error(err)));
-
-let currentEmployee = 1;
-
-console.log(TablesEmployees);
-
-
-
-// employeeName.textContent = TablesEmployees[currentEmployee].employeeName;
-// console.log(TablesEmployees);
-
-
-
-
-
+const sliderCounter = document.querySelector('.slider__counter');
 
 const sliderArrows = document.querySelectorAll('.employee__slider .slider__arrow');
 

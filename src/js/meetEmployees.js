@@ -6,9 +6,9 @@ const employeeImg = document.querySelector('.meetEmployees__farmerWrapper img');
 const iconSun = document.querySelector('.icon__dataSun');
 const iconAltitude = document.querySelector('.icon__dataAltitude');
 const iconRain = document.querySelector('.icon__dataRain');
+const sliderCounter = document.querySelector('.slider__counter');
 
-const arrows = document.querySelectorAll('.employee__slider .slider__arrow');
-
+const sliderArrows = document.querySelectorAll('.employee__slider .slider__arrow');
 
 // JSON FILE FETCH FUNCTION
 const tablesEmployees = [
@@ -55,24 +55,27 @@ function employeeSetData() {
   iconSun.textContent = tablesEmployees[currentEmployee].iconSun;
   iconAltitude.textContent = tablesEmployees[currentEmployee].iconAltitude;
   iconRain.textContent = tablesEmployees[currentEmployee].iconRain;
-  employeeImg.setAttribute(src, tablesEmployees[currentEmployee].employeeImg);
-  employeeImg.setAttribute(alt, tablesEmployees[currentEmployee].employeeName);
+
+  employeeImg.setAttribute('src', tablesEmployees[currentEmployee].employeeImg);
+  employeeImg.setAttribute('alt', tablesEmployees[currentEmployee].employeeName);
+
+  sliderCounter.textContent = "- " + (currentEmployee + 1) + " / 3";
 }
 
 // FUNCTION ON CLICK ON SLIDER ARROWS - UPDATE EMPLOYEE CONTENT
-arrows.forEach((element) => {
+sliderArrows.forEach((element) => {
   element.addEventListener('click', (e) => {
     e.preventDefault();
 
     if (element.classList.contains("arrows__arrowRight")) {
-      if ( (currentEmployee++) > tablesEmployees.length - 1)
+      if ( (currentEmployee + 1) > tablesEmployees.length - 1)
         currentEmployee = 0;
 
       else 
         currentEmployee++;
 
     } else {
-      if ( (currentEmployee--) < 0)
+      if ( (currentEmployee - 1) < 0)
         currentEmployee = tablesEmployees.length - 1;
     
       else

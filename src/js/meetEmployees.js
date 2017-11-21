@@ -11,17 +11,25 @@ const iconAltitude = document.querySelector('.icon__dataAltitude');
 const iconRain = document.querySelector('.icon__dataRain');
 const arrows = document.querySelectorAll('.employee__slider .slider__arrow');
 
+console.log(TablesEmployees);
+
 // JSON FILE FETCH FUNCTION
 fetch(JsonEmployeesLink)
   .then(employee => employee.json())
   .then((data) => {
     TablesEmployees.push(...data);
+    console.log(TablesEmployees);
   })
+  .catch(err => console.log(Error(err)));
 
 let currentEmployee = 1;
 
+console.log(TablesEmployees);
+
+
+
 // employeeName.textContent = TablesEmployees[currentEmployee].employeeName;
-console.log(TablesEmployees['1']);
+// console.log(TablesEmployees);
 
 
 

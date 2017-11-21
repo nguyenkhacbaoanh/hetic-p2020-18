@@ -13,7 +13,7 @@
     display: none;
     position: relative;
     width: 50vw;
-    height: 617px;
+    height: 657px;
     overflow: hidden;
     background: #FBFBFB;
     z-index: $zindex;
@@ -219,3 +219,66 @@
 .capsules__slider .slider__data .intensity__svg {
     margin-top: 20px;
 }
+
+
+.capsules__slider .slider__data .data__buy a{
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 35px;
+    color: $gold;
+    text-align: center;
+    border: solid 2px $gold;
+    z-index: 10;
+    line-height: 30px;
+    font-size: 1rem;
+}
+.capsules__slider .slider__data .data__buy a:hover{
+   color: $white;
+}
+
+
+
+.capsules__slider .slider__data .data__buy a::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    z-index: -2;
+    width: 50%;
+    height: 100%;
+    background-color: $gold;
+    opacity: .9;
+    transform: scaleX(0);
+    will-change: transform;
+    transition: .3s ease;
+    transform-origin: left;
+}
+.capsules__slider .slider__data .data__buy a:hover::before{
+    content: '';
+    transform: scaleX(1);
+}
+
+.capsules__slider .slider__data .data__buy a::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    z-index: -2;
+    width: 50%;
+    height: 100%;
+    background-color: $gold;
+    opacity: .9;
+    transform: scaleX(0);
+    will-change: transform ;
+    transition: .3s ease;
+    transition-property: transform ;
+    transform-origin: right;
+}
+
+.capsules__slider .slider__data .data__buy a:hover::after{
+    content: '';
+    transform: scaleX(1);
+
+}
+
+
+

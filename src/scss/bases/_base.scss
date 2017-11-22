@@ -1,17 +1,17 @@
 * {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+      box-sizing: border-box;
 }
 
 html, body {
-    font-family: $description-font, 'Open sans' sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    background: #fefefe;
-    color: $black;
+  font-family: $description-font, 'Open sans' sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #fefefe;
+  color: $black;
 }
 
 // h1, h2, h3, h4, h5, h6 {
@@ -20,62 +20,101 @@ html, body {
 // }
 
 h1 {
-    font-size: 22px;
-    font-family: $title-font;
-    color: $gold;
-    font-weight: 700;
-    padding-bottom: 15px;
-    text-transform: uppercase;
+  font-size: 22px;
+  font-family: $title-font;
+  color: $gold;
+  font-weight: 700;
+  padding-bottom: 15px;
+  text-transform: uppercase;
 }
 
 h2 {
-    font-size: 17px;
-    font-family: $button-font;
-    color: $white;
-    padding-bottom: 4px;
+  font-size: 17px;
+  font-family: $button-font;
+  color: $white;
+  padding-bottom: 4px;
 }
 
 p {
-    font-size: 13px;
-    line-height: 1.5;
-    // font-weight: 400;
-    font-family: $description-font;
+  font-size: 13px;
+  line-height: 1.5;
+  // font-weight: 400;
+  font-family: $description-font;
 }
 
 a {
-    font-size: 1em;
-    text-decoration: none;
-    // color: $main-color;
-    transition: all 0.15s ease-in-out;
+  font-size: 1em;
+  text-decoration: none;
+  // color: $main-color;
+  transition: all 0.15s ease-in-out;
 
-    &:hover {
-        // color: $main-color-hover;
-        transition: all 0.15s ease-in-out;
-    }
+  &:hover {
+    // color: $main-color-hover;
+    transition: all 0.15s ease-in-out;
+  }
 }
 
 .blue {
-    color: $blue;
+  color: $blue;
 }
 
 .gold {
-    color: $gold;
+  color: $gold;
 }
 
 .italic {
-    font-style: italic;
+  font-style: italic;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  background-color: $gold;
+  transform: scaleX(0);
+  will-change: transform;
+  transition: .2s ease;
+  transform-origin: left;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button a {
+  color: $gold;
+  font-family: $button-font;
+  font-size: 11px;
+  border: solid 2px $gold;
+  border-radius: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 8px 16px;
+  z-index: 10;
+}
+
+.button a:hover {
+  color: $white;
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 ::selection {
-    // background-color: $main-color;
-    color: #fefefe;
+  // background-color: $main-color;
+  color: #fefefe;
 }
 
 ::-moz-selection {
-    // background-color: $main-color;
-    color: #fefefe;
+  // background-color: $main-color;
+  color: #fefefe;
 }

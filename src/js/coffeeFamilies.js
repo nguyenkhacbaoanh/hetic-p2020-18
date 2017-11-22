@@ -113,20 +113,25 @@ function setDataAttribut() {
 
 
 prev.addEventListener('click', () => {
+    if ( slideesAll[incrementation].classList.contains('current') ) {
+        if (incrementation <= 0) {
+            incrementation = slideesAll.length - 1;
+            console.log(incrementation);
 
-
-    console.log('prev');
-    // for (let i = 0; i < slideesAll.length; i++) {
-    //     if (slideesAll[i].classList.contains('current')) {
-    //         document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[i++].coffeeFamily;
-    //         // document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[i+x].coffeeDescription;
-    //     }
-    // }
-
+            document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
+            document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
+        }
+        else {
+            incrementation--;
+            console.log(incrementation);
+            document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
+            document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
+            // document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[slideesAll[i].dataset.id].coffeeFamily;
+            // document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[slideesAll[i].dataset.id].coffeeDescription;
+        }
+    }
 });
-
 next.addEventListener('click', () => {
-
     if ( slideesAll[incrementation].classList.contains('current') ) {
         if (incrementation === slideesAll.length - 1) {
             incrementation = 0;
@@ -144,15 +149,19 @@ next.addEventListener('click', () => {
             // document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[slideesAll[i].dataset.id].coffeeDescription;
         }
     }
-
 });
+
+
+
+
+
 
 
 slideesAll.forEach(element => {
     element.addEventListener('click', () => {
         incrementation = element.dataset.id;
-        document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[element.dataset.id].coffeeFamily;
-        document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[element.dataset.id].coffeeDescription;
+        document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
+        document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
     })
 });
 

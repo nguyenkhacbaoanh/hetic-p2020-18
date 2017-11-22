@@ -10,7 +10,7 @@ const sliderCounter = document.querySelector('.slider__counter');
 
 const sliderArrows = document.querySelectorAll('.employee__slider .slider__arrow');
 
-// JSON FILE FETCH FUNCTION
+// EMPLOYEES CONTENT ARRAY
 const tablesEmployees = [
   {
     "id": 1,
@@ -44,7 +44,7 @@ const tablesEmployees = [
   }
 ];
 
-// Employee currently displayed
+// INITIALIZE EMPLOYEE CURRENTLY DISPLAYED
 let currentEmployee = 0;
 
 // FUNCTION SET EMPLOYEE DATA IN HTML

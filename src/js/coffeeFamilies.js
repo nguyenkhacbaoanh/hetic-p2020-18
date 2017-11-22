@@ -22,19 +22,19 @@ const JsonCoffeeFamiliesLink = 'datas/coffeeFamilies.json';
 const TablesCoffeeFamiliesJson = [
     {
         "id": 0,
-        "coffeeFamily": "Titre1",
-        "coffeeDescription": "description 1"
+        "coffeeFamily": "Titre0",
+        "coffeeDescription": "description0"
 
     },
     {
         "id": 1,
-        "coffeeFamily": "Titre2",
-        "coffeeDescription": "description 2"
+        "coffeeFamily": "Titre1",
+        "coffeeDescription": "description 1"
     },
     {
         "id": 2,
-        "coffeeFamily": "Titre3",
-        "coffeeDescription": "description 3"
+        "coffeeFamily": "Titre2",
+        "coffeeDescription": "description 2"
     }
 ];
 
@@ -44,6 +44,9 @@ const TablesCoffeeFamiliesJson = [
 
 
 
+
+//VARIABLE
+let incrementation = 0
 
 
 
@@ -77,7 +80,7 @@ next.innerHTML = '<img src="../img/arrow-right.png" >';
 setDataAttribut()
 function setDataAttribut() {
     for (let i = 0; i < slideesAll.length; i++) {
-        slideesAll[i].setAttribute('data-id', `${i}`);   
+        slideesAll[i].setAttribute('data-id', `${i}`);
     }
 }
 
@@ -94,25 +97,62 @@ function setDataAttribut() {
 
 
 
-// SET CONENT 
-// function SetCoffeeFamiliesDescription(element) {
-//         element
-//         // for (let i = 0; i < slideesAll.length; i++) {
-//         //     if (slideesAll[i].classList.contains('current')) {
-//         //         console.log(slideesAll[i])
-//         //         document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[i].coffeeFamily;
-//         //         document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[i].coffeeDescription;
-//         //     }
-//         // }
+// // SET CONENT 
+// function SetCoffeeFamiliesDescription(x) {
+
+//     for (let i = 0; i < slideesAll.length; i++) {
+//         console.log(x)
+//         if (slideesAll[i].classList.contains('current')) {
+//             console.log(slideesAll[i])
+//             document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[slideesAll[i].dataset.id + x].coffeeFamily;
+//             document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[i+x].coffeeDescription;
+//         }
+//     }
 
 // }
 
 
+prev.addEventListener('click', () => {
+
+
+    console.log('prev');
+    // for (let i = 0; i < slideesAll.length; i++) {
+    //     if (slideesAll[i].classList.contains('current')) {
+    //         document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[i++].coffeeFamily;
+    //         // document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[i+x].coffeeDescription;
+    //     }
+    // }
+
+});
+
+next.addEventListener('click', () => {
+
+    if ( slideesAll[incrementation].classList.contains('current') ) {
+        if (incrementation === slideesAll.length - 1) {
+            incrementation = 0;
+            console.log(incrementation);
+
+            document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
+            document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
+        }
+        else {
+            incrementation++;
+            console.log(incrementation);
+            document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
+            document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
+            // document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[slideesAll[i].dataset.id].coffeeFamily;
+            // document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[slideesAll[i].dataset.id].coffeeDescription;
+        }
+    }
+
+});
 
 
 slideesAll.forEach(element => {
-    element.addEventListener('click',  () =>  {
+    element.addEventListener('click', () => {
+        incrementation = element.dataset.id;
         document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[element.dataset.id].coffeeFamily;
         document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[element.dataset.id].coffeeDescription;
     })
 });
+

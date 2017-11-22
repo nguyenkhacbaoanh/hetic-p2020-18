@@ -1,0 +1,18 @@
+[
+    {
+      "id": 0,
+      "coffeeFamily": "Titre1",
+      "coffeeDescription": "description 1"
+    
+    },
+    {
+      "id": 1,
+      "coffeeFamily": "Titre2",
+      "coffeeDescription": "description 2"
+    },
+    {
+      "id": 2,
+      "coffeeFamily": "Titre3",
+      "coffeeDescription": "description 3"
+    }
+]

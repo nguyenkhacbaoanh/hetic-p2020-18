@@ -106,6 +106,7 @@ gulp.task('default', gulp.parallel(templates, scss, js, images, data, fonts, fun
   gulp.watch('src/**/*.pug', templates);
   gulp.watch('src/**/*.scss', scss);
   gulp.watch('src/**/*.js', js);
+  gulp.watch('src/**/*.json', js);
 
   done();
 }));

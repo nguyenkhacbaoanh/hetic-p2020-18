@@ -6,9 +6,9 @@ setInterval(() => {
     allinfos[i].classList.remove('info--active');
     i = 0;
     allinfos[i].classList.add('info--active');
-    console.log('if')
+    // console.log('if')
   } else {
-    console.log('else')
+    // console.log('else')
     allinfos[i].classList.remove('info--active');
     i++
     allinfos[i].classList.add('info--active');

@@ -5,8 +5,9 @@
     "employeeCountry": "Brésil",
     "employeeQuote": "Nespresso respecte la qualité de mon travail et m’accompagne au quotidien dans la production de mon café.",
     "iconSun": "176 jours / an",
-    "iconAltitude": "1150 m",
-    "iconRain": "135 jours / an"
+    "iconAltitude": "910 m",
+    "iconRain": "135 jours / an",
+    "employeeImg": "../img/meet_employees/employees-humberto-galeano-coffee-farmer.jpg"
   },
   {
     "id": 2,
@@ -15,8 +16,9 @@
     "employeeQuote": "Pouvoir me réveiller tous les matins en sachant que je vais travailler dans un cadre aussi magnifique me rappelle chaque jour à quel point j’adore mon métier.",
     "iconSun": "156 jours / an",
     "iconAltitude": "780 m",
-    "iconRain": "145 jours / an"
-  },
+    "iconRain": "145 jours / an",
+    "employeeImg": "../img/meet_employees/grabriela-evano-coffee-farmer-guatemala.jpg"
+   },
   {
     "id": 3,
     "employeeName": "Esteban Suarez",
@@ -24,6 +26,7 @@
     "employeeQuote": "Ma famille cultive le café depuis toujours, pour rien au monde je ne ferais autre chose. Nespresso nous a permis de perpétuer cette tradition familiale en nous offrant de meilleurs moyens de cultiver.",
     "iconSun": "184 jours / an",
     "iconAltitude": "820 m",
-    "iconRain": "127 jours / an"
+    "iconRain": "127 jours / an",
+    "employeeImg": "../img/meet_employees/esteban-suarez-coffee-farmer-colombia.jpg"
   }
 ]

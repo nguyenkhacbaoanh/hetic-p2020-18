@@ -1,26 +1,46 @@
 section.findYourCoffee
-  .findYourCoffee__cupWrapper
+  .cup
     include ./coffee-cup-svg.pug
+    .cup__indicator
+      img(src="../img/find__etap.svg", alt="étape quizz")
 
-  .findYourCoffee__contentWrapper
-    .findYourCoffee__contentHeader
+  .findYourCoffee__header
+    .findYourCoffee__headerContent
       h1.findYourCoffee__headerOnTitle TROUVEZ
       h2.findYourCoffee__headerTitle Votre café idéal
       p.findYourCoffee__headerText Découvrez le café qui vous correspond le mieux à travers une expérience en quelques réponses.
 
-    .findYourCoffee__contentQuizz
-      .findYourCoffee__quizzQuestions
+    .quizz
+      .quizz__questionList
+        .quizz__questionIndividual.question--displayed
+          .quizz__questionIndividualTitle.italic Comment aimez-vous votre café ?
+          .quizz__questionIndividualContent
+            img(src="../img/intensity-circles.svg", alt="Determinez l'intensité que vous aimez")
+            p Fort
+        
+        .quizz__questionIndividual
+          .quizz__questionIndividualTitle.italic Question 2
+          .quizz__questionIndividualContent
+            img(src="../img/intensity-circles.svg", alt="Determinez l'intensité que vous aimez")
+            p Fort
 
-        .quizzQuestions__question question__first
-          .quizzQuestions__questionTitle.italic Comment aimez-vous votre café ?
-          .quizzQuestions__questionContent
+        .quizz__questionIndividual
+          .quizz__questionIndividualTitle.italic Question 3
+          .quizz__questionIndividualContent
+            img(src="../img/intensity-circles.svg", alt="Determinez l'intensité que vous aimez")
+            p Fort
 
-        .quizzQuestions__buttons
-          .quizzQuestions__buttonsPrevious.button
+        .quizz__restart
+          .quizz__restartTitle.italic Refaire le test ?
+          .quizz__restartButton.button
+            a(href="#" title="Refaire le test") Recommencer
+
+        .quizz__buttons
+          .quizz__buttonsPrevious.button
             a(href="#" title="Question précédente") Précédent
           
-          .quizzQuestions__buttonsNext.button 
+          .quizz__buttonsNext.button.button--displayed
             a(href="#" title="Question suivante") Suivant
           
-          .quizzQuestions__buttonsValidate.button 
+          .quizz__buttonsValidate.button
             a(href="#" title="Valider et découvrir ma capsule") Découvrir ma capsule

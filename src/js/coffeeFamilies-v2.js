@@ -1,8 +1,8 @@
 
 
 const btns = document.querySelectorAll('.coffeeBeans__sliderBtn');
-const slides = [...document.querySelectorAll('.slide')]
-const carousel = document.querySelector('.carousel');
+const slides = [...document.querySelectorAll('.coffeeBeans__slide')]
+const carousel = document.querySelector('.coffeeBeans__sliderCarousel');
 
 console.log(slides)
 let currenSlide = 0

@@ -54,13 +54,6 @@ let incrementation = 0
 console.log("elements", slideesAll)
 // CHANGE CONTENT SLIDER
 
-prev.textContent = '';
-prev.innerHTML = '<img src="../img/arrow-left.png" >';
-next.textContent = '';
-next.innerHTML = '<img src="../img/arrow-right.png" >';
-
-
-
 
 
 

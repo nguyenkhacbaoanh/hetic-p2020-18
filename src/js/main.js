@@ -1,6 +1,6 @@
 require('./script.js');
 // require('./coffeeFamilies.js');
-require('./carousel-3d.js');
+require('./coffeeFamilies-v2.js');
 require('./meetEmployees.js');
 require('./graph.js');
 

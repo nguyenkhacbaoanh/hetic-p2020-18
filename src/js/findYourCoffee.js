@@ -1,9 +1,11 @@
-const quizzButtons = document.querySelectorAll('.quizz__questionList .button');
 const quizzQuestions = document.querySelectorAll('.quizz__questionIndividual');
-// const quizzRestart = document.querySelector('.quizz__restart');
+const quizzRestart = document.querySelector('.quizz__restart');
 
-console.log(quizzQuestions);
-console.log(quizzButtons);
+const quizzButtons = document.querySelectorAll('.quizz__questionList .button');
+// quizzButtons[0] --> restart button
+// quizzButtons[1] --> previous button
+// quizzButtons[2] --> next button
+// quizzButtons[3] --> validate button
 
 let currentQuizzQuestion = 0;
 
@@ -11,15 +13,37 @@ quizzButtons.forEach((element) => {
   element.addEventListener('click', (e) => {
     e.preventDefault();
 
-    if ( (element.classList.contains("quizz__buttonsNext")) && ( currentQuizzQuestion < quizzQuestions.length - 1 ) ) {
+    // Next button
+    if ( (element == quizzButtons[2]) && ( currentQuizzQuestion < quizzQuestions.length - 1 ) ) {
       setClassList(false, quizzQuestions[currentQuizzQuestion], 'question--displayed');
       currentQuizzQuestion++;
       setClassList(true, quizzQuestions[currentQuizzQuestion], 'question--displayed');
 
-    } else if ( (element.classList.contains("quizz__buttonsPrevious")) && ( currentQuizzQuestion > 0 ) ) {
+    // Previous button
+    } else if ( (element == quizzButtons[1]) && ( currentQuizzQuestion > 0 ) ) {
       setClassList(false, quizzQuestions[currentQuizzQuestion], 'question--displayed');
       currentQuizzQuestion--;
       setClassList(true, quizzQuestions[currentQuizzQuestion], 'question--displayed');
+    
+    // Validate button
+    } else if ( (element == quizzButtons[3])) {
+      setClassList(false, quizzButtons[1], 'button--displayed');
+      
+      // display restart quizz content
+      setClassList(false, quizzButtons[3], 'button--displayed');
+      setClassList(false, quizzQuestions[currentQuizzQuestion], 'question--displayed');
+      setClassList(true, quizzRestart, 'question--displayed');
+    
+      currentQuizzQuestion = 0;
+    
+    // Restart button
+    }  else if ( (element == quizzButtons[0])) {
+      // Restart quizz
+      setClassList(false, quizzRestart, 'question--displayed');
+      
+      // display first quizz question
+      setClassList(true, quizzQuestions[currentQuizzQuestion], 'question--displayed');
+      setClassList(true, quizzButtons[2], 'button--displayed');
     }
 
     if (currentQuizzQuestion > 0) {
@@ -38,19 +62,13 @@ quizzButtons.forEach((element) => {
       }
 
     } else {
+      // Display previous button
       setClassList(false, quizzButtons[1], 'button--displayed');
     }
   });
 });
 
-// quizz__restart.addEventListener('click', (e) => {
-//   e.preventDefault();
-
-//   setClassList(false, quizzQuestions[currentQuizzQuestion], 'question--displayed');
-//   setClassList(true, quizzRestart, 'question--displayed');
-    
-// });
-
+// Function add or remove class after a check
 function setClassList(addClass, elementName, elementClassName) {
   if (addClass) {
     if (!elementName.classList.contains(elementClassName))

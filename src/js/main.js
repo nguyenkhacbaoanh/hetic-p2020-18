@@ -3,6 +3,9 @@ require('./script.js');
 require('./coffeeFamilies-v2.js');
 require('./meetEmployees.js');
 require('./findYourCoffee.js');
+
+require('./smoothScroll.js');
+// require('./coffeeFamilies.js');
 require('./graph.js');
 
 

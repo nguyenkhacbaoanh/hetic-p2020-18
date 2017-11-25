@@ -1,113 +1,203 @@
 // COFFEE FAMILIES SECTION
-
 .coffeeFamilies {
-  padding: 30px 25px;
-  font-family: $description-font;
-  color: $black;
-  text-align: center;
-  background: #FBFBFB;
-
-  @include medium {
-    padding: 60px 40px;
-  }
+    padding: 30px 25px;
+    font-family: $description-font;
+    color: $black;
+    text-align: center;
+    background: #FBFBFB;
+    @include medium {
+        padding: 60px 40px;
+    }
 }
 
 // Header
 .coffeeFamilies__header {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .coffeeFamilies__header h2 {
-  color: $blue;
+    color: $blue;
 }
 
 .coffeeFamilies__header p,
 .coffeeBean__description p {
-  width: 80vw;
-  margin: auto;
-
-  @include medium {
-    width: 369px;
-  }
+    width: 80vw;
+    margin: auto;
+    @include medium {
+        width: 369px;
+    }
 }
 
 // Styled coffee bean
-.coffeeBeans__slider div {
-  display: inline-block;
-}
-
+// .coffeeBeans__slider div {
+//   display: inline-block;
+// }
 .coffeeBeans__images {
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .coffeeBeans__images img {
-  width: 260px;
-  height: auto;
+    width: 260px;
+    height: auto;
 }
 
 .coffeeBean,
 .bean {
-  display: none;
+    display: none;
 }
 
 .coffeeBean.coffeeBean--active,
 .bean.bean--active {
-  display: inline-block;
+    display: inline-block;
 }
 
+//DESCRITPION OF THE FAMILLY
 .coffeeBeans__content .coffeeBean__family {
-  font-family: $title-font;
-  font-weight: 600;
-  color: $blue;
-  text-transform: uppercase;
-  margin-bottom: 25px;
+    font-family: $title-font;
+    font-weight: 600;
+    color: $blue;
+    text-transform: uppercase;
+    margin-bottom: 25px;
 }
 
 .coffeeBean__tasteNotes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 25px auto 0 auto;
-  width: 204px;
-  font-style: italic;
-  font-size: 12px;
-  color: #9B9B9B;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 25px auto 0 auto;
+    width: 204px;
+    font-style: italic;
+    font-size: 12px;
+    color: #9B9B9B;
 }
 
 .coffeeBean__tasteNotes img {
-  margin-bottom: 15px;
-  width: 21px;
-  height: auto;
+    margin-bottom: 15px;
+    width: 21px;
+    height: auto;
 }
 
 .coffeeBean__tasteNotes p {
-  text-transform: lowercase;
+    text-transform: lowercase;
+}
+
+// .carousel-3d-container {
+//   height: 500px;
+// }
+// .carousel-3d-slide.slidee {
+//   background: none;
+//   opacity: 0.5 !important;
+//   cursor: pointer;
+//   border: 0;
+// }
+// .carousel-3d-slide.slidee.current{
+//   border: 0;
+//   opacity:1 !important;
+// }
+// .coffeeBeans__sliderContent {
+//   text-align: center;
+// }
+// .carousel-3d {
+//   position: relative;
+//   width: 20px;
+//   height: 20px;
+//   background-color: #2d4aff;
+//   margin: 200px auto;
+// }
+// .carousel-3d .carousel-item {
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   width: 300px;
+//   height: 200px;
+//   margin-left: -150px;
+//   margin-top: -100px;
+//   background-size: cover;
+// }
+// .carousel-3d .carousel-item:nth-child(1) {
+//   background-image: url("http://news.cctvnews.cn/news/3d457a4d3149544d/img/73233fb6-0afe-41d7-900d-ae3e2d088313.jpg");
+// }
+// .carousel-3d .carousel-item:nth-child(2) {
+//   background-image: url("http://news.cctvnews.cn/news/3d55444e3249544d/img/ea65c16b-1a90-47ba-9997-46ddf0a7a32f.jpg");
+// }
+// .carousel-3d .carousel-item:nth-child(3) {
+//   background-image: url("http://news.cctvnews.cn/news/3d55444e3249544d/img/c91d9953-7b36-4da4-9174-7574b8239e2c.jpg");
+// }
+// .carousel-3d .carousel-item:nth-child(4) {
+//   background-image: url("http://news.cctvnews.cn/news/3d676a4d7949544d/img/b0c3e3c3-0161-4f15-bcd4-4380a3ca0bd2.jpg");
+// }
+.coffeeBeans__slider {
+    /* position: relative; */
+    /* width: 210px; */
+    height: 140px;
+    perspective: 1000px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 250px;
+}
+
+.carousel {
+  width: 300px;
+  height: 100%;
+  /* position: absolute; */
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.slide {
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 300px;
+    left: 10px;
+    top: 10px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 116px;
+    color: #fff;
+    font-size: 2em;
+    opacity: 0.3;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &:first-of-type {
+        transform: rotateY(0deg) translateZ(300px);
+        
+    }
+    &:nth-of-type(2) {
+        transform: rotateY(120deg) translateZ(300px) ;
+
+    }
+    &:nth-of-type(3) {
+        transform: rotateY(240deg) translateZ(300px);
+    }
+}
+.currentSlide{
+  opacity: 1;
+}
+
+button.btn {
+    width: 100px;
+    height: 50px;
+
+    z-index: 200;
+    // left: -100px;
+    // bottom: -80px;
+    border: 2px solid blue;
+    background-color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: darkorange;
+    outline: none;
+
+    &:nth-of-type(2) {
+        left: 100%;
+    }
 }
 
 
-
-
-
-
-
-
-.carousel-3d-container {
-  height: 500px;
-}
-
-.carousel-3d-slide.slidee {
-  background: none;
-  opacity: 0.5 !important;
-  cursor: pointer;
-
-  border: 0;
-}
-
-.carousel-3d-slide.slidee.current{
-  border: 0;
-  opacity:1 !important;
-}
-
-.coffeeBeans__sliderContent {
-  text-align: center;
-}

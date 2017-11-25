@@ -1,55 +1,55 @@
 
-section(class="coffeeOrigins")
-  div(class="coffeOrigins__wrapperMap")
+section.coffeeOrigins
+  .coffeOrigins__wrapperMap
     include ./map-svg.pug
 
-  div(class= "coffeeOrigin__wrapperContent")
-    div(class="coffeeOrigins__header")
-      h1(class="header__onTitle") DÉCOUVREZ
-      h2(class="header__title") Les origines de vos cafés
-      p(class="header_text") Un café parfait n’est pas le fruit du hasard. Cela signifie que nous repoussons les limites sans compromis à chaque étape de la longue chaîne de valeur, de l’arbre à la tasse, créant délibérément nos Grands Crus.
+  .coffeeOrigin__wrapperContent
+    .coffeeOrigins__header
+      h1.header__onTitle DÉCOUVREZ
+      h2.header__title Les origines de vos cafés
+      p.header_text Un café parfait n’est pas le fruit du hasard. Cela signifie que nous repoussons les limites sans compromis à chaque étape de la longue chaîne de valeur, de l’arbre à la tasse, créant délibérément nos Grands Crus.
 
-    div(class="coffeeOrigins__countries")
-      div(class="countries__nav")  
-        div(class="nav_countriesList")
-          a(href="#"  class="country activeCountry" data-country="Mexique") Mexique
-          a(href="#" class="country" data-country="Costa Rica") Costa Rica
-          a(href="#" class="country" data-country="Guatemala") Guatemala
-          a(href="#" class="country" data-country="Colombie") Colombie
-          a(href="#" class="country" data-country="Brésil") Brésil
-          a(href="#" class="country" data-country="Éthiopie") Éthiopie
-          a(href="#" class="country" data-country="Kenya") Kenya
-          a(href="#" class="country" data-country="Inde") Inde
-          a(href="#" class="country" data-country="Indonésie") Indonésie
-          
+    .coffeeOrigins__countries
+      .countries__nav 
+        .nav_countriesList
+          a.country.activeCountry(href="#" data-country="Mexique") Mexique
+          a.country(href="#" data-country="Costa Rica") Costa Rica
+          a.country(href="#" data-country="Guatemala") Guatemala
+          a.country(href="#" data-country="Colombie") Colombie
+          a.country(href="#" data-country="Brésil") Brésil
+          a.country(href="#" data-country="Éthiopie") Éthiopie
+          a.country(href="#" data-country="Kenya") Kenya
+          a.country(href="#" data-country="Inde") Inde
+          a.country(href="#" data-country="Indonésie") Indonésie
+        
         div(class="nav__line")
           div(class="nav__lineBorder")
-      //- button(type="button" class='countries__btnPrevious') previous 
-      //- div(class="countries__currentCapsules") Div capsule
-      //- button(type="button" class='countries__btnNext') next
+      //- button.countries__btnPrevious(type="button") previous 
+      //- .countries__currentCapsules Div capsule
+      //- button.countries__btnNext(type="button") next
 
 
-    div(class="capsules__slider")
-      div(class="slider__content")
-        div(class="arrows slider_previousBtn")
+    .capsules__slider
+      .slider__content
+        .arrows.slider_previousBtn
           img(src="../img/arrow-left.png", alt="arrow left")
 
-        //- div(class="slider__contentCapsules")
-        div(class="slider__contentCapsulesWrapper")
+        //- .slider__contentCapsules
+        .slider__contentCapsulesWrapper
 
-        div(class="arrows slider_nextBtn")
+        .arrows.slider_nextBtn
           img(src="../img/arrow-right.png", alt="arrow right")
         
-      div(class="slider__data")
-        div(class="data__name") Kazaar
-        div(class="data__aroma") Intense - Boisé
-        div(class="data__line")
-        div(class="data__description") Exceptionnellement intense et Sirupeux
-        div(class="data__intensity") Intensité
-          div(class="intensity__strength") | Moyen
-          div(class="intensity__svg")
-            img(src="../img/intensity-circles.svg", alt="intensity")
+      .slider__data
+        .data__name Kazaar
+        .data__aroma Intense - Boisé
+        .data__line
+        .data__description Exceptionnellement intense et Sirupeux
+        .data__intensity Intensité
+          .intensity__strength | Moyen
+          .intensity__svg
+              img(src="../img/intensity-circles.svg", alt="intensity")
 
-        div(class="data__buyWrapper")
-          div(class='data__buy button')
-            a(href="#" title="" class="") Acheter
+        .data__buyWrapper
+          .data__buy.button
+            a(href="#" title="") Acheter

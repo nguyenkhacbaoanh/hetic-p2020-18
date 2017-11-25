@@ -5,10 +5,14 @@ footer {
 }
 
 .footer__container {
-  width: 97%;
+  width: 92%;
   height: 100%;
   margin: 0 auto;
   padding: 36px 0;
+
+  @include small {
+    width: 97%;
+  }
 }
 
 .footer__logo img {
@@ -24,7 +28,7 @@ hr.footer__separtor {
 }
 
 .footer__content {
-  height: 200px;
+  // height: 200px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -32,19 +36,46 @@ hr.footer__separtor {
 
 .contentTop__toplist {
   display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 90%;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  @include small {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 0px;
+
+  }
+  
+  @include medium-2 {
+    justify-content: normal;
+    width: 100%;
+
+  }
+
+
 }
 
 .contentTop__listEl {
-  margin-right: 30px;
+  // margin-right: 30px;
   color: $black-background;
   opacity: .5;
+  margin: 10px 0;
+
+  @include small {
+    margin-right: 20px;
+    
+    
+  }
 }
 
 .footer__bot{
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  flex-direction: column
 }
 
 .footer__botSocialMedia  {

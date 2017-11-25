@@ -1,0 +1,73 @@
+section(class="coffeeFamilies")
+  div(class="coffeeFamilies__header")
+    h1 EXPÉRIMENTEZ
+    h2 Un café qui a de l'âme
+    p Trois familles aromatiques de café mise au point pour une plus grande palette de goûts à déguster.
+
+  div(class="coffeeFamilies__coffeBeans")
+    div(class="coffeeBeans__slider")
+        .carousel
+          .slide(data-id="1")
+            img(src="img/coffee-bean-fruity.png")
+          .slide(data-id="2")
+            img(src="img/coffee-bean-fruity.png")
+          .slide(data-id="3")
+            img(src="img/coffee-bean-fruity.png")
+
+          //- each val in [1,2,3]
+          //-   figure= val
+
+        each val in ['prev','next']
+          button.btn= val
+
+
+    div(class="coffeeBeans__content")
+      div(class="coffeeBean__fruityBean coffeeBean coffeeBean--active")
+        div(class="coffeeBean__family") Fruité
+        div(class="coffeeBean__description")
+          p Des capsules aux notes subtiles de bouquets fleuris, de confiture de fruits rouges ou d’agrumes.
+        div(class="coffeeBean__tasteNotes")
+          div(class="tasteNotes__content")
+            img(src="../img/aromatic_notes/vin-fruite.svg", alt="Vin fruité")
+            p Vin fruité
+
+          div(class="tasteNotes__content")
+            img(src="../img/aromatic_notes/floral.svg", alt="Floral")
+            p Floral
+
+          div(class="tasteNotes__content")
+            img(src="../img/aromatic_notes/agrume.svg", alt="Agrume")
+            p Agrume
+      
+  
+
+      div(class="coffeeBean__intenseBean coffeeBean")
+
+      div(class="coffeeBean__balancedBean coffeeBean")
+
+
+
+
+//-       <div id="example">
+//-   <carousel-3d :height="700">
+//-     <slide :index="0" class="slidee">
+//-       <div>
+//-         <img src="http://www.speakerscorner.me/wp-content/uploads/2016/01/emma7.jpg" style="display: block; width: 100%; height: 100%; margin-left: auto; margin-right: auto;">
+//-       </div>
+
+//-     </slide>
+//-     <slide :index="1" class="slidee">
+//-       <div>
+//-         <img src="https://metrouk2.files.wordpress.com/2016/02/ryan1.jpg" style="display: block; width: 100%; height: 100%; margin-left: auto; margin-right: auto;">
+//-         </div>
+
+//-     </slide>
+//-   <slide :index="2" class="slidee">
+//-     <div>
+//-    <img src="http://www.racingjunky.com/wp-content/uploads/2017/03/Dakota-Johnson.jpg" style="display: block; width: 100%; height: 100%; margin-left: auto; margin-right: auto;">
+            
+//-   </div>
+
+//-   </slide>
+//- </carousel-3d>
+//- </div>

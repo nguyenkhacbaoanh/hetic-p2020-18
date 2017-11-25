@@ -89,3 +89,7 @@ sliderArrows.forEach((element) => {
 
 // Initialize employee display
 employeeSetData();
+
+// const tata  = 1
+
+// export const {tata as titi}

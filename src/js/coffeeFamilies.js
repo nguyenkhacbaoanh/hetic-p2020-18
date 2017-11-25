@@ -1,14 +1,14 @@
-// SET SLIDER ELEMENTS
-new Vue({
-    el: '#example',
-    data: {
-        slides: 7
-    },
-    components: {
-        'carousel-3d': Carousel3d.Carousel3d,
-        'slide': Carousel3d.Slide
-    }
-})
+// // SET SLIDER ELEMENTS
+// new Vue({
+//     el: '#example',
+//     data: {
+//         slides: 7
+//     },
+//     components: {
+//         'carousel-3d': Carousel3d.Carousel3d,
+//         'slide': Carousel3d.Slide
+//     }
+// })
 
 // CONSTANTE
 const prev = document.querySelector('.prev span')

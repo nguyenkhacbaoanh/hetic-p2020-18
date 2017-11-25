@@ -14,9 +14,9 @@ html(lang="fr")
     script(async src="//cdn.bootcss.com/tween.js/r14/Tween.min.js")
     script(async src="js/script.js")
   body
-    .container
-      header.header
+    div(class="container")
+      header(class="header")
         a(href="#")
-          img.logo(src="../img/logo-nespresso.svg", alt="logo nesspresso")
-        a.header__callToAction(href="#") Trouver votre café
+          img(src="../img/logo-nespresso.svg", alt="logo nesspresso" class='logo')
+        a(href="#" class='header__callToAction') Trouver votre café
     

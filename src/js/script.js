@@ -38,18 +38,21 @@ const producer = [...document.querySelectorAll('#producer')];
 // VARIABLES
 // This array will contains all de capsules of all countries
 let capsules = [];
+let LastCountryActive = document.querySelector('.activeCountry')
 
 //Array contrains alls the country capsules
 let currentCountryDataTable;
 
 let currentData;
 
-
 //This array will contain all the dom element per country caps
 let allcurrentCapsulesElements = [];
+
+
 // This is variable will serve check id or the capsule in previous array
 let currentCapsuleId = 0;
 let rotateWrapper = 0;
+
 
 
 
@@ -155,13 +158,7 @@ function creatCapsuleSlides(countryDatas) {
 function setcurrentCapsule() {
   for (let i = 0; i < allcurrentCapsulesElements.length; i++) {
     allcurrentCapsulesElements[0].classList.add('currentCap');
-    // if (allcurrentCapsulesElements.length >= 3) {
-    //   allcurrentCapsulesElements[1].classList.add('currentCap');
-    // currentCapsuleId = 1
-    // } else {
-    //   allcurrentCapsulesElements[0].classList.add('currentCap');
 
-    // }
   }
 }
 
@@ -179,9 +176,15 @@ function GetShowCountryOnMap(country) {
 }
 
 
+
+
+
 function setBorderPosition(element) {
   border.style.transform = `translateX(${element.offsetLeft}px)`;
 }
+
+
+
 
 
 // FUNCTION GET THE COUNTRY BY CLICK
@@ -192,7 +195,13 @@ countries.forEach((element) => {
     rotateWrapper = 0;
     wrapperCapsules.style.transform = `rotateY(0deg)`;
     currentCapsuleId = 0;
+
+    LastCountryActive.classList.remove('activeCountry');
+    LastCountryActive = element;
+    LastCountryActive.classList.add('activeCountry');
     const countryDatas = findCountryDatas(element.dataset.country);
+
+
 
     GetShowCountryOnMap(element.dataset.country);
 

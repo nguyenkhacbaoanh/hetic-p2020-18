@@ -6,31 +6,7 @@
   }
 }
 
-// Coffee cup
-.findYourCoffee__cupWrapper {
-  display: none;
-  position: relative;
-  width: 50vw;
-  height: 657px;
-  overflow: hidden;
-  background: #FBFBFB;
-  z-index: $zindex;
-  // .bkg-map {
-  //     fill: #CAC9C9;
-  // }
-  // svg {
-  //     width: 130%;
-  //     position: absolute;
-  //     top: 50%;
-  //     left: 50%;
-  //     transform: translate(-50%, -50%);
-  // }
-  @include medium-2 {
-    display: block;
-  }
-}
-
-.findYourCoffee__contentWrapper {
+.findYourCoffee__header {
   z-index: $zindex-2;
   position: relative;
   @include medium-2 {
@@ -38,77 +14,8 @@
   }
 }
 
-.findYourCoffee__contentHeader {
+.findYourCoffee__headerContent {
   padding: 30px 25px;
   background: $blue;
   color: $light-grey;
-}
-
-.findYourCoffee__contentQuizz {
-  font-family: $description-font;
-}
-
-.quizzQuestions__questionTitle {
-  font-size: 20px;
-  color: $black;
-  margin: 28px 0 0 60px;
-  position: relative;
-  display: inline-block;
-}
-
-.quizzQuestions__questionTitle::after {
-  content: '';
-  position: absolute;
-  bottom: -28px;
-  left: -60px;
-  right: 0;
-  z-index: -2;
-  height: 1px;
-  background: $grey;
-}
-
-.quizzQuestions__questionContent,
-.quizzQuestions__buttons {
-  padding: 30px 25px;
-}
-
-.quizzQuestions__buttons {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-
-
-.quizzQuestions__buttonsValidate::before {
-  background-color: $white;
-}
-
-.quizzQuestions__buttonsValidate a {
-  color: $white;
-  background: $gold;
-}
-
-.quizzQuestions__buttonsPrevious a {
-  color: $light-grey;
-  border-color: $light-grey;
-}
-
-.quizzQuestions__buttonsValidate a:hover {
-  color: $gold;
-}
-
-.quizzQuestions__buttonsNext,
-.quizzQuestions__buttonsValidate {
-  float: right;
-}
-
-.quizzQuestions__buttonsValidate,
-.quizzQuestions__buttonsPrevious {
-  display: none;
-}
-
-.quizzQuestions__buttonsValidate.buttons--displayed,
-.quizzQuestions__buttonsPrevious.buttons--displayed {
-  display: inline-block;
 }

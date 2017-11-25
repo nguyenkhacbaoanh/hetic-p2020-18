@@ -1,0 +1,74 @@
+.quizz {
+  font-family: $description-font;
+}
+
+.quizz__questionIndividual,
+.quizz__restart {
+  display: none;
+}
+
+.quizz__questionIndividual.question--displayed,
+.quizz__restart.question--displayed {
+  display: block;
+}
+
+.quizz__questionIndividualTitle {
+  font-size: 20px;
+  color: $black;
+  margin: 28px 0 0 60px;
+  position: relative;
+  display: inline-block;
+}
+
+.quizz__questionIndividualTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -28px;
+  left: -60px;
+  right: 0;
+  z-index: -2;
+  height: 1px;
+  background: $grey;
+}
+
+.quizz__questionIndividualContent,
+.quizz__buttons {
+  padding: 30px 25px;
+}
+
+.quizz__buttons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.quizz__questionButtonsValidate::before {
+  background-color: $white;
+}
+
+.quizz__questionButtonsValidate a {
+  color: $white;
+  background: $gold;
+}
+
+.quizz__buttonsPrevious a {
+  color: $light-grey;
+  border-color: $light-grey;
+}
+
+.quizz__buttonsValidate a:hover {
+  color: $gold;
+}
+
+.quizz__buttonsNext,
+.quizz__buttonsValidate {
+  float: right;
+}
+
+.quizz__buttons .button {
+  display: none;
+}
+
+.quizz__buttons .button.button--displayed {
+  display: inline-block;
+}

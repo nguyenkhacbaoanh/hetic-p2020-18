@@ -27,6 +27,7 @@ const wrapperCapsules = document.querySelector('.slider__contentCapsulesWrapper'
 const border = document.querySelector('.nav__lineBorder');
 const previous = document.querySelector('.slider_previousBtn');
 const next = document.querySelector('.slider_nextBtn');
+const intensity_svg = document.querySelector('.intensity__gold');
 // const allcapsules = document.querySelectorAll('.capsule');
 
 const producer = [...document.querySelectorAll('#producer')];
@@ -53,6 +54,7 @@ let allcurrentCapsulesElements = [];
 let currentCapsuleId = 0;
 let rotateWrapper = 0;
 
+let lastIntensity = 4;
 
 
 
@@ -164,7 +166,7 @@ function setcurrentCapsule() {
 
 
 
-// 
+// FUNCTION SHOW THE COUNTRY IN MAP
 function GetShowCountryOnMap(country) {
   producer.forEach((element) => {
     if (element.dataset.country === country) {
@@ -184,6 +186,10 @@ function setBorderPosition(element) {
 }
 
 
+// function Sect Intensity 
+function setIntensity() {
+
+}
 
 
 
@@ -201,7 +207,7 @@ countries.forEach((element) => {
     LastCountryActive.classList.add('activeCountry');
     const countryDatas = findCountryDatas(element.dataset.country);
 
-
+    console.log(countryDatas);
 
     GetShowCountryOnMap(element.dataset.country);
 
@@ -252,6 +258,8 @@ countries.forEach((element) => {
 
 
 
+
+
 /***********************************************************
  *
  *   BELLOW : FUNCTION WIHCH TRAIT THE CAPSULES
@@ -271,11 +279,18 @@ function findCurrentCapsuleDatas(id) {
 }
 
 
-// FUNCION AFFICHE LA DATA
+// FUNCION AFFICHE THE DATA
 function getCurrentCapsuleDomDescription(data) {
-  // console.log(data.casuleName);
+  console.log('data',data);
+
   capsuleName.textContent = `${data.casuleName}`;
   shortDescription.textContent = `${data.shortDescription}`;
+
+  intensity_svg.classList.remove(`intensity__gold-${lastIntensity}`);
+
+  lastIntensity = data.intensity;
+
+  intensity_svg.classList.add(`intensity__gold-${data.intensity}`);
 
   let currentAromData;
 

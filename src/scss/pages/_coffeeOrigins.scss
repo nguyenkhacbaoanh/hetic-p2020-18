@@ -203,6 +203,7 @@
 
 .capsules__slider .slider__data .data__description,
 .capsules__slider .slider__data .data__intensity {
+ 
   font-size: 13px;
   font-style: italic;
   margin-bottom: 33px;
@@ -214,12 +215,17 @@
   padding-left: 4px;
 }
 
-.capsules__slider .slider__data .data__intensity,
 .capsules__slider .slider__data .intensity__strength {
   display: inline-block;
 }
 
 .capsules__slider .slider__data .intensity__svg {
-  margin-top: 20px;
   height: 30px;
+}
+
+
+.data__intensity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

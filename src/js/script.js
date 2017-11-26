@@ -28,6 +28,7 @@ const border = document.querySelector('.nav__lineBorder');
 const previous = document.querySelector('.slider_previousBtn');
 const next = document.querySelector('.slider_nextBtn');
 const intensity_svg = document.querySelector('.intensity__gold');
+const intensity_strength = document.querySelector('.intensity__strength ');
 // const allcapsules = document.querySelectorAll('.capsule');
 
 const producer = [...document.querySelectorAll('#producer')];
@@ -286,20 +287,28 @@ function getCurrentCapsuleDomDescription(data) {
   capsuleName.textContent = `${data.casuleName}`;
   shortDescription.textContent = `${data.shortDescription}`;
 
+
+  // set intensity 
   intensity_svg.classList.remove(`intensity__gold-${lastIntensity}`);
-
   lastIntensity = data.intensity;
-
   intensity_svg.classList.add(`intensity__gold-${data.intensity}`);
 
-  let currentAromData;
 
+  // set strength 
+  if (data.intensity <= 4) {
+    intensity_strength.textContent = 'Doux';
+  } else if (data.intensity <= 8) {
+    intensity_strength.textContent = 'Moyen';
+  } else {
+    intensity_strength.textContent = 'Fort';
+  }
+
+  // set Aromatique
+  let currentAromData;
   for (let i = 0; i < data.aromatic_notes.length; i++) {
     if (i == 0) {
-
       currentAromData = data.aromatic_notes[0];
-    }
-    else {
+    }else {
       currentAromData += ` • ${data.aromatic_notes[i]}`;
     }
   }

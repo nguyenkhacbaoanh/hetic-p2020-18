@@ -3,8 +3,11 @@
 .coffeeOrigins {
   display: flex;
   flex-direction: column;
+  margin-bottom:  20px;
+
   @include medium-2 {
       flex-direction: row;
+      margin-bottom:  0px;
   }
 }
 
@@ -159,7 +162,7 @@
   display: block;
   width: 60px;
   height: 70px;
-  left: 34%;
+  left: 21%;
   opacity: 0;
   transform: scale(0.6);
   will-change: opacity, transform;
@@ -167,6 +170,10 @@
   transform-style: preserve-3d; 
   transition-duration: .5s;
   transition-timing-function: ease-in-out;
+
+  @include medium {
+    left: 34%;
+  }
   img {
     width: 100%;
     height: auto;
@@ -220,7 +227,7 @@
 }
 
 .capsules__slider .slider__data .intensity__svg {
-  height: 30px;
+
 }
 
 
@@ -228,4 +235,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  @include medium {
+    flex-direction: row;
+  }
 }

@@ -6,8 +6,8 @@
   margin-bottom:  20px;
 
   @include medium-2 {
-      flex-direction: row;
-      margin-bottom:  0px;
+    flex-direction: row;
+    margin-bottom:  0px;
   }
 }
 
@@ -78,7 +78,6 @@
   }
 }
 
-
 .nav_countriesList {
   padding-bottom: 30px;
   color: $light-grey;
@@ -100,7 +99,6 @@
   }
 }
 
-
 .nav__line {
   position: absolute;
   z-index: $zindex;
@@ -117,7 +115,6 @@
   width: 60px;
   transition: 0.30s ease-in-out;
   transition-property: transform; 
-
 }
 
 // Capsules slider
@@ -162,7 +159,8 @@
   display: block;
   width: 60px;
   height: 70px;
-  left: 21%;
+  left: 50%;
+  transform: translateX(-50%);
   opacity: 0;
   transform: scale(0.6);
   will-change: opacity, transform;
@@ -170,10 +168,6 @@
   transform-style: preserve-3d; 
   transition-duration: .5s;
   transition-timing-function: ease-in-out;
-
-  @include medium {
-    left: 34%;
-  }
   img {
     width: 100%;
     height: auto;
@@ -182,7 +176,6 @@
 
 .currentCap {
   opacity: 1;
-
 }
 
 .capsules__slider .slider__data {
@@ -225,11 +218,6 @@
 .capsules__slider .slider__data .intensity__strength {
   display: inline-block;
 }
-
-.capsules__slider .slider__data .intensity__svg {
-
-}
-
 
 .data__intensity {
   display: flex;

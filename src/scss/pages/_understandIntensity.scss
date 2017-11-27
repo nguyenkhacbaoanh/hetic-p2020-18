@@ -46,10 +46,9 @@
 .morphing__infos .infos__info {
   padding: 20px 0 15px 0;
   border-bottom: 1px solid $black;
-  transition-duration: .5s;
-  transition-property: color;
-  transition-timing-function: ease;
+  transition: color 0.5s ease;
   will-change: color;
+  cursor: pointer;
   
   @include medium {
     position: absolute;
@@ -57,6 +56,10 @@
     border: none;
     width: 30vw;
   }
+}
+
+.morphing__infos .infos__info:hover span:nth-child(1) {
+  color: $gold;
 }
 
 .morphing__infos .infos__info:nth-child(1),
@@ -96,6 +99,7 @@
 
 .morphing__infos .infos__info .info__arrow {
   cursor: pointer;
+  float: right;
 
   @include medium {
     display: none;
@@ -105,13 +109,12 @@
 .morphing__infos .infos__info .info__arrow img {
   width: 15px;
   height: auto;
-  float: right;
   will-change: transform;
 }
 
 .morphing__infos .infos__info p {
   display: none;
-  margin-top: 5px;
+  margin-top: 10px;
   color: $light-grey;
   font-size: 13px;
 }

@@ -12,12 +12,6 @@ fetch(JsonCapsulesLink)
   .catch(err => console.log(Error(err)));
 
 
-
-
-
-
-
-
 //  DOM ELMENTS FOR BINDING : 
 const capsuleName = document.querySelector('.data__name');
 const capsuleArom = document.querySelector('.data__aroma');
@@ -29,12 +23,9 @@ const previous = document.querySelector('.slider_previousBtn');
 const next = document.querySelector('.slider_nextBtn');
 const intensity_svg = document.querySelector('.intensity__gold');
 const intensity_strength = document.querySelector('.intensity__strength ');
+
 // const allcapsules = document.querySelectorAll('.capsule');
-
 const producer = [...document.querySelectorAll('#producer')];
-
-
-
 
 
 // VARIABLES
@@ -57,26 +48,6 @@ let rotateWrapper = 0;
 
 let lastIntensity = 4;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // FUNCTION WHICH LOOK FOR ALL THE CLIKED COUNTRY CAPSULES IN THE JSON FILE
 function findCountryDatas(country) {
   currentCountryDataTable = [];
@@ -91,12 +62,6 @@ function findCountryDatas(country) {
   return currentCountryDataTable;
 }
 
-
-
-
-
-
-
 // FUNCTION REMOVE LAST COUNTRY DOM CAPSULE
 function removeLasCountryCapsules() {
   while (wrapperCapsules.hasChildNodes()) {
@@ -104,14 +69,11 @@ function removeLasCountryCapsules() {
   }
 }
 
-
 // FUNCTION CREAT CPASULE SLIDE
 function creatCapsuleSlides(countryDatas) {
 
-
   // let rotateYCapsule = 0;
   const ratio = 360 / countryDatas.length;
-
 
   // Stockable variable initialize
   capsules.length = 0;
@@ -126,7 +88,6 @@ function creatCapsuleSlides(countryDatas) {
     capsule.setAttribute('data-id', `${element.id}`);
     // capsule.style.transform = `rotateY(30deg) translateZ(288px)`;
 
-
     // Create image
     const capsuleImage = document.createElement('img');
     capsuleImage.src = `img/gammes_capsules/${element.mainImage}`;
@@ -138,9 +99,8 @@ function creatCapsuleSlides(countryDatas) {
     capsules.push(capsule);
   });
 
-
   for (let i = 0; i < capsules.length; i++) {
-    capsules[i].style.transform = `rotateY(${ratio * i}deg) translateZ(280px)`;
+    capsules[i].style.transform = `rotateY(${ratio * i}deg) translateZ(280px) translateX(-50%)`;
   }
 
   allcurrentCapsulesElements = [...capsules];
@@ -151,12 +111,6 @@ function creatCapsuleSlides(countryDatas) {
   });
 }
 
-
-
-
-
-
-
 // FUNCTION INIT CLASS FOR SLIDER
 function setcurrentCapsule() {
   for (let i = 0; i < allcurrentCapsulesElements.length; i++) {
@@ -164,8 +118,6 @@ function setcurrentCapsule() {
 
   }
 }
-
-
 
 // FUNCTION SHOW THE COUNTRY IN MAP
 function GetShowCountryOnMap(country) {
@@ -178,21 +130,14 @@ function GetShowCountryOnMap(country) {
   });
 }
 
-
-
-
-
 function setBorderPosition(element) {
   border.style.transform = `translateX(${element.offsetLeft}px)`;
 }
-
 
 // function Sect Intensity 
 function setIntensity() {
 
 }
-
-
 
 // FUNCTION GET THE COUNTRY BY CLICK
 countries.forEach((element) => {

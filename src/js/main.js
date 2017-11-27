@@ -6,10 +6,5 @@ require('./smoothScroll.js');
 require('./graph.js');
 require('./scrolReveal.js');
 
-
-
-
 // import { titi } from './meetEmployees'
-
 // console.log(titi)
-

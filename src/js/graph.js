@@ -14,11 +14,11 @@ var morphing = anime({
   loop: true
 });
 
-// import function setClassList
-import {setClassList} from './findYourCoffee';
-
 // All infos
 const morphingInfos = document.querySelectorAll('.infos__info');
+
+// import setClassList function
+import { setClassList } from "./findYourCoffee";
 
 // infos__info on click function
 morphingInfos.forEach((element) => {

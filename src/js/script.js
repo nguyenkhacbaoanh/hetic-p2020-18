@@ -1,3 +1,5 @@
+import { setClassList } from "./findYourCoffee";
+
 // DATA CONST
 const JsonCapsulesLink = 'datas/capsules.json';
 const TablesCapsules = [];
@@ -10,7 +12,6 @@ fetch(JsonCapsulesLink)
     // console.log(TablesCapsules);
   })
   .catch(err => console.log(Error(err)));
-
 
 //  DOM ELMENTS FOR BINDING : 
 const capsuleName = document.querySelector('.data__name');
@@ -40,7 +41,6 @@ let currentData;
 
 //This array will contain all the dom element per country caps
 let allcurrentCapsulesElements = [];
-
 
 // This is variable will serve check id or the capsule in previous array
 let currentCapsuleId = 0;
@@ -84,7 +84,7 @@ function creatCapsuleSlides(countryDatas) {
     // Creat wrapper
     const capsule = document.createElement('div');
     capsule.setAttribute('class', 'capsule');
-    capsule.setAttribute('data-name', `${element.casuleName}`);
+    capsule.setAttribute('data-name', `${element.capsuleName}`);
     capsule.setAttribute('data-id', `${element.id}`);
     // capsule.style.transform = `rotateY(30deg) translateZ(288px)`;
 
@@ -134,7 +134,7 @@ function setBorderPosition(element) {
   border.style.transform = `translateX(${element.offsetLeft}px)`;
 }
 
-// function Sect Intensity 
+// function Set Intensity 
 function setIntensity() {
 
 }
@@ -153,8 +153,6 @@ countries.forEach((element) => {
     LastCountryActive.classList.add('activeCountry');
     const countryDatas = findCountryDatas(element.dataset.country);
 
-    // console.log(countryDatas);
-
     GetShowCountryOnMap(element.dataset.country);
 
     // removing last country children
@@ -169,53 +167,25 @@ countries.forEach((element) => {
     // Get current capsule id a show his DOM like Next and Previous BTN
     getCurrentCapsuleId(currentCapsuleId);
 
-
-
     setBorderPosition(element);
+
+    if (currentCountryDataTable.length < 2) {
+      setClassList(true, next, 'arrows--hidden');
+      setClassList(true, previous, 'arrows--hidden');
+    
+    } else {
+      setClassList(false, next, 'arrows--hidden');
+      setClassList(false, previous, 'arrows--hidden');
+    }
 
   });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /***********************************************************
- *
- *   BELLOW : FUNCTION WIHCH TRAIT THE CAPSULES
- * 
- **********************************************************/
 
-
-
-
-
+  BELLOW : FUNCTION SET CAPSULE CONTENT
+ 
+***********************************************************/
 
 // FUNCTION  FIN THE CURRENT CAPSULE DATAS
 function findCurrentCapsuleDatas(id) {
@@ -224,12 +194,11 @@ function findCurrentCapsuleDatas(id) {
   });
 }
 
-
 // FUNCION AFFICHE THE DATA
 function getCurrentCapsuleDomDescription(data) {
   // console.log('data',data);
 
-  capsuleName.textContent = `${data.casuleName}`;
+  capsuleName.textContent = `${data.capsuleName}`;
   shortDescription.textContent = `${data.shortDescription}`;
 
 
@@ -260,13 +229,6 @@ function getCurrentCapsuleDomDescription(data) {
   capsuleArom.innerHTML = currentAromData;
 }
 
-
-
-
-
-
-
-
 function getCurrentCapsuleId(id) {
   const currentId = allcurrentCapsulesElements[id].dataset.id;
   // console.log(`current capsule id ${currentId}`);
@@ -274,14 +236,7 @@ function getCurrentCapsuleId(id) {
   getCurrentCapsuleDomDescription(currentCapsuleDataId);
 }
 
-
-
-
-
-
-
 // EVENT ON NEXT BTN
-
 next.addEventListener('click', () => {
   // console.log('allcurrentCapsule', allcurrentCapsulesElements.length);
   const rotateCaroussel = 360 / allcurrentCapsulesElements.length;
@@ -300,13 +255,6 @@ next.addEventListener('click', () => {
   }
   getCurrentCapsuleId(currentCapsuleId);
 });
-
-
-
-
-
-
-
 
 // EVENT ON PREVIOUS BTN 
 previous.addEventListener('click', () => {
@@ -332,41 +280,10 @@ previous.addEventListener('click', () => {
 
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ONLOAD FUNCTION
+// ONLOAD FUNCTION, initialize content
 window.addEventListener('load', () => {
   const onloadCountryDatas = findCountryDatas('Mexique');
   GetShowCountryOnMap('Mexique');
   creatCapsuleSlides(onloadCountryDatas);
   setcurrentCapsule();
 });
-
-
-

@@ -3,12 +3,14 @@
 }
 
 .quizz__questionIndividual,
-.quizz__restart {
+.quizz__restart,
+.quizz__start {
   display: none;
 }
 
 .quizz__questionIndividual.question--displayed,
-.quizz__restart.question--displayed {
+.quizz__restart.question--displayed,
+.quizz__start.question--displayed {
   display: block;
 }
 

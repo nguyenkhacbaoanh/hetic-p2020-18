@@ -46,7 +46,6 @@
 .morphing__infos .infos__info {
   padding: 20px 0 15px 0;
   border-bottom: 1px solid $black;
-  transition: color 0.5s ease;
   will-change: color;
   cursor: pointer;
   
@@ -56,6 +55,10 @@
     border: none;
     width: 30vw;
   }
+}
+
+.morphing__infos .infos__info span:nth-child(1) {
+  transition: color 0.15s ease;
 }
 
 .morphing__infos .infos__info:hover span:nth-child(1) {
@@ -113,10 +116,11 @@
 }
 
 .morphing__infos .infos__info p {
-  display: none;
+  opacity: 0;
   margin-top: 10px;
   color: $light-grey;
   font-size: 13px;
+  transition: opacity 0.15s ease-in-out;
 }
 
 .morphing__infos .infos__info.info--active span:nth-child(1) {
@@ -126,7 +130,7 @@
 }
 
 .morphing__infos .infos__info.info--active p {
-  display: block;
+  opacity: 1;
 }
 
 .morphing__infos .infos__info.info--active .info__arrow img {

@@ -1,4 +1,7 @@
+// import function setClassList
+import {setClassList} from './findYourCoffee';
 require('./script.js');
+
 require('./coffeeFamilies-v2.js');
 require('./meetEmployees.js');
 require('./findYourCoffee.js');

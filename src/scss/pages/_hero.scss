@@ -49,10 +49,10 @@
 }
 
 .hero__cta {
-  margin-top: 15px;
+  margin-top: 30px;
   position: relative;
-  left: -20%;
-  width: 140%;
+  left: -40%;
+  width: 180%;
   opacity: .5;
   font-size: 14px;
   color: $gold;
@@ -62,7 +62,7 @@
 }
 
 .hero__content:hover .hero__cta {
-  opacity: 1;
+  opacity: 0.9;
 }
 
 @keyframes mooving-capsule {

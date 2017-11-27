@@ -12,7 +12,13 @@ section.findYourCoffee
 
     .quizz
       .quizz__questionList
-        .quizz__questionIndividual.question--displayed
+
+        .quizz__start.question--displayed
+          .quizz__startTitle.italic Trouvez la capsule qui vous correspond
+          .quizz__startButton.button
+            a(href="#" title="Refaire le test") Commencer
+
+        .quizz__questionIndividual
           .quizz__questionIndividualTitle.italic Comment aimez-vous votre café ?
           .quizz__questionIndividualContent
             img(src="../img/intensity-circles.svg", alt="Determinez l'intensité que vous aimez")
@@ -39,7 +45,7 @@ section.findYourCoffee
           .quizz__buttonsPrevious.button
             a(href="#" title="Question précédente") Précédent
           
-          .quizz__buttonsNext.button.button--displayed
+          .quizz__buttonsNext.button
             a(href="#" title="Question suivante") Suivant
           
           .quizz__buttonsValidate.button

@@ -154,6 +154,10 @@
   cursor: pointer;
 }
 
+.capsules__slider .arrows.arrows--hidden {
+  display: none;
+}
+
 .capsule {
   position: absolute;
   display: block;

@@ -80,23 +80,21 @@ function scrollIt(destination, duration = 200, easing = 'linear', callback) {
 // Smooth scroll from hero capsule to coffee origins
 document.querySelector('.hero__capsulePath').addEventListener('click', (e) => {
   e.preventDefault();
-  console.log('click');
+  // console.log('click');
   scrollIt(
     document.querySelector('.coffeeOrigins'),
     400,
-    'easeInOutQuad',
-    () => console.log(`Just finished scrolling to ${window.pageYOffset}px`)
+    'easeInOutQuad'
   );
 });
 
 // Smooth scroll from quizz to result
 document.querySelector('.quizz__buttonsValidate').addEventListener('click', (e) => {
   e.preventDefault();
-  console.log('click');
+  // console.log('click');
   scrollIt(
     document.querySelector('.yourCapsuleResult'),
     400,
-    'easeInOutQuad',
-    () => console.log(`Just finished scrolling to ${window.pageYOffset}px`)
+    'easeInOutQuad'
   );
 });

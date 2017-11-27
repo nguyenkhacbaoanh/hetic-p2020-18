@@ -69,7 +69,7 @@ quizzButtons.forEach((element) => {
 });
 
 // Function add or remove class after a check
-function setClassList(addClass, elementName, elementClassName) {
+export function setClassList(addClass, elementName, elementClassName) {
   if (addClass) {
     if (!elementName.classList.contains(elementClassName))
       elementName.classList.add(elementClassName);

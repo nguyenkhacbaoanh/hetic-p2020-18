@@ -14,16 +14,8 @@ var morphing = anime({
   loop: true
 });
 
-// Set or unset class function
-function setClassList(addClass, elementName, elementClassName) {
-  if (addClass) {
-    if (!elementName.classList.contains(elementClassName))
-      elementName.classList.add(elementClassName);
-  } else {
-    if (elementName.classList.contains(elementClassName))
-      elementName.classList.remove(elementClassName);
-  }
-}
+// import function setClassList
+import {setClassList} from './findYourCoffee';
 
 // All infos
 const morphingInfos = document.querySelectorAll('.infos__info');

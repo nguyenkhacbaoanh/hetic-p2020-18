@@ -153,7 +153,7 @@ countries.forEach((element) => {
     LastCountryActive.classList.add('activeCountry');
     const countryDatas = findCountryDatas(element.dataset.country);
 
-    console.log(countryDatas);
+    // console.log(countryDatas);
 
     GetShowCountryOnMap(element.dataset.country);
 
@@ -227,7 +227,7 @@ function findCurrentCapsuleDatas(id) {
 
 // FUNCION AFFICHE THE DATA
 function getCurrentCapsuleDomDescription(data) {
-  console.log('data',data);
+  // console.log('data',data);
 
   capsuleName.textContent = `${data.casuleName}`;
   shortDescription.textContent = `${data.shortDescription}`;

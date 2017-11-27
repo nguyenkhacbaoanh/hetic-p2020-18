@@ -51,7 +51,7 @@ let incrementation = 0
 
 
 
-console.log("elements", slideesAll)
+// console.log("elements", slideesAll)
 // CHANGE CONTENT SLIDER
 
 
@@ -109,7 +109,7 @@ prev.addEventListener('click', () => {
     if ( slideesAll[incrementation].classList.contains('current') ) {
         if (incrementation <= 0) {
             incrementation = slideesAll.length - 1;
-            console.log(incrementation);
+            // console.log(incrementation);
 
             document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
             document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
@@ -128,14 +128,14 @@ next.addEventListener('click', () => {
     if ( slideesAll[incrementation].classList.contains('current') ) {
         if (incrementation === slideesAll.length - 1) {
             incrementation = 0;
-            console.log(incrementation);
+            // console.log(incrementation);
 
             document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
             document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
         }
         else {
             incrementation++;
-            console.log(incrementation);
+            // console.log(incrementation);
             document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
             document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
             // document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[slideesAll[i].dataset.id].coffeeFamily;

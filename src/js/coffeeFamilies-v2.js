@@ -27,7 +27,7 @@ const TablesCoffeeFamiliesJson = [
 
 btns.forEach((btn) => {
   btn.addEventListener('click', () => {
-    console.log('click')
+    // console.log('click')
     if (btn.classList.contains('coffeeBeans__sliderBtnPrev')) {
       rotationY-= 120;
       if(currenSlide >=  slides.length-1) {

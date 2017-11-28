@@ -112,15 +112,22 @@
 .morphing__infos .infos__info .info__arrow img {
   width: 15px;
   height: auto;
+  transition: transform 0.15s ease-in-out;
   will-change: transform;
 }
 
 .morphing__infos .infos__info p {
   opacity: 0;
+  display: none;
   margin-top: 10px;
   color: $light-grey;
   font-size: 13px;
-  transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  will-change: opacity;
+
+  @include medium {
+    display: inherit;
+  }
 }
 
 .morphing__infos .infos__info.info--active span:nth-child(1) {
@@ -131,6 +138,7 @@
 
 .morphing__infos .infos__info.info--active p {
   opacity: 1;
+  display: inline-block;
 }
 
 .morphing__infos .infos__info.info--active .info__arrow img {

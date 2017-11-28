@@ -1,11 +1,12 @@
-// CONSTANTE
-const prev = document.querySelector('.prev span')
-const next = document.querySelector('.next span')
-const carousel3D = document.querySelector('.carousel-3d-container')
-const slideesAll = [...document.querySelectorAll('.slidee')];
+const btns = document.querySelectorAll('.coffeeBeans__sliderBtn');
+const slides = [...document.querySelectorAll('.coffeeBeans__slide')]
+const carousel = document.querySelector('.coffeeBeans__sliderCarousel');
 
-// DATA CONST
-const JsonCoffeeFamiliesLink = 'datas/coffeeFamilies.json';
+// console.log(slides);
+let currenSlide = 0;
+let rotationY = 0;
+
+// DATAS OF THE SECTON
 const TablesCoffeeFamiliesJson = [
   {
     "id": 0,
@@ -24,74 +25,46 @@ const TablesCoffeeFamiliesJson = [
   }
 ];
 
-//VARIABLE
-let incrementation = 0
+btns.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    // console.log('click')
+    if (btn.classList.contains('coffeeBeans__sliderBtnPrev')) {
+      rotationY-= 120;
+      if(currenSlide >=  slides.length-1) {
+        slides[currenSlide].classList.remove('currentSlide');
+        currenSlide = 0
+        slides[currenSlide].classList.add('currentSlide');
+        currentSliderData(currenSlide)
+      } else {
+        slides[currenSlide].classList.remove('currentSlide');
+        currenSlide++
+        slides[currenSlide].classList.add('currentSlide');
+        currentSliderData(currenSlide)
+      }
 
-// console.log("elements", slideesAll)
+    } else {
+      rotationY+= 120;
 
-// CHANGE CONTENT SLIDER
-setDataAttribut()
-function setDataAttribut() {
-    for (let i = 0; i < slideesAll.length; i++) {
-        slideesAll[i].setAttribute('data-id', `${i}`);
+      if(currenSlide <= 0 ) {
+        slides[currenSlide].classList.remove('currentSlide');
+        currenSlide = slides.length-1
+        slides[currenSlide].classList.add('currentSlide');
+        currentSliderData(currenSlide)
+      } else {
+        slides[currenSlide].classList.remove('currentSlide');
+        currenSlide--
+        slides[currenSlide].classList.add('currentSlide');
+        currentSliderData(currenSlide)
+      }
     }
+    carousel.style.transform = "rotateY(" + rotationY+ "deg)";
+    carousel.style.webkitTransform = "rotateY(" + rotationY+ "deg)";
+    carousel.style.mozTransform = "rotateY(" + rotationY+ "deg)";
+  });
+});
+
+// FUNCTION SET DATA
+function currentSliderData(index) {
+  document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[index].coffeeFamily;
+  document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[index].coffeeDescription;
 }
-
-// // SET CONENT 
-// function SetCoffeeFamiliesDescription(x) {
-
-//     for (let i = 0; i < slideesAll.length; i++) {
-//         console.log(x)
-//         if (slideesAll[i].classList.contains('current')) {
-//             console.log(slideesAll[i])
-//             document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[slideesAll[i].dataset.id + x].coffeeFamily;
-//             document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[i+x].coffeeDescription;
-//         }
-//     }
-
-// }
-
-prev.addEventListener('click', () => {
-  if ( slideesAll[incrementation].classList.contains('current') ) {
-    if (incrementation <= 0) {
-      incrementation = slideesAll.length - 1;
-      // console.log(incrementation);
-      document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
-      document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
-    
-    } else {
-      incrementation--;
-      console.log(incrementation);
-      document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
-      document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
-      // document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[slideesAll[i].dataset.id].coffeeFamily;
-      // document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[slideesAll[i].dataset.id].coffeeDescription;
-    }
-  }
-});
-next.addEventListener('click', () => {
-  if ( slideesAll[incrementation].classList.contains('current') ) {
-    if (incrementation === slideesAll.length - 1) {
-      incrementation = 0;
-      // console.log(incrementation);
-      document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
-      document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
-  
-    } else {
-      incrementation++;
-      // console.log(incrementation);
-      document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
-      document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
-      // document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[slideesAll[i].dataset.id].coffeeFamily;
-      // document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[slideesAll[i].dataset.id].coffeeDescription;
-    }
-  }
-});
-
-slideesAll.forEach(element => {
-  element.addEventListener('click', () => {
-    incrementation = element.dataset.id;
-    document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeFamily;
-    document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[incrementation].coffeeDescription;
-  })
-});

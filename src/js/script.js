@@ -1,4 +1,5 @@
-import { setClassList } from "./findYourCoffee";
+// import setClassList function
+import { setClassList } from "./helper.js";
 
 // DATA CONST
 const JsonCapsulesLink = 'datas/capsules.json';

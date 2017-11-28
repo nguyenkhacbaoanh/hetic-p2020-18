@@ -18,7 +18,7 @@ var morphing = anime({
 const morphingInfos = document.querySelectorAll('.infos__info');
 
 // import setClassList function
-import { setClassList } from "./findYourCoffee";
+import { setClassList } from "./helper.js";
 
 // infos__info on click function
 morphingInfos.forEach((element) => {

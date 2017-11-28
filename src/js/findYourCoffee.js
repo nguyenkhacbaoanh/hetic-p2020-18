@@ -12,6 +12,7 @@ const quizzButtons = document.querySelectorAll('.quizz__questionList .button');
 let currentQuizzQuestion = 0;
 let startOnce = false;
 
+// quizzButtons on click function, change question, display right buttons
 quizzButtons.forEach((element) => {
   element.addEventListener('click', (e) => {
     e.preventDefault();
@@ -80,3 +81,4 @@ quizzButtons.forEach((element) => {
     }
   });
 });
+

@@ -1,8 +1,8 @@
 Nespresso website project ![](https://img.shields.io/travis/CarinaChenot/hetic-p2020-01/dev.svg?style=flat-square)
 
-[![](https://www.netlify.com/img/global/badges/netlify-color-accent.svg)](https://peddler-prefixes-60007.netlify.com/)
+[![](https://www.netlify.com/img/global/badges/netlify-color-accent.svg)](https://www.netlify.com)
 
-Project url: [https://peddler-prefixes-60007.netlify.com/](https://crosshelmet.netlify.com)
+Project url: [https://peddler-prefixes-60007.netlify.com/](https://peddler-prefixes-60007.netlify.com/)
 
 Front-end development school project for the [Nespresso website](https://www.nespresso.com/fr/fr/home)
 

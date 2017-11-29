@@ -1,43 +1,41 @@
 // Coffee cup
 .cup {
-  display: none;
-  position: relative;
-  width: 100vw;
-  height: 657px;
-  overflow: hidden;
-  background: #FBFBFB;
-  z-index: $zindex;
-  margin: auto;
-  text-align: center;
-
-  @include medium-2 {
-    width: 50vw;
-  }
+    display: none;
+    position: relative;
+    width: 100vw;
+    height: 657px;
+    overflow: hidden;
+    background: #FBFBFB;
+    z-index: $zindex;
+    margin: auto;
+    text-align: center;
+    @include medium-2 {
+        width: 50vw;
+    }
 }
 
 .cup.active--content {
-  display: none;
-  
-  @include medium-2 {
-    display: block;
-    order: 1;
-  }
+    display: none;
+    @include medium-2 {
+        display: block;
+        order: 1;
+    }
 }
 
 .cup svg {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 45%;
-  height: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45%;
+    height: auto;
 }
 
 .cup__indicator {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-  width: 15%;
-  height: auto;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: 15%;
+    height: auto;
 }

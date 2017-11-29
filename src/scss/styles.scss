@@ -12,7 +12,6 @@
   'bases/_base.scss';
 
 @import
-  // 'pages/_error.scss',
   'pages/_hero.scss',
   'pages/_coffeeOrigins.scss',
   'pages/_coffeeOrigins-intensity.scss',
@@ -26,7 +25,7 @@
   'pages/_findYourCoffee-quizz.scss',
   'pages/_findYourCoffee-result.scss';
 
-//   'pages/_legales.scss';
+
 
 
 @import
@@ -34,24 +33,3 @@
   "partials/_footer.scss";
 
 
-// @import
-//   'themes/_theme.scss',
-//   'themes/_admin.scss';
-
-// @import
-//   'responsive/_home_responsive.scss',
-//   'responsive/_trendee_responsive.scss';
-
-// @font-face {
-//  font-family: "Roboto";
-//  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
-// }
-
-// h1 {
-//   color: brown;
-//   font-family: "Roboto", Arial;
-
-//   &:hover {
-//     color: green;
-//   }
-// }

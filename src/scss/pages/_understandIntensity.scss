@@ -1,146 +1,140 @@
 // UNDERSTAND INTENSITY SECTION
 .understandIntensity {
-  padding: 30px 25px;
-  font-family: $description-font;
-  color: $white;
-  text-align: center;
-  background: $black-background;
-  
-  @include medium {
-    padding: 60px 40px 100px 40px;
-  }
-} 
+    padding: 30px 25px;
+    font-family: $description-font;
+    color: $white;
+    text-align: center;
+    background: $black-background;
+    @include medium {
+        padding: 60px 40px 100px 40px;
+    }
+}
 
 // header
 .understandIntensity__header {
-  width: 80vw;
-  margin: auto;
-  color: $light-grey;
-  margin-bottom: 40px;
-
-  @include medium {
-    width: 369px;
-  }
+    width: 80vw;
+    margin: auto;
+    color: $light-grey;
+    margin-bottom: 40px;
+    @include medium {
+        width: 369px;
+    }
 }
 
 // Morphing svg
 .understandIntensity__morphing {
-  position: relative;
-  padding-bottom: 30px;
+    position: relative;
+    padding-bottom: 30px;
 }
 
 .understandIntensity__morphing .morphing__infos {
-  margin-top: 30px;
-  text-align: left;
-
-  @include medium {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: none;
-    transform: translate(-50%,-50%);
-  }
+    margin-top: 30px;
+    text-align: left;
+    @include medium {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: none;
+        transform: translate(-50%, -50%);
+    }
 }
 
 // Intensity explanation
 .morphing__infos .infos__info {
-  padding: 20px 0 15px 0;
-  border-bottom: 1px solid $black;
-  will-change: color;
-  cursor: pointer;
-  
-  @include medium {
-    position: absolute;
-    padding: none;
-    border: none;
-    width: 30vw;
-  }
+    padding: 20px 0 15px 0;
+    border-bottom: 1px solid $black;
+    will-change: color;
+    cursor: pointer;
+    @include medium {
+        position: absolute;
+        padding: none;
+        border: none;
+        width: 30vw;
+    }
 }
 
 .morphing__infos .infos__info span:nth-child(1) {
-  transition: color 0.15s ease;
+    transition: color 0.15s ease;
 }
 
 .morphing__infos .infos__info:hover span:nth-child(1) {
-  color: $gold;
+    color: $gold;
 }
 
 .morphing__infos .infos__info:nth-child(1),
 .morphing__infos .infos__info:nth-child(4) {
-  @include medium {
-    text-align: right;
-  }
+    @include medium {
+        text-align: right;
+    }
 }
 
 .morphing__infos .infos__info:nth-child(1) {
-  @include medium {
-    right: 110px;
-    top: -190px;
-  }
+    @include medium {
+        right: 110px;
+        top: -190px;
+    }
 }
 
 .morphing__infos .infos__info:nth-child(2) {
-  @include medium {
-    left: 110px;
-    top: -150px;
-  }
+    @include medium {
+        left: 110px;
+        top: -150px;
+    }
 }
 
 .morphing__infos .infos__info:nth-child(3) {
-  @include medium {
-    left: 130px;
-    top: 30px;
-  }
+    @include medium {
+        left: 130px;
+        top: 30px;
+    }
 }
 
 .morphing__infos .infos__info:nth-child(4) {
-  @include medium {
-    right: 130px;
-    top: 50px;
-  }
+    @include medium {
+        right: 130px;
+        top: 50px;
+    }
 }
 
 .morphing__infos .infos__info .info__arrow {
-  cursor: pointer;
-  float: right;
-
-  @include medium {
-    display: none;
-  }
+    cursor: pointer;
+    float: right;
+    @include medium {
+        display: none;
+    }
 }
 
 .morphing__infos .infos__info .info__arrow img {
-  width: 15px;
-  height: auto;
-  transition: transform 0.15s ease-in-out;
-  will-change: transform;
+    width: 15px;
+    height: auto;
+    transition: transform 0.15s ease-in-out;
+    will-change: transform;
 }
 
 .morphing__infos .infos__info p {
-  opacity: 0;
-  display: none;
-  margin-top: 10px;
-  color: $light-grey;
-  font-size: 13px;
-  transition: opacity 0.3s ease-in-out;
-  will-change: opacity;
-
-  @include medium {
-    display: inherit;
-  }
+    opacity: 0;
+    display: none;
+    margin-top: 10px;
+    color: $light-grey;
+    font-size: 13px;
+    transition: opacity 0.3s ease-in-out;
+    will-change: opacity;
+    @include medium {
+        display: inherit;
+    }
 }
 
 .morphing__infos .infos__info.info--active span:nth-child(1) {
-  @include medium {
-    color: $gold;
-  }
+    @include medium {
+        color: $gold;
+    }
 }
 
 .morphing__infos .infos__info.info--active p {
-  opacity: 1;
-  display: inline-block;
+    opacity: 1;
+    display: inline-block;
 }
 
 .morphing__infos .infos__info.info--active .info__arrow img {
-  transform: rotate(180deg);
+    transform: rotate(180deg);
 }

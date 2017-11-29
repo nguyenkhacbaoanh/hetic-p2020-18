@@ -1,90 +1,90 @@
 .quizz {
-  font-family: $description-font;
+    font-family: $description-font;
 }
 
 .quizz__questionIndividual,
 .capsuleResult__restart,
 .quizz__start {
-  display: none;
+    display: none;
 }
 
 .quizz__questionIndividual.question--displayed,
 .capsuleResult__restart.question--displayed,
 .quizz__start.question--displayed {
-  display: block;
+    display: block;
 }
 
 .quizz__questionIndividualTitle {
-  font-size: 20px;
-  color: $black;
-  margin: 28px 0 0 60px;
-  position: relative;
-  display: inline-block;
+    font-size: 20px;
+    color: $black;
+    margin: 28px 0 0 60px;
+    position: relative;
+    display: inline-block;
 }
 
 .quizz__questionIndividualTitle::after {
-  content: '';
-  position: absolute;
-  bottom: -28px;
-  left: -60px;
-  right: 0;
-  z-index: -2;
-  height: 1px;
-  background: $grey;
+    content: '';
+    position: absolute;
+    bottom: -28px;
+    left: -60px;
+    right: 0;
+    z-index: -2;
+    height: 1px;
+    background: $grey;
 }
 
 .quizz__questionIndividualContent,
 .quizz__buttons {
-  padding: 30px 25px;
+    padding: 30px 25px;
 }
 
 .quizz__buttons {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .quizz__questionButtonsValidate::before {
-  background-color: $white;
+    background-color: $white;
 }
 
 .quizz__questionButtonsValidate a {
-  color: $white;
-  background: $gold;
+    color: $white;
+    background: $gold;
 }
 
 .quizz__buttonsPrevious a {
-  color: $light-grey;
-  border-color: $light-grey;
+    color: $light-grey;
+    border-color: $light-grey;
 }
 
 .quizz__buttonsPrevious a:hover {
-  background-color: $light-grey;
+    background-color: $light-grey;
 }
 
 .quizz__buttonsValidate a:hover {
-  color: $gold;
+    color: $gold;
 }
 
 .capsuleResult__restartButton a {
-  color: $grey;
-  border-color: $grey;
+    color: $grey;
+    border-color: $grey;
 }
 
 .capsuleResult__restartButton a:hover {
-  background-color: $grey;
-  color: $blue;
+    background-color: $grey;
+    color: $blue;
 }
 
 .quizz__buttonsNext,
 .quizz__buttonsValidate {
-  float: right;
+    float: right;
 }
 
 .quizz__buttons .button {
-  display: none;
+    display: none;
 }
 
 .quizz__buttons .button.button--displayed {
-  display: inline-block;
+    display: inline-block;
 }

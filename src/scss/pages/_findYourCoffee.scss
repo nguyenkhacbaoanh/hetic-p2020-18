@@ -1,23 +1,23 @@
 .findYourCoffee {
-  display: flex;
-  flex-direction: column;
-  @include medium-2 {
-    flex-direction: row;
-  }
+    display: flex;
+    flex-direction: column;
+    @include medium-2 {
+        flex-direction: row;
+    }
 }
 
 .findYourCoffee__header {
-  order: 1;
-  z-index: $zindex-2;
-  position: relative;
-  @include medium-2 {
-    width: 50vw;
-    order: 2;
-  }
+    order: 1;
+    z-index: $zindex-2;
+    position: relative;
+    @include medium-2 {
+        width: 50vw;
+        order: 2;
+    }
 }
 
 .findYourCoffee__headerContent {
-  padding: 30px 25px;
-  background: $blue;
-  color: $light-grey;
+    padding: 30px 25px;
+    background: $blue;
+    color: $light-grey;
 }

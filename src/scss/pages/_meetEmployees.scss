@@ -1,167 +1,160 @@
 // MEET EMPLOYEES SECTION
 .meetEmployees {
-  font-family: $description-font;
-  display: flex;
-  flex-direction: column;
-
-  @include medium {
-    flex-direction: row;
-  } 
+    font-family: $description-font;
+    display: flex;
+    flex-direction: column;
+    @include medium {
+        flex-direction: row;
+    }
 }
 
 // Farmer image
 .meetEmployees__farmerWrapper {
-  position: relative;
-  width: 100%;
-  height: 375px;
-  overflow: hidden;
-
-  @include medium {
-    order: 2;
-    width: 50vw;
-    height: 577px;
-  } 
+    position: relative;
+    width: 100%;
+    height: 375px;
+    overflow: hidden;
+    @include medium {
+        order: 2;
+        width: 50vw;
+        height: 577px;
+    }
 }
 
 .meetEmployees__farmerWrapper img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 101%;
-  height: auto;
-  margin: auto;
-  transform: translate(-50%,-50%);
-
-  @include medium {
-    height: 101%;
-    width: auto;
-  } 
-
-  @include large-1 {
-    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 101%;
-  }
+    height: auto;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    @include medium {
+        height: 101%;
+        width: auto;
+    }
+    @include large-1 {
+        height: auto;
+        width: 101%;
+    }
 }
 
 // Farmer informations
 .meetEmployees__contentWrapper {
-  position: relative;
-  padding: 30px 25px 64px 25px;
-
-  @include medium {
-    order: 1;
-    width: 50vw;
-    padding: 60px 0px 64px 25px;
-  } 
+    position: relative;
+    padding: 30px 25px 64px 25px;
+    @include medium {
+        order: 1;
+        width: 50vw;
+        padding: 60px 0px 64px 25px;
+    }
 }
 
 // // header
 .meetEmployees__header {
-  margin-bottom: 15px;
-
-  @include medium {
-    margin: 0 auto 80px auto;
-    width: 80%;
-  }
+    margin-bottom: 15px;
+    @include medium {
+        margin: 0 auto 80px auto;
+        width: 80%;
+    }
 }
 
 .employees__employee {
-  @include medium {
-    margin: auto;
-    width: 80%;
-  }
+    @include medium {
+        margin: auto;
+        width: 80%;
+    }
 }
 
 .employees__employeeContent {
-  opacity: 1;
-  transition: opacity 0.13s ease-in-out;
+    opacity: 1;
+    transition: opacity 0.13s ease-in-out;
 }
 
 .employees__employeeContent.employee--contentChange {
-  opacity: 0;
+    opacity: 0;
 }
 
 // // infos
 .employees__employee .employee__name {
-  text-transform: uppercase;  
-  font-size: 17px;
-  font-family: $title-font;
-  font-weight: 600;
-  margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-family: $title-font;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
 .employees__employee .employee__country span {
-  margin-left: 15px;
+    margin-left: 15px;
 }
 
 .employees__employee .employee__name,
 .employees__employee .employee__country {
-  display: inline-block;
+    display: inline-block;
 }
 
 .employee__icons {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin-top: 25px;
-
-  @include medium {
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 60px;
-  }
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    @include medium {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 60px;
+    }
 }
 
 .employee__icons .icons__icon {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .employee__icons .icons__icon:last-child {
-  margin-bottom: inherit;
+    margin-bottom: inherit;
 }
 
 .employee__icons .icons__icon img,
 .employee__icons .icons__icon .icon__data {
-  display: inline-block;
+    display: inline-block;
 }
 
 .employee__icons .icons__icon img {
-  margin-right: 26px;
-  width: 31px;
-  height: auto;
+    margin-right: 26px;
+    width: 31px;
+    height: auto;
 }
 
 .employee__icons .icon__data {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 // Farmer slider
 .employee__slider {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  float: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    float: right;
 }
 
 .employee__slider .slider__counter {
-  margin-bottom: 10px;
-  font-size: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .employee__slider .slider__arrows div {
-  background: $blue;
-  padding: 17px 21px;
-  display: inline-block;
-  cursor: pointer;
-  @include medium {
-    padding: 24px 29px;
-  }
+    background: $blue;
+    padding: 17px 21px;
+    display: inline-block;
+    cursor: pointer;
+    @include medium {
+        padding: 24px 29px;
+    }
 }
 
 .employee__slider .slider__arrows div img {
-  height: 17px;
-  width: auto;
-  @include medium {
-    height: 22px;
-  }
+    height: 17px;
+    width: auto;
+    @include medium {
+        height: 22px;
+    }
 }

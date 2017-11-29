@@ -1,10 +1,10 @@
 @mixin font-face($font-family, $file-path, $font-weight, $font-style) {
-	@font-face {
-		font-family: $font-family;
-		src: url('../fonts/#{$file-path}.ttf') format('truetype');
-		font-weight: $font-weight;
-		font-style: $font-style;
-	}
+    @font-face {
+        font-family: $font-family;
+        src: url('../fonts/#{$file-path}.ttf') format('truetype');
+        font-weight: $font-weight;
+        font-style: $font-style;
+    }
 }
 
 // Responsive
@@ -14,140 +14,146 @@ $medium-2: 920px;
 $large: 1024px;
 $large-1: 1165px;
 $large-2: 1200px;
-
 @mixin small {
-	@media (min-width: #{$small}) {
-	  @content;
-	}
+    @media (min-width: #{$small}) {
+        @content;
+    }
 }
 
 @mixin medium {
-	@media (min-width: #{$medium}) {
-	  @content;
-	}
+    @media (min-width: #{$medium}) {
+        @content;
+    }
 }
 
 @mixin medium-2 {
-	@media (min-width: #{$medium-2}) {
-	  @content;
-	}
+    @media (min-width: #{$medium-2}) {
+        @content;
+    }
 }
 
 @mixin large {
-	@media (min-width: #{$large}) {
-  		@content;
-	}
+    @media (min-width: #{$large}) {
+        @content;
+    }
 }
 
 @mixin large-1 {
-	@media (min-width: #{$large-1}) {
-  		@content;
-	}
+    @media (min-width: #{$large-1}) {
+        @content;
+    }
 }
 
 @mixin large-2 {
-	@media (min-width: #{$large-2}) {
-  		@content;
-	}
+    @media (min-width: #{$large-2}) {
+        @content;
+    }
 }
 
-@mixin gradient($startColor: #eee, $endColor: white)
-{
-	background-color: $startColor;
-	background: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
-	background: -webkit-linear-gradient(top, $startColor, $endColor);
-	background: -moz-linear-gradient(top, $startColor, $endColor);
-	background: -ms-linear-gradient(top, $startColor, $endColor);
-	background: -o-linear-gradient(top, $startColor, $endColor);
-	background: linear-gradient(top, $startColor, $endColor);
-}
-@mixin horizontal-gradient($startColor: #eee, $endColor: white)
-{
- 	background-color: $startColor;
-	background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
-	background-image: -webkit-linear-gradient(left, $startColor, $endColor);
-	background-image: -moz-linear-gradient(left, $startColor, $endColor);
-	background-image: -ms-linear-gradient(left, $startColor, $endColor);
-	background-image: -o-linear-gradient(left, $startColor, $endColor);
-	background-image: linear-gradient(left, $startColor, $endColor);
+@mixin gradient($startColor: #eee,
+$endColor: white) {
+    background-color: $startColor;
+    background: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+    background: -webkit-linear-gradient(top, $startColor, $endColor);
+    background: -moz-linear-gradient(top, $startColor, $endColor);
+    background: -ms-linear-gradient(top, $startColor, $endColor);
+    background: -o-linear-gradient(top, $startColor, $endColor);
+    background: linear-gradient(top, $startColor, $endColor);
 }
 
-@mixin animation($name, $duration: 300ms, $delay: 0.5s, $ease: ease)
-{
-	-webkit-animation: $name $duration $delay $ease;
-	-moz-animation:    $name $duration $delay $ease;
-	-ms-animation:     $name $duration $delay $ease;
-	animation:     $name $duration $delay $ease;
+@mixin horizontal-gradient($startColor: #eee,
+$endColor: white) {
+    background-color: $startColor;
+    background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+    background-image: -moz-linear-gradient(left, $startColor, $endColor);
+    background-image: -ms-linear-gradient(left, $startColor, $endColor);
+    background-image: -o-linear-gradient(left, $startColor, $endColor);
+    background-image: linear-gradient(left, $startColor, $endColor);
 }
 
-@mixin transition($transition)
-{
-	-webkit-transition: $transition;  
-	-moz-transition:    $transition;
-	-ms-transition:     $transition; 
-	-o-transition:      $transition; 
-	transition:      $transition;  
+@mixin animation($name,
+$duration: 300ms,
+$delay: 0.5s,
+$ease: ease) {
+    -webkit-animation: $name $duration $delay $ease;
+    -moz-animation: $name $duration $delay $ease;
+    -ms-animation: $name $duration $delay $ease;
+    animation: $name $duration $delay $ease;
 }
-@mixin transform($string)
-{
-	-webkit-transform: $string;
-	-moz-transform: 	 $string;
-	-ms-transform: 		 $string;
-	-o-transform: 		 $string;
-	transform: 		 $string;
+
+@mixin transition($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
 }
-@mixin scale($factor)
-{
-	-webkit-transform: scale($factor);
-	-moz-transform: 	 scale($factor);
-	-ms-transform: 		 scale($factor);
-	-o-transform: 		 scale($factor);
-	transform: 		 scale($factor);
+
+@mixin transform($string) {
+    -webkit-transform: $string;
+    -moz-transform: $string;
+    -ms-transform: $string;
+    -o-transform: $string;
+    transform: $string;
 }
-@mixin rotate($deg)
-{
-	-webkit-transform: rotate($deg);
-	-moz-transform: 	 rotate($deg);
-	-ms-transform: 		 rotate($deg);
-	-o-transform: 		 rotate($deg);
-	transform: 		 rotate($deg);
+
+@mixin scale($factor) {
+    -webkit-transform: scale($factor);
+    -moz-transform: scale($factor);
+    -ms-transform: scale($factor);
+    -o-transform: scale($factor);
+    transform: scale($factor);
 }
-@mixin skew($deg, $deg2)
-{
-	-webkit-transform:       skew($deg, $deg2);
-	-moz-transform: 	 skew($deg, $deg2);
-	-ms-transform: 		 skew($deg, $deg2);
-	-o-transform: 		 skew($deg, $deg2);
-	transform: 		 skew($deg, $deg2);
+
+@mixin rotate($deg) {
+    -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    -ms-transform: rotate($deg);
+    -o-transform: rotate($deg);
+    transform: rotate($deg);
 }
-@mixin translate($x, $y:0)
-{
-	-webkit-transform:       translate($x, $y);
-	-moz-transform: 	 translate($x, $y);
-	-ms-transform: 		 translate($x, $y);
-	-o-transform: 		 translate($x, $y);
-	transform: 		 translate($x, $y);
+
+@mixin skew($deg,
+$deg2) {
+    -webkit-transform: skew($deg, $deg2);
+    -moz-transform: skew($deg, $deg2);
+    -ms-transform: skew($deg, $deg2);
+    -o-transform: skew($deg, $deg2);
+    transform: skew($deg, $deg2);
 }
-@mixin translate3d($x, $y: 0, $z: 0)
-{
-	-webkit-transform:       translate3d($x, $y, $z);
-	-moz-transform: 	 translate3d($x, $y, $z);
-	-ms-transform: 		 translate3d($x, $y, $z);
-	-o-transform: 		 translate3d($x, $y, $z);
-	transform: 		 translate3d($x, $y, $z);
+
+@mixin translate($x,
+$y:0) {
+    -webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    transform: translate($x, $y);
 }
-@mixin perspective($value: 1000)
-{
-	-webkit-perspective: 	$value;
-	-moz-perspective: 	$value;
-	-ms-perspective: 	$value;
-	perspective: 		$value;
+
+@mixin translate3d($x,
+$y: 0,
+$z: 0) {
+    -webkit-transform: translate3d($x, $y, $z);
+    -moz-transform: translate3d($x, $y, $z);
+    -ms-transform: translate3d($x, $y, $z);
+    -o-transform: translate3d($x, $y, $z);
+    transform: translate3d($x, $y, $z);
 }
-@mixin transform-origin($x:center, $y:center)
-{
-	-webkit-transform-origin: $x $y;
-	-moz-transform-origin:    $x $y;
-	-ms-transform-origin:     $x $y;
-	-o-transform-origin:      $x $y;
-	transform-origin:      $x $y;
+
+@mixin perspective($value: 1000) {
+    -webkit-perspective: $value;
+    -moz-perspective: $value;
+    -ms-perspective: $value;
+    perspective: $value;
+}
+
+@mixin transform-origin($x:center,
+$y:center) {
+    -webkit-transform-origin: $x $y;
+    -moz-transform-origin: $x $y;
+    -ms-transform-origin: $x $y;
+    -o-transform-origin: $x $y;
+    transform-origin: $x $y;
 }

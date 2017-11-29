@@ -22,9 +22,12 @@
 .coffeeFamilies__header p,
 .coffeeBean__description p {
     width: 80vw;
+    height: 50px;
+
     margin: auto;
     @include medium {
         width: 369px;
+        
     }
 }
 
@@ -69,6 +72,7 @@
 
 .currentSlide {
     opacity: 1;
+    will-change: opacity;
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -99,11 +103,16 @@ button.coffeeBeans__sliderBtn {
 .coffeeBean,
 .bean {
     display: none;
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 0.3s ease-in-out;
+
 }
 
 .coffeeBean.coffeeBean--active,
 .bean.bean--active {
     display: inline-block;
+    opacity: 1;
 }
 
 //DESCRITPION OF THE FAMILLY
@@ -119,7 +128,9 @@ button.coffeeBeans__sliderBtn {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: baseline;
     margin: 25px auto 0 auto;
+    height: 50px;
     width: 204px;
     font-style: italic;
     font-size: 12px;

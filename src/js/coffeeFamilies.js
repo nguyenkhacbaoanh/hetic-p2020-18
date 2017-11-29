@@ -1,6 +1,8 @@
 const btns = document.querySelectorAll('.coffeeBeans__sliderBtn');
-const slides = [...document.querySelectorAll('.coffeeBeans__slide')]
+const slides = document.querySelectorAll('.coffeeBeans__slide');
 const carousel = document.querySelector('.coffeeBeans__sliderCarousel');
+const allDescritpions = [...document.querySelectorAll('.coffeeBean')];
+
 
 // console.log(slides);
 let currenSlide = 0;
@@ -36,14 +38,27 @@ btns.forEach((btn) => {
       rotationY-= 120;
       if(currenSlide >=  slides.length-1) {
         slides[currenSlide].classList.remove('currentSlide');
-        currenSlide = 0
+        console.log(allDescritpions[currenSlide]);
+        setClassList(false,allDescritpions[currenSlide], 'coffeeBean--active');
+        // allDescritpions[currenSlide].classList.remove('coffeeBean--active');
+        
+        currenSlide = 0;
+
         slides[currenSlide].classList.add('currentSlide');
-        currentSliderData(currenSlide)
+        // allDescritpions[currenSlide].classList.add('coffeeBean--active');
+        setClassList(true, allDescritpions[currenSlide], 'coffeeBean--active');
+        // currentSliderData(currenSlide)
       } else {
         slides[currenSlide].classList.remove('currentSlide');
-        currenSlide++
+        // allDescritpions[currenSlide].classList.remove('coffeeBean--active');
+        setClassList(false,allDescritpions[currenSlide], 'coffeeBean--active');
+
+        currenSlide++;
+
         slides[currenSlide].classList.add('currentSlide');
-        currentSliderData(currenSlide)
+        // allDescritpions[currenSlide].classList.add('coffeeBean--active');
+        setClassList(true,allDescritpions[currenSlide], 'coffeeBean--active');
+        // currentSliderData(currenSlide)
       }
 
     } else {
@@ -51,14 +66,26 @@ btns.forEach((btn) => {
 
       if(currenSlide <= 0 ) {
         slides[currenSlide].classList.remove('currentSlide');
-        currenSlide = slides.length-1
+        // allDescritpions[currenSlide].classList.remove('coffeeBean--active');
+        setClassList(false,allDescritpions[currenSlide], 'coffeeBean--active');
+
+        currenSlide = slides.length-1;
+
         slides[currenSlide].classList.add('currentSlide');
-        currentSliderData(currenSlide)
+        // allDescritpions[currenSlide].classList.add('coffeeBean--active');
+        setClassList(true,allDescritpions[currenSlide], 'coffeeBean--active');
+        // currentSliderData(currenSlide)
       } else {
         slides[currenSlide].classList.remove('currentSlide');
-        currenSlide--
+        // allDescritpions[currenSlide].classList.remove('coffeeBean--active');
+        setClassList(false,allDescritpions[currenSlide], 'coffeeBean--active');
+
+        currenSlide--;
+
         slides[currenSlide].classList.add('currentSlide');
-        currentSliderData(currenSlide)
+        // allDescritpions[currenSlide].classList.add('coffeeBean--active');
+        setClassList(true,allDescritpions[currenSlide], 'coffeeBean--active');
+        // currentSliderData(currenSlide)
       }
     }
     carousel.style.transform = "rotateY(" + rotationY+ "deg)";
@@ -68,7 +95,7 @@ btns.forEach((btn) => {
 });
 
 // FUNCTION SET DATA
-function currentSliderData(index) {
-  document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[index].coffeeFamily;
-  document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[index].coffeeDescription;
-}
+// function currentSliderData(index) {
+//   document.querySelector('.coffeeBean__family').textContent = TablesCoffeeFamiliesJson[index].coffeeFamily;
+//   document.querySelector('.coffeeBean__description p').textContent = TablesCoffeeFamiliesJson[index].coffeeDescription;
+// }

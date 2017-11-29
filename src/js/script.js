@@ -100,7 +100,7 @@ function creatCapsuleSlides(countryDatas) {
   });
 
   for (let i = 0; i < capsules.length; i++) {
-    capsules[i].style.transform = `rotateY(${ratio * i}deg) translateZ(280px) translateX(-50%)`;
+    capsules[i].style.transform = `rotateY(${ratio * i}deg) translateZ(280px) `;
   }
 
   allcurrentCapsulesElements = [...capsules];

@@ -36,12 +36,16 @@
 
 .machine__button {
     margin-top: 30px;
+    &:hover {
+        color:gold;
+    }
 }
 
-.button {
-    display: inline-block;
-    position: relative;
-}
+// .button {
+//     display: inline-block;
+//     position: relative;
+
+
 
 .machine__imgWrapper {
     margin-top: 50px; // justify-self: right;

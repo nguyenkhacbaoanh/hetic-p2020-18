@@ -1,90 +1,134 @@
 .quizz {
-    font-family: $description-font;
+  font-family: $description-font;
+  padding-bottom: 100px;
 }
 
 .quizz__questionIndividual,
 .capsuleResult__restart,
 .quizz__start {
-    display: none;
+  display: none;
 }
 
 .quizz__questionIndividual.question--displayed,
 .capsuleResult__restart.question--displayed,
 .quizz__start.question--displayed {
-    display: block;
+  display: block;
 }
 
 .quizz__questionIndividualTitle {
-    font-size: 20px;
-    color: $black;
-    margin: 28px 0 0 60px;
-    position: relative;
-    display: inline-block;
+  font-size: 20px;
+  color: $black;
+  margin: 28px 0 0 60px;
+  position: relative;
+  display: inline-block;
 }
 
 .quizz__questionIndividualTitle::after {
-    content: '';
-    position: absolute;
-    bottom: -28px;
-    left: -60px;
-    right: 0;
-    z-index: -2;
-    height: 1px;
-    background: $grey;
+  content: '';
+  position: absolute;
+  bottom: -28px;
+  left: -60px;
+  right: 0;
+  z-index: -2;
+  height: 1px;
+  background: $grey;
 }
 
 .quizz__questionIndividualContent,
 .quizz__buttons {
-    padding: 30px 25px;
+  padding: 30px 25px;
 }
 
 .quizz__buttons {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-.quizz__questionButtonsValidate::before {
-    background-color: $white;
-}
-
-.quizz__questionButtonsValidate a {
-    color: $white;
-    background: $gold;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .quizz__buttonsPrevious a {
-    color: $light-grey;
-    border-color: $light-grey;
+  color: $light-grey;
+  border-color: $light-grey;
 }
 
 .quizz__buttonsPrevious a:hover {
-    background-color: $light-grey;
+  background-color: $light-grey;
+}
+
+.quizz__buttonsValidate a {
+  color: $white;
+  background: $gold;
 }
 
 .quizz__buttonsValidate a:hover {
-    color: $gold;
+  color: $gold;
+  background: $white;
 }
 
 .capsuleResult__restartButton a {
-    color: $grey;
-    border-color: $grey;
+  color: $grey;
+  border-color: $grey;
 }
 
 .capsuleResult__restartButton a:hover {
-    background-color: $grey;
-    color: $blue;
+  background-color: $grey;
+  color: $blue;
 }
 
 .quizz__buttonsNext,
 .quizz__buttonsValidate {
-    float: right;
+  float: right;
 }
 
 .quizz__buttons .button {
-    display: none;
+  display: none;
 }
 
 .quizz__buttons .button.button--displayed {
-    display: inline-block;
+  display: inline-block;
+}
+
+// Question 1
+.quizz__questionList div:nth-child(2) .quizz__questionIndividualContent {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.quizz__questionList div:nth-child(2) .quizz__firstQuestion {
+  width: 200px;
+}
+
+svg.quizzIntensity .svgIntensity {
+  fill:$grey;
+}
+
+svg.quizzIntensity .svgIntensity:hover {
+  cursor: pointer;
+  fill: $gold;
+}
+
+@keyframes fillGreyToGold {
+  0% {
+    fill: $grey;
+  }
+  100% {
+    fill: $gold;
+  }
+}
+
+@keyframes fillGoldToGrey {
+  0% {
+    fill: $gold;
+  }
+  100% {
+    fill: $grey;
+  }
+}
+
+.quizz__questionList div:nth-child(2) .quizz__firstQuestion,
+.quizz__questionList div:nth-child(2) p {
+  display: inline-block;
+}
+
+.quizz__questionList div:nth-child(2) p {
+  margin-left: 15px;
 }

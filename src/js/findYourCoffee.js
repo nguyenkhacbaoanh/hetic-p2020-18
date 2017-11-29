@@ -29,6 +29,11 @@ const capBuy = document.querySelector('.capsuleResult__button a');
 const capHeaderName = document.querySelector('.capsuleResult__description h2');
 const capLongDescription = document.querySelector('.capsuleResult__description p');
 
+// cup svg element
+const cupFill = document.querySelector('.cup__fill');
+let coffeeFill = 30,
+    coffeeDisplayed = false;
+
 // Json constants
 const JsonCapsulesLink = 'datas/capsules.json';
 const capsTable = [];
@@ -46,7 +51,6 @@ fetch(JsonCapsulesLink)
 .then(capsule => capsule.json())
 .then((data) => {
   capsTable.push(...data);
-  // console.log(TablesCapsules);
 })
 .catch(err => console.log(Error(err)));
 
@@ -69,11 +73,21 @@ quizzButtons.forEach((element) => {
 
       startOnce = true;
 
+      if(!coffeeDisplayed)
+        cupFill.style.opacity = 1;
+  
+      coffeeFill -= 30;  
+      cupFill.style.transform = 'translateY(' + coffeeFill + 'px)';
+
     // Next button
     } else if ( (element == quizzButtons[2]) && ( currentQuizzQuestion < quizzQuestions.length - 1 ) ) {
       setClassList(false, quizzQuestions[currentQuizzQuestion], 'question--displayed');
       currentQuizzQuestion++;
       setClassList(true, quizzQuestions[currentQuizzQuestion], 'question--displayed');
+      
+      // coffee cup
+      coffeeFill -= 34;  
+      cupFill.style.transform = 'translateY(' + coffeeFill + 'px)';
 
     // Previous button
     } else if ( (element == quizzButtons[1]) && ( currentQuizzQuestion > 0 ) ) {
@@ -81,6 +95,9 @@ quizzButtons.forEach((element) => {
       currentQuizzQuestion--;
       setClassList(true, quizzQuestions[currentQuizzQuestion], 'question--displayed');
     
+      coffeeFill += 34;  
+      cupFill.style.transform = 'translateY(' + coffeeFill + 'px)';
+
     // Validate button
     } else if ( (element == quizzButtons[3])) {
       setClassList(false, quizzButtons[1], 'button--displayed');
@@ -126,7 +143,7 @@ quizzButtons.forEach((element) => {
   });
 });
 
-// 
+// On button restart 
 quizzRestart.addEventListener('click', (e) => {
   e.preventDefault();
   // Restart quizz
@@ -148,6 +165,10 @@ quizzRestart.addEventListener('click', (e) => {
   // display right buttons
   setClassList(false, quizzButtons[3], 'button--displayed');
   setClassList(true, quizzButtons[2], 'button--displayed');
+
+  // coffee cup
+  coffeeFill = 0;  
+  cupFill.style.transform = 'translateY(' + coffeeFill + 'px)';
 });
 
 function findCapsuleByIntensity(intensity) {
@@ -180,7 +201,6 @@ function setCapData(capsule) {
   // set aromas data
   let capsuleNotes;
   for (let i = 0; i < capsule.aromatic_notes.length; i++) {
-    console.log(capsule.aromatic_notes[i]);
     if (i == 0 )
       capsuleNotes = capsule.aromatic_notes[i];
     else
@@ -201,6 +221,5 @@ function displayResult(intensity) {
   
   randomCap = matchingCaps[randomCap];
  
-  console.log(randomCap);
   setCapData(randomCap);
 }

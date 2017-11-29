@@ -2,7 +2,8 @@ section.findYourCoffee
   .cup.active--content
     include ./coffee-cup-svg.pug
     .cup__indicator
-      img(src="../img/find__etap.svg", alt="étape quizz")
+      //- .cup__questionCount 1 / 3
+      //- img(src="../img/find__etap.svg", alt="étape quizz")
   
   .capsuleResult
     .capsuleResult__capsule
@@ -47,8 +48,11 @@ section.findYourCoffee
         .quizz__questionIndividual
           .quizz__questionIndividualTitle.italic Comment aimez-vous votre café ?
           .quizz__questionIndividualContent
-            img(src="../img/intensity-circles.svg", alt="Determinez l'intensité que vous aimez")
-            p Fort
+            .quizz__firstQuestion
+              include ./findYourCoffee-intensity-svg.pug
+              //- img(src="../img/intensity-circles.svg", alt="Determinez l'intensité que vous aimez")
+            
+            p.italic.gold Fort
         
         .quizz__questionIndividual
           .quizz__questionIndividualTitle.italic Question 2

@@ -9,6 +9,20 @@
   display: none;
 }
 
+.quizz__start,
+.capsuleResult__restart {
+  text-align: center;
+}
+
+.quizz__start .button,
+.capsuleResult__restart .button {
+  margin-top: 15px;
+}
+
+.capsuleResult__restartTitle {
+  color: $gold;
+}
+
 .quizz__questionIndividual.question--displayed,
 .capsuleResult__restart.question--displayed,
 .quizz__start.question--displayed {
@@ -97,14 +111,25 @@
   width: 200px;
 }
 
-svg.quizzIntensity .svgIntensity {
+.svgIntensity--grey {
   fill:$grey;
+  animation: fillGoldToGrey 0.15 ease-in-out;
+}
+
+.svgIntensity--gold {
+  fill:$gold;
+  animation: fillGreyToGold 0.15 ease-in-out;
 }
 
 svg.quizzIntensity .svgIntensity:hover {
   cursor: pointer;
   fill: $gold;
 }
+
+.capsuleResult__capsuleCaracteristics div {
+  margin-right: 15px;
+}
+
 
 @keyframes fillGreyToGold {
   0% {

@@ -1,15 +1,40 @@
 section.findYourCoffee
-  .cup
+  .cup.active--content
     include ./coffee-cup-svg.pug
     .cup__indicator
       img(src="../img/find__etap.svg", alt="étape quizz")
   
+  .capsuleResult
+    .capsuleResult__capsule
+      .capsuleResult__capsuleShortDescription.italic Doux et Léger
+      .capsuleResult__capsuleImg
+        img(src="../img/gammes_capsules/capsule-espresso-volluto-nespresso.png", alt="capsule espresso volluto")
+
+      .capsuleResult__capsuleName.gold Volluto
+      .capsuleResult__capsuleAromas.italic Biscuit • Fruité
+      .capsuleResult__capsuleIntensity.italic Intensity
+      
+      .capsuleResult__capsuleCaracteristics
+        .capsuleResult__capsuleBitterness.italic Amertume
+        .capsuleResult__capsuleAcidity.italic Acidité
+      
+      .capsuleResult__capsuleCaracteristics
+        .capsuleResult__capsuleCorps.italic Corps
+        .capsuleResult__capslueRoasting.italic Torréfaction
+      
+      .capsuleResult__button.button
+        a(href="#" title="") Acheter
 
   .findYourCoffee__header
-    .findYourCoffee__headerContent
+    .findYourCoffee__headerContent.active--header
       h1.findYourCoffee__headerOnTitle TROUVEZ
       h2.findYourCoffee__headerTitle Votre café idéal
       p.findYourCoffee__headerText Découvrez le café qui vous correspond le mieux à travers une expérience en quelques réponses.
+
+    .capsuleResult__description
+      h1.findYourCoffee__headerOnTitle VOTRE CAPSULE
+      h2.findYourCoffee__headerTitle Volluto
+      p.findYourCoffee__headerText Pur Arabica d’Amérique du Sud, Linizio Lungo est un mélange de cafés Brésiliens et Colombiens, et particulièrement rond en bouche. La torréfaction séparée des grains permet de garder des notes céréales maltées typique de la variété Bourbon tout en gardant son caractère doux et soyeux.
 
     .quizz
       .quizz__questionList
@@ -37,11 +62,6 @@ section.findYourCoffee
             img(src="../img/intensity-circles.svg", alt="Determinez l'intensité que vous aimez")
             p Fort
 
-        .quizz__restart
-          .quizz__restartTitle.italic Refaire le test ?
-          .quizz__restartButton.button
-            a(href="#" title="Refaire le test") Recommencer
-
         .quizz__buttons
           .quizz__buttonsPrevious.button
             a(href="#" title="Question précédente") Précédent
@@ -51,22 +71,8 @@ section.findYourCoffee
           
           .quizz__buttonsValidate.button
             a(href="#" title="Valider et découvrir ma capsule") Découvrir ma capsule
-  
-  .capsuleResult
 
-    .capsuleResult__capsule
-      .capsuleResult__capsuleShortDescription
-      .capsuleResult__capsuleImg
-      .capsuleResult__capsuleName
-      .capsuleResult__capsuleAromas
-      .capsuleResult__capsuleIntensity
-      .capsuleResult__capsuleBitterness
-      .capsuleResult__capsuleAcidity
-      .capsuleResult__capsuleCorps
-      .capsuleResult__capslueRoasting
-      .capsuleResult__button
-
-    .capsuleResult__description
-      h1.findYourCoffee__headerOnTitle VOLLUTO
-      h2.findYourCoffee__headerTitle La capsule qui vous correspond
-      p.findYourCoffee__headerText Pur Arabica d’Amérique du Sud, Linizio Lungo est un mélange de cafés Brésiliens et Colombiens, et particulièrement rond en bouche. La torréfaction séparée des grains permet de garder des notes céréales maltées typique de la variété Bourbon tout en gardant son caractère doux et soyeux.
+      .capsuleResult__restart
+        .capsuleResult__restartTitle.italic Refaire le test ?
+        .capsuleResult__restartButton.button
+          a(href="#" title="Refaire le test") Recommencer

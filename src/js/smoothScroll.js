@@ -87,14 +87,3 @@ document.querySelector('.hero__capsulePath').addEventListener('click', (e) => {
     'easeInOutQuad'
   );
 });
-
-// Smooth scroll from quizz to result
-document.querySelector('.quizz__buttonsValidate').addEventListener('click', (e) => {
-  e.preventDefault();
-  // console.log('click');
-  scrollIt(
-    document.querySelector('.yourCapsuleResult'),
-    400,
-    'easeInOutQuad'
-  );
-});

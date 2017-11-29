@@ -7,6 +7,7 @@ const iconSun = document.querySelector('.icon__dataSun');
 const iconAltitude = document.querySelector('.icon__dataAltitude');
 const iconRain = document.querySelector('.icon__dataRain');
 const sliderCounter = document.querySelector('.slider__counter');
+const employeeContent = document.querySelector('.employees__employeeContent');
 
 const sliderArrows = document.querySelectorAll('.employee__slider .slider__arrow');
 
@@ -47,19 +48,30 @@ const tablesEmployees = [
 // INITIALIZE EMPLOYEE CURRENTLY DISPLAYED
 let currentEmployee = 0;
 
+// import setClassList function
+import { setClassList } from "./helper.js";
+
 // FUNCTION SET EMPLOYEE DATA IN HTML
 function employeeSetData() {
-  employeeName.textContent = tablesEmployees[currentEmployee].employeeName;
-  employeeCountry.textContent = tablesEmployees[currentEmployee].employeeCountry;
-  employeeQuote.textContent = tablesEmployees[currentEmployee].employeeQuote;
-  iconSun.textContent = tablesEmployees[currentEmployee].iconSun;
-  iconAltitude.textContent = tablesEmployees[currentEmployee].iconAltitude;
-  iconRain.textContent = tablesEmployees[currentEmployee].iconRain;
+  setClassList(true, employeeContent, 'employee--contentChange');
+  setClassList(true, employeeImg, 'employee--contentChange');
 
-  employeeImg.setAttribute('src', tablesEmployees[currentEmployee].employeeImg);
-  employeeImg.setAttribute('alt', tablesEmployees[currentEmployee].employeeName);
-
-  sliderCounter.textContent = "- " + (currentEmployee + 1) + " / 3";
+  setTimeout(function() {
+    employeeName.textContent = tablesEmployees[currentEmployee].employeeName;
+    employeeCountry.textContent = tablesEmployees[currentEmployee].employeeCountry;
+    employeeQuote.textContent = tablesEmployees[currentEmployee].employeeQuote;
+    iconSun.textContent = tablesEmployees[currentEmployee].iconSun;
+    iconAltitude.textContent = tablesEmployees[currentEmployee].iconAltitude;
+    iconRain.textContent = tablesEmployees[currentEmployee].iconRain;
+  
+    employeeImg.setAttribute('src', tablesEmployees[currentEmployee].employeeImg);
+    employeeImg.setAttribute('alt', tablesEmployees[currentEmployee].employeeName);
+  
+    sliderCounter.textContent = "- " + (currentEmployee + 1) + " / 3";
+    setClassList(false, employeeContent, 'employee--contentChange');
+    setClassList(false, employeeImg, 'employee--contentChange');
+    
+  }, 150);
 }
 
 // FUNCTION ON CLICK ON SLIDER ARROWS - UPDATE EMPLOYEE CONTENT

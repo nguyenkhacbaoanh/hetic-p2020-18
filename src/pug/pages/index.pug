@@ -1,12 +1,16 @@
 include ../partials/header.pug
 
 section.hero
-  div.hero__capsule
+  .hero__capsule
     img.logoBackground(src="../img/n-logo-nespresso.png", alt="N nespresso")
     a.hero__capsulePath(href="#" title="Trouvez la capsule qui vous correspond")
       .hero__content
         img.capsulePath(src="../img/capsule-trace-nespresso.svg", alt="Capsule tracé nespresso")
-        .hero__cta.italic Découvrez votre capsule
+        .hero__cta Découvrez votre capsule
+
+  //- .hero__scrollIndication
+  //-   .hero__scrollDown
+  //-   .hero__scrollindicator
 
 include ./coffeeOrigins.pug
 include ./coffeeFamilies.pug

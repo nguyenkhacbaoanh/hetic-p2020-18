@@ -5,19 +5,6 @@ section.coffeeFamilies
     p Trois familles aromatiques de café mise au point pour une plus grande palette de goûts à déguster.
 
   .coffeeFamilies__coffeBeans
-    //- .coffeeBeans__slider
-    //- #example
-      //- carousel-3d(:perspective="0",:controls-visible="true", :height="500", :space="600")
-      //-   slide.slidee(:index="0")
-      //-     coffeeBeans__sliderContent
-      //-       img(src="img/coffee-bean-fruity.png", style="display: block; width: 100%; height: 100%; margin-left: auto; margin-right: auto;")
-
-      //-   slide.slidee(:index="1")
-      //-     div
-      //-       img(src="img/coffee-bean-fruity.png", style="display: block; width: 100%; height: 100%; margin-left: auto; margin-right: auto;")
-      //-   slide.slidee(:index="2")
-      //-     div
-      //-       img(src="img/coffee-bean-fruity.png", style="display: block; width: 100%; height: 100%; margin-left: auto; margin-right: auto;")
     .coffeeBeans__slider
         button.coffeeBeans__sliderBtn.coffeeBeans__sliderBtnPrev 
           img(src="../img/arrow-left.png")
@@ -32,11 +19,6 @@ section.coffeeFamilies
 
         button.coffeeBeans__sliderBtn.coffeeBeans__sliderBtnNext
           img(src="../img/arrow-right.png")
-          //- each val in [1,2,3]
-          //-   figure= val
-
-        //- each val in ['prev','next']
-        //-   button.btn= val
 
     .coffeeBeans__content
       .coffeeBean__fruityBean.coffeeBean.coffeeBean--active
@@ -101,30 +83,3 @@ section.coffeeFamilies
           .tasteNotes__content
             img(src="../img/aromatic_notes/agrume.svg", alt="Agrume")
             p Miel
-
-
-
-
-//-       #example
-//-   <carousel-3d :height="700">
-//-     <slide.slidee :index="0">
-//-       <div>
-//-         <img src="http://www.speakerscorner.me/wp-content/uploads/2016/01/emma7.jpg" style="display: block; width: 100%; height: 100%; margin-left: auto; margin-right: auto;">
-//-       </div>
-
-//-     </slide>
-//-     <slide.slidee :index="1">
-//-       <div>
-//-         <img src="https://metrouk2.files.wordpress.com/2016/02/ryan1.jpg" style="display: block; width: 100%; height: 100%; margin-left: auto; margin-right: auto;">
-//-         </div>
-
-//-     </slide>
-//-   <slide.slidee :index="2">
-//-     <div>
-//-    <img src="http://www.racingjunky.com/wp-content/uploads/2017/03/Dakota-Johnson.jpg" style="display: block; width: 100%; height: 100%; margin-left: auto; margin-right: auto;">
-            
-//-   </div>
-
-//-   </slide>
-//- </carousel-3d>
-//- </div>

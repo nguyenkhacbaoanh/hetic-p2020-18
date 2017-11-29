@@ -8,3 +8,7 @@ export function setClassList(addClass, elementName, elementClassName) {
       elementName.classList.remove(elementClassName);
   }
 }
+
+export function getRandom (min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}

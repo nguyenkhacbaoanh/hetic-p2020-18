@@ -1,3 +1,99 @@
-.capsuleResult {
+.capsuleResult,
+.capsuleResult__description {
   display: none;
+}
+
+.findYourCoffee__header.blue--header {
+  background: $blue;
+}
+
+.findYourCoffee__header {
+  background: $white;
+}
+
+.findYourCoffee__headerContent,
+.capsuleResult__description {
+  display: none;
+}
+
+.findYourCoffee__headerContent.active--header,
+.capsuleResult__description.active--header {
+  display: block;
+}
+
+.capsuleResult__description h1 {
+  margin-bottom: 30px;
+}
+
+// Left section
+.capsuleResult {
+  order: 2;
+  display: none;
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  background: #FBFBFB;
+  z-index: $zindex;
+  margin: auto;
+  text-align: center;
+  font-family: $description-font;
+  color: #9B9B9B;
+  padding: 30px 40px;
+
+  @include medium-2 {
+    order: 1;
+    width: 50vw;
+  }
+}
+
+.capsuleResult.active--content {
+  display: block;
+}
+
+.capsuleResult__capsuleShortDescription {
+  font-size: 17px;
+  margin-bottom: 60px;
+}
+
+.capsuleResult__capsuleImg img {
+  width: 80px;
+  height: auto;
+
+  @include medium-2 {
+    width: 120px;
+  }
+}
+
+.capsuleResult__capsuleName {
+  font-size: 22px;
+  margin: 15px 0 4px 0;
+}
+
+.capsuleResult__capsuleAromas {
+  font-size: 12px;
+  color: $black;
+}
+
+.capsuleResult__capsuleIntensity {
+  margin: 30px 0 45px 0;
+}
+
+.capsuleResult__capsuleCaracteristics {
+  margin-bottom: 10px;
+}
+
+.capsuleResult__capsuleCaracteristics  div {
+  display: inline-block;
+}
+
+.capsuleResult__button {
+  margin-top: 35px;
+}
+
+// Right section
+.capsuleResult__description {
+  font-family: $description-font;
+  padding: 30px 25px;
+  background: $blue;
+  color: $light-grey;
 }

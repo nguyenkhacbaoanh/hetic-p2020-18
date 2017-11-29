@@ -2,7 +2,7 @@
 .cup {
   display: none;
   position: relative;
-  width: 50vw;
+  width: 100vw;
   height: 657px;
   overflow: hidden;
   background: #FBFBFB;
@@ -11,7 +11,16 @@
   text-align: center;
 
   @include medium-2 {
+    width: 50vw;
+  }
+}
+
+.cup.active--content {
+  display: none;
+  
+  @include medium-2 {
     display: block;
+    order: 1;
   }
 }
 

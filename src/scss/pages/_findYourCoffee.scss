@@ -7,10 +7,12 @@
 }
 
 .findYourCoffee__header {
+  order: 1;
   z-index: $zindex-2;
   position: relative;
   @include medium-2 {
     width: 50vw;
+    order: 2;
   }
 }
 

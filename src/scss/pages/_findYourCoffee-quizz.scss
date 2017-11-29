@@ -3,13 +3,13 @@
 }
 
 .quizz__questionIndividual,
-.quizz__restart,
+.capsuleResult__restart,
 .quizz__start {
   display: none;
 }
 
 .quizz__questionIndividual.question--displayed,
-.quizz__restart.question--displayed,
+.capsuleResult__restart.question--displayed,
 .quizz__start.question--displayed {
   display: block;
 }
@@ -58,8 +58,22 @@
   border-color: $light-grey;
 }
 
+.quizz__buttonsPrevious a:hover {
+  background-color: $light-grey;
+}
+
 .quizz__buttonsValidate a:hover {
   color: $gold;
+}
+
+.capsuleResult__restartButton a {
+  color: $grey;
+  border-color: $grey;
+}
+
+.capsuleResult__restartButton a:hover {
+  background-color: $grey;
+  color: $blue;
 }
 
 .quizz__buttonsNext,

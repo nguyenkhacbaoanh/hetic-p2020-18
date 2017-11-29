@@ -72,6 +72,15 @@
   }
 }
 
+.employees__employeeContent {
+  opacity: 1;
+  transition: opacity 0.13s ease-in-out;
+}
+
+.employees__employeeContent.employee--contentChange {
+  opacity: 0;
+}
+
 // // infos
 .employees__employee .employee__name {
   text-transform: uppercase;  

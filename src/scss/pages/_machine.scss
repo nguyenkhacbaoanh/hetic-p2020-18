@@ -1,0 +1,63 @@
+.machine {
+    position: relative;
+    padding: 30px 25px;
+    font-family: "Trebuchet", "Open sans", "Helvetica", sans-serif; // color: #ffffff;
+    color: #1B1B1B;
+    text-align: center;
+    background: $white;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.machine__header {
+    width: 80vw;
+    margin: auto;
+    color: #D2D2D2;
+    margin-bottom: 40px;
+}
+
+.machine__header h1 {
+    @include medium-2 {
+        margin-bottom: 50px;
+    }
+}
+
+.machine__header h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.machine__header h2,
+.machine__header p {
+    color: $black-background;
+}
+
+.machine__button {
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    position: relative;
+}
+
+.machine__imgWrapper {
+    margin-top: 50px; // justify-self: right;
+    // width: 80%;
+    @include medium {
+        width: 500px;
+        align-self: flex-end;
+        margin-top: 0;
+    }
+    @include large {
+        width: 700px;
+        align-self: flex-end;
+        margin-top: 0;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

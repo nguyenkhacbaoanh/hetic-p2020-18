@@ -26,6 +26,7 @@ const capAcidity = document.querySelector('.capsuleResult__capsuleAcidity');
 const capCorps = document.querySelector('.capsuleResult__capsuleCorps');
 const capRoasting = document.querySelector('.capsuleResult__capslueRoasting');
 const capBuy = document.querySelector('.capsuleResult__button a');
+const capHeaderName = document.querySelector('.capsuleResult__description h2');
 const capLongDescription = document.querySelector('.capsuleResult__description p');
 
 // Json constants
@@ -159,18 +160,38 @@ function findCapsuleByIntensity(intensity) {
   return matchingCaps;
 }
 
+// Set capsule data in html
 function setCapData(capsule) {
-  // capName.textContent = capsule.capsuleName;
-  // capShortDescription.textContent = capsule.shortDescription;
-  // capName.capLongDescription = capsule.longDescription;
-  // capIntensity.textContent = capName + capsule.intensity;
-  // capBitterness.textContent = capName + capsule.bitterness;
-  // capAcidity.textContent = capName + capsule.acidity;
-  // capCorps.textContent = capName + capsule.corps;
-  // capRoasting.textContent = capName + capsule.roasting;
-  // capAromas.textContent =  --> capsule.roasting; //  boucle
-  // capImg --> '../img/gammes_capsules/' + capsule.mainImage; // set img src
-  // capBuy
+  capName.textContent = capsule.capsuleName;
+  capHeaderName.textContent = capsule.capsuleName;
+
+  capShortDescription.textContent = capsule.shortDescription;
+  capLongDescription.textContent = capsule.longDescription;
+
+  capIntensity.textContent = 'intensité ' + capsule.intensity;
+  capBitterness.textContent = 'amertume ' + capsule.bitterness;
+  capAcidity.textContent = 'acidité ' + capsule.acidity;
+  capCorps.textContent = 'corps ' + capsule.corps;
+  capRoasting.textContent = 'torréfaction ' + capsule.roasting;
+
+  capImg.src = ('../img/gammes_capsules/' + capsule.mainImage);
+  capImg.setAttribute('alt', (capsule.capsuleName + ' ' + capsule.capsuleRange + 'Nespresso'));
+  
+  // set aromas data
+  let capsuleNotes;
+  for (let i = 0; i < capsule.aromatic_notes.length; i++) {
+    console.log(capsule.aromatic_notes[i]);
+    if (i == 0 )
+      capsuleNotes = capsule.aromatic_notes[i];
+    else
+      capsuleNotes += ' • ' + capsule.aromatic_notes[i];
+  }
+  capAromas.textContent = capsuleNotes;
+
+  // set button link
+  capBuy.setAttribute('href', capsule.capsuleLink);
+  capBuy.setAttribute('title', 'Acheter la capsule ' + capsule.capsuleName);
+  
 }
 
 function displayResult(intensity) {
@@ -178,5 +199,8 @@ function displayResult(intensity) {
 
   let randomCap = getRandom(0, matchingCaps.length-1);
   
+  randomCap = matchingCaps[randomCap];
+ 
+  console.log(randomCap);
   setCapData(randomCap);
 }

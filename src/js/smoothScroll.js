@@ -77,6 +77,17 @@ function scrollIt(destination, duration = 200, easing = 'linear', callback) {
   scroll();
 }
 
+// Smooth scroll from hero button to coffee quizz
+document.querySelector('.header__callToAction').addEventListener('click', (e) => {
+  e.preventDefault();
+  // console.log('click');
+  scrollIt(
+    document.querySelector('.findYourCoffee'),
+    800,
+    'easeInOutQuad'
+  );
+});
+
 // Smooth scroll from hero capsule to coffee origins
 document.querySelector('.hero__capsulePath').addEventListener('click', (e) => {
   e.preventDefault();

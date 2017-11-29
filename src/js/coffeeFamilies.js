@@ -6,6 +6,10 @@ const carousel = document.querySelector('.coffeeBeans__sliderCarousel');
 let currenSlide = 0;
 let rotationY = 0;
 
+// import setClassList function
+import { setClassList } from "./helper.js";
+// setClassList(false, morphingInfos[0], 'info--active');
+
 // DATAS OF THE SECTON
 const TablesCoffeeFamiliesJson = [
   {

@@ -25,10 +25,10 @@ const previous = document.querySelector('.slider_previousBtn');
 const next = document.querySelector('.slider_nextBtn');
 const intensity_svg = document.querySelector('.intensity__gold');
 const intensity_strength = document.querySelector('.intensity__strength ');
+const capsuleBuyButton = document.querySelector('.data__buy a');
 
 // const allcapsules = document.querySelectorAll('.capsule');
 const producer = [...document.querySelectorAll('#producer')];
-
 
 // VARIABLES
 // This array will contains all de capsules of all countries
@@ -95,7 +95,6 @@ function creatCapsuleSlides(countryDatas) {
     capsuleImage.setAttribute('alt', `Nesspresso ${element.countries}`);
     capsule.appendChild(capsuleImage);
 
-
     // Stocking all in variable
     capsules.push(capsule);
   });
@@ -136,9 +135,9 @@ function setBorderPosition(element) {
 }
 
 // function Set Intensity 
-function setIntensity() {
+// function setIntensity() {
 
-}
+// }
 
 // FUNCTION GET THE COUNTRY BY CLICK
 countries.forEach((element) => {
@@ -197,17 +196,14 @@ function findCurrentCapsuleDatas(id) {
 
 // FUNCION AFFICHE THE DATA
 function getCurrentCapsuleDomDescription(data) {
-  // console.log('data',data);
 
   capsuleName.textContent = `${data.capsuleName}`;
   shortDescription.textContent = `${data.shortDescription}`;
-
 
   // set intensity 
   intensity_svg.classList.remove(`intensity__gold-${lastIntensity}`);
   lastIntensity = data.intensity;
   intensity_svg.classList.add(`intensity__gold-${data.intensity}`);
-
 
   // set strength 
   if (data.intensity <= 4) {
@@ -218,16 +214,20 @@ function getCurrentCapsuleDomDescription(data) {
     intensity_strength.textContent = 'Fort';
   }
 
+  // set button link
+  capsuleBuyButton.setAttribute('href', `${data.capsuleLink}`);
+  capsuleBuyButton.setAttribute('title', 'Acheter la capsule ' + `${data.capsuleName}`);
+
   // set Aromatique
   let currentAromData;
   for (let i = 0; i < data.aromatic_notes.length; i++) {
     if (i == 0) {
       currentAromData = data.aromatic_notes[0];
-    }else {
+    } else {
       currentAromData += ` • ${data.aromatic_notes[i]}`;
     }
   }
-  capsuleArom.innerHTML = currentAromData;
+  capsuleArom.textContent = currentAromData;
 }
 
 function getCurrentCapsuleId(id) {

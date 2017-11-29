@@ -34,6 +34,9 @@ const cupFill = document.querySelector('.cup__fill');
 let coffeeFill = 30,
     coffeeDisplayed = false;
 
+// question 1 elements
+const svgIntensity = document.querySelectorAll('.svgIntensity');
+
 // Json constants
 const JsonCapsulesLink = 'datas/capsules.json';
 const capsTable = [];
@@ -42,9 +45,11 @@ let currentQuizzQuestion = 0;
 let startOnce = false;
 
 // Capsule research elements
-let family = 'Intense',
+let coffeeIntensity,
+    family = 'Intense',
     deca = false,
-    matchingCaps = [];
+    matchingCaps = [],
+    coffeeType = 'doux';
 
 // Fetch Json capsule data
 fetch(JsonCapsulesLink)
@@ -85,6 +90,8 @@ quizzButtons.forEach((element) => {
       currentQuizzQuestion++;
       setClassList(true, quizzQuestions[currentQuizzQuestion], 'question--displayed');
       
+      questionGetChoice(currentQuizzQuestion);
+
       // coffee cup
       coffeeFill -= 34;  
       cupFill.style.transform = 'translateY(' + coffeeFill + 'px)';
@@ -171,11 +178,80 @@ quizzRestart.addEventListener('click', (e) => {
   cupFill.style.transform = 'translateY(' + coffeeFill + 'px)';
 });
 
-function findCapsuleByIntensity(intensity) {
-  for (let i = 0; i < capsTable.length; i++) {
-    if (capsTable[i].intensity == intensity) {
-      matchingCaps.push(capsTable[i]);
+// get intensity on click
+svgIntensity.forEach((element) => {
+  element.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    for (let i = 0; i < svgIntensity.length; i++) {
+      setClassList(false, svgIntensity[i], 'svgIntensity--active');
+      setClassList(false, svgIntensity[i], 'svgIntensity--gold');
+      setClassList(true, svgIntensity[i], 'svgIntensity--grey');
     }
+
+    let j = 0;
+    while (element != svgIntensity[j]) {
+      setClassList(true, svgIntensity[j], 'svgIntensity--gold');
+      setClassList(false, svgIntensity[j], 'svgIntensity--grey');
+      j++;
+    }
+    
+    setClassList(true, element, 'svgIntensity--gold');
+    setClassList(true, element, 'svgIntensity--active');
+
+    coffeeIntensity = element.dataset.intensity;
+
+    if (coffeeIntensity < 4)
+      coffeeType = 'doux';
+
+    else if ((coffeeIntensity > 4) && (coffeeIntensity < 7))
+      coffeeType = 'moyen';
+
+    else
+      coffeeType = 'fort';
+
+  });
+});
+
+// svgIntensity.forEach((element) => {
+//   element.addEventListener('mouseover', (e) => {
+//     e.preventDefault();
+    
+//     let elementHoverIntensity = element.dataset.intensity;
+    
+//     for (let i = 0; i < svgIntensity.length; i++) {
+//       if(svgIntensity[i] == element)
+//         console.log('hey');
+//     }
+
+//     if (element < svgIntensity[0]) {
+//       intensity_strength.textContent = 'Doux';
+//     } else if (data.intensity <= 8) {
+//       intensity_strength.textContent = 'Moyen';
+//     } else {
+//       intensity_strength.textContent = 'Fort';
+//     }
+
+//   });
+// });
+
+
+function findCapsuleByIntensity(coffeeType) {
+  for (let i = 0; i < capsTable.length; i++) {
+    if (coffeeType == 'doux') {
+      if (parseInt(capsTable[i].intensity) <= 4) {
+        matchingCaps.push(capsTable[i]);
+      }
+    } else if (coffeeType == 'moyen') {
+      if ((parseInt(capsTable[i].intensity) > 4) && (parseInt(capsTable[i].intensity) < 8)) {
+        matchingCaps.push(capsTable[i]);
+      }
+    } else {
+      if ((parseInt(capsTable[i].intensity) > 8)) {
+        matchingCaps.push(capsTable[i]);
+      }
+    }
+    
   }
 
   return matchingCaps;
@@ -214,8 +290,15 @@ function setCapData(capsule) {
   
 }
 
+function questionGetChoice(currentQuizzQuestion) {
+  // Question 1
+  if(currentQuizzQuestion == 0) {
+    
+  }
+}
+
 function displayResult(intensity) {
-  findCapsuleByIntensity(intensity);
+  findCapsuleByIntensity(coffeeType);
 
   let randomCap = getRandom(0, matchingCaps.length-1);
   

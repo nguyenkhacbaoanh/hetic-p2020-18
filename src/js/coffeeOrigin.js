@@ -28,7 +28,7 @@ const intensity_strength = document.querySelector('.intensity__strength ');
 const capsuleBuyButton = document.querySelector('.data__buy a');
 
 // const allcapsules = document.querySelectorAll('.capsule');
-const producer = [...document.querySelectorAll('#producer')];
+const producer = document.querySelectorAll('#producer');
 
 // VARIABLES
 // This array will contains all de capsules of all countries
@@ -216,7 +216,7 @@ function getCurrentCapsuleDomDescription(data) {
 
   // set button link
   capsuleBuyButton.setAttribute('href', `${data.capsuleLink}`);
-  capsuleBuyButton.setAttribute('title', 'Acheter la capsule ' + `${data.capsuleName}`);
+  capsuleBuyButton.setAttribute('title', `Acheter la capsule ${data.capsuleName}`);
 
   // set Aromatique
   let currentAromData;

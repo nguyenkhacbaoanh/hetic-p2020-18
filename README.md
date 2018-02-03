@@ -1,4 +1,6 @@
-##Nespresso website project ![](https://img.shields.io/travis/CarinaChenot/hetic-p2020-01/dev.svg?style=flat-square)
+##  PROJECT STATUS : WORK IN PROGRESS
+
+Nespresso # website project ![](https://img.shields.io/travis/CarinaChenot/hetic-p2020-01/dev.svg?style=flat-square)
 
 [![](https://www.netlify.com/img/global/badges/netlify-color-accent.svg)](https://www.netlify.com)
 
